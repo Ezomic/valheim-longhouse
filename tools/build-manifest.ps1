@@ -44,6 +44,12 @@ if (-not $Root) { $Root = Split-Path -Parent $here }
 #   Surge     is published on its own.
 #   Fiends    likewise.
 #   Delve     likewise.
+#   Nidling   is a creature, and a published creature commits the suite to its prefab name
+#             forever: ZNetScene keys creatures by name hash and silently discards any ZDO
+#             whose name no longer resolves, so renaming or withdrawing one later deletes
+#             every instance players had standing in their worlds. It works and it has been
+#             confirmed in game - it is held back because the name is the permanent part,
+#             not because the mod is not ready.
 #
 # The three published-separately ones still have their own packages and remotes; they are
 # simply not part of the set the version gate holds everyone to.
@@ -65,7 +71,6 @@ $members = @(
     'furrow',
     'boon',
     'wither',
-    'nidling',
     'vaettir',
     'threshold'
 )
