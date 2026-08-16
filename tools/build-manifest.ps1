@@ -37,8 +37,16 @@ $ErrorActionPreference = 'Stop'
 $here = Split-Path -Parent $PSScriptRoot
 if (-not $Root) { $Root = Split-Path -Parent $here }
 
-# Every mod a player is meant to have. Devkit is absent on purpose: it is the menu these
-# are tested through and it is never shipped.
+# The mods the pack ships. Deliberately not "every folder with a manifest" - three separate
+# reasons keep a mod out, and all three are decisions rather than oversights:
+#
+#   Devkit    is the menu these are tested through, and never goes to a player.
+#   Surge     is published on its own.
+#   Fiends    likewise.
+#   Delve     likewise.
+#
+# The three published-separately ones still have their own packages and remotes; they are
+# simply not part of the set the version gate holds everyone to.
 $members = @(
     'core',
     'thralls',
@@ -50,10 +58,7 @@ $members = @(
     'furrow',
     'boon',
     'wither',
-    'surge',
     'nidling',
-    'fiends',
-    'delve',
     'vaettir'
 )
 
