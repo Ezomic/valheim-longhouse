@@ -47,6 +47,13 @@ if (-not $Root) { $Root = Split-Path -Parent $here }
 #
 # The three published-separately ones still have their own packages and remotes; they are
 # simply not part of the set the version gate holds everyone to.
+#
+# Threshold was missing from this list until 2026-08-16, and that one was an oversight rather
+# than a decision - it was split out of Boon after these pins were first generated and nothing
+# brought it in. It belongs here for two reasons. It runs on the server at
+# Requirement.Everyone, so a pack without it means every pack user is refused; and half of what
+# it does runs on the client, guarding your own character in the menu against being started in
+# the wrong world. That half only protects a player who actually has the mod.
 $members = @(
     'core',
     'thralls',
@@ -59,7 +66,8 @@ $members = @(
     'boon',
     'wither',
     'nidling',
-    'vaettir'
+    'vaettir',
+    'threshold'
 )
 
 # BepInEx is pinned by the pack as well as by each mod. A pack that named only the mods
