@@ -1,0 +1,25 @@
+{
+    "name":  "Longhouse",
+    "author":  "Robbin Thijssen",
+    "version_number":  "0.1.0",
+    "website_url":  "https://github.com/Ezomic/valheim-longhouse",
+    "description":  "Every Ezomic mod, pinned to one set that a server will accept.",
+    "dependencies":  [
+                         "denikson-BepInExPack_Valheim-5.4.2333",
+                         "Ezomic-Core-0.2.0",
+                         "Ezomic-Thralls-1.0.0",
+                         "Ezomic-Stow-0.3.0",
+                         "Ezomic-Stoker-0.3.0",
+                         "Ezomic-Tether-0.1.0",
+                         "Ezomic-Dovetail-1.0.0",
+                         "Ezomic-Hoard-1.0.0",
+                         "Ezomic-Furrow-0.1.0",
+                         "Ezomic-Boon-0.1.0",
+                         "Ezomic-Wither-0.2.0",
+                         "Ezomic-Surge-0.1.0",
+                         "Ezomic-Nidling-0.1.0",
+                         "Ezomic-Fiends-0.1.0",
+                         "Ezomic-Delve-0.1.0",
+                         "Ezomic-Vaettir-1.0.0"
+                     ]
+}
