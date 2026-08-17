@@ -60,15 +60,15 @@ if (-not $Root) { $Root = Split-Path -Parent $here }
 # Requirement.Everyone, so a pack without it means every pack user is refused; and half of what
 # it does runs on the client, guarding your own character in the menu against being started in
 # the wrong world. That half only protects a player who actually has the mod.
+# Stow and Furrow are absent because they are not separate mods any more - both ship
+# inside Vaettir, and the pack gets them through that member.
 $members = @(
     'core',
     'thralls',
-    'stow',
     'stoker',
     'tether',
     'dovetail',
     'hoard',
-    'furrow',
     'boon',
     'wither',
     'vaettir',
