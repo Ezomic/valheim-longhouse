@@ -8,7 +8,7 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [0.1.0] — 2026-08-16
+## [0.1.0] - 2026-08-16
 
 First assembly of the pack. **Not published.**
 
