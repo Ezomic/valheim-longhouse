@@ -55,7 +55,7 @@ if (-not $Root) { $Root = Split-Path -Parent $here }
 # simply not part of the set the version gate holds everyone to.
 #
 # Threshold was missing from this list until 2026-08-16, and that one was an oversight rather
-# than a decision - it was split out of Boon after these pins were first generated and nothing
+# than a decision - it was split out of Rist after these pins were first generated and nothing
 # brought it in. It belongs here for two reasons. It runs on the server at
 # Requirement.Everyone, so a pack without it means every pack user is refused; and half of what
 # it does runs on the client, guarding your own character in the menu against being started in
@@ -69,7 +69,7 @@ $members = @(
     'tether',
     'dovetail',
     'hoard',
-    'boon',
+    'rist',
     'wither',
     'vaettir',
     'threshold'

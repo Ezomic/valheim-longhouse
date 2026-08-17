@@ -20,7 +20,7 @@ Fifteen mods, every one meant for a player. Devkit is deliberately absent.
 | --- | --- |
 | Core | the version gate the rest depend on |
 | Thralls, Stow, Stoker, Tether, Dovetail, Hoard, Furrow | the quality-of-life half |
-| Boon, Wither, Surge | progression and pressure |
+| Rist, Wither, Surge | progression and pressure |
 | Nidling, Fiends, Vaettir, Delve | things living in the world, and places to go down into |
 
 ### Generated pins
@@ -38,5 +38,5 @@ Fifteen mods, every one meant for a player. Devkit is deliberately absent.
 - Several members are at 0.x and have never been run in a session. The pack pins what
   exists, not what is finished.
 - The Core dependency string is unsettled: Core's own manifest declares its package name as
-  `Core`, and Boon currently pins `Ezomic-EzomicCore`. One of the two has to move before
+  `Core`, and Rist currently pins `Ezomic-EzomicCore`. One of the two has to move before
   anything resolves.
