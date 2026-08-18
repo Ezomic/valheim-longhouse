@@ -62,11 +62,16 @@ if (-not $Root) { $Root = Split-Path -Parent $here }
 # the wrong world. That half only protects a player who actually has the mod.
 # Stow and Furrow are absent because they are not separate mods any more - both ship
 # inside Vaettir, and the pack gets them through that member.
+# Tether is out of the pack for now. It is free from the first minute, with no cost to make
+# a link and nothing to earn first, and it has never been played. A pack member is a promise
+# about how a server plays, and that is not one to make yet.
 $members = @(
     'core',
-    'thralls',
+    # Thralls is out of the pack as of 2026-08-17, back at 0.5.0 with its piece being
+    # redesigned and its binding cost reworked. A pack is a promise that the set works
+    # together, and that is not a promise to make about a mod its own author has not
+    # played through. Put the line back when it earns its version.
     'stoker',
-    'tether',
     'dovetail',
     'hoard',
     'rist',
