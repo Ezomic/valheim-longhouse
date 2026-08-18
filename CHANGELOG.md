@@ -14,17 +14,18 @@ First assembly of the pack. **Not published.**
 
 ### Members
 
-Eight mods. Devkit is deliberately absent, and so is every mod that is published on its
-own or has not been played.
+Six mods. Devkit is deliberately absent, and so is every mod that is published on its own
+or has not been played.
 
 | | |
 | --- | --- |
 | Core | the version gate the rest depend on |
-| Stoker, Dovetail, Hoard | the quality-of-life half |
+| Yoke | quality of life |
 | Rist, Utangard | progression and pressure |
 | Vaettir, Dyrr | the spirits, and the door policy |
 
-Held out, each for its own reason: Thralls and Tether have never been played through;
+Held out, each for its own reason: Thralls, Tether, Stoker and Dovetail have never been
+played through;
 Surge, Fiends and Delve are published on their own; Nidling is a creature, and a
 published creature commits the suite to its prefab name forever; Saga writes per-player
 state and is at 0.1.0. Stow and Furrow are not separate mods any more - both ship inside

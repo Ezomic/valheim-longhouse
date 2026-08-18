@@ -6,10 +6,8 @@
     "description":  "Every Ezomic mod, pinned to one set that a server will accept.",
     "dependencies":  [
                          "denikson-BepInExPack_Valheim-5.4.2333",
-                         "Ezomic-Longhouse_Core-0.2.0",
-                         "Ezomic-Stoker-0.3.0",
-                         "Ezomic-Dovetail-0.9.0",
-                         "Ezomic-Yoke-0.12.1",
+                         "Ezomic-Longhouse_Core-1.0.0",
+                         "Ezomic-Yoke-1.0.0",
                          "Ezomic-Rist-1.0.1",
                          "Ezomic-Utangard-1.1.0",
                          "Ezomic-Vaettir-1.0.0",

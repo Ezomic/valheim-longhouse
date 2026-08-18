@@ -75,8 +75,10 @@ $members = @(
     # redesigned and its binding cost reworked. A pack is a promise that the set works
     # together, and that is not a promise to make about a mod its own author has not
     # played through. Put the line back when it earns its version.
-    'stoker',
-    'dovetail',
+    # Stoker and Dovetail came out on 2026-08-18. Both are still 0.x - 0.3.0 and 0.9.0 -
+    # and neither has been played through, which is the same bar Thralls and Tether are
+    # sitting behind. Their own packages are unaffected; this is only the set the version
+    # gate holds everyone to.
     'yoke',
     'rist',
     # 'utangard', not 'wither': the mod was renamed on 2026-08-16 and this line was not,
