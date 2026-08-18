@@ -8,6 +8,24 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.0.3] - 2026-08-18
+
+**Rist repinned to 1.1.0.** One pin moved, nothing else.
+
+Rist now weights XP by which skill earned it, after the server's ledger showed half a
+character's level had come from felling trees. The reasoning and the numbers are in Rist's own
+changelog; what matters at pack level is that this pin **must** move. Longhouse Core's version
+gate compares the compiler's build id, not the version string, so a client on the old Rist and
+a server on the new one do not merely disagree about XP - the connection is refused. Pinning
+1.0.1 here while a server runs 1.1.0 would lock out everyone who installed the pack.
+
+### Two things to know before updating a server
+
+- **Every character is re-priced once, on its next login.** Levels go down. Runestones already
+  taken are kept, and no new pick is earned until the old level is passed again.
+- **Rist's ledger moves to `v4` and older builds cannot read it**, which drops records rather
+  than erroring. Copy `BepInEx/config/rist-ledger.txt` aside before updating.
+
 ## [1.0.2] - 2026-08-18
 
 Page text only. **No member changed and no pin moved** - the set shipped in 1.0.1 is the set
