@@ -64,3 +64,14 @@ says, so refreshing pins never silently renumbers the pack.
 The pack's version is its own and does not track any member's. It goes up when the set
 changes: a mod added, removed, or repinned. What changed in each is in that mod's own
 changelog; what changed in the *set* is in [CHANGELOG.md](CHANGELOG.md).
+
+## Reporting bugs
+
+[The Discord](https://discord.gg/hJzAVaZ5wb) is the fastest route for anything in the
+pack, and the right one when you cannot tell which mod is responsible. That is most of
+the time, and it is the reason to ask here rather than guess at one mod's issue tracker.
+Issues on [the pack repo](https://github.com/Ezomic/valheim-longhouse) work too.
+
+Bring `BepInEx\LogOutput.log` if you can, and say whether you were on a server or your
+own world. It names every mod that loaded and its version, which is usually the first
+thing worth knowing.
