@@ -6,9 +6,27 @@ This is a **pack, not a mod**. There is no DLL here and nothing to patch; the pa
 manifest naming each mod at an exact version, plus this file and an icon. Installing it
 installs all of them.
 
+## There is a server
+
+The pack exists because of one. **Longhouse** is a small EU server on Amsterdam time running
+exactly this set: fresh world, hard combat difficulty, everything else vanilla, resources at
+1x. No application and no activity requirements.
+
+[The Discord](https://discord.gg/hJzAVaZ5wb) is the only door. Connection details are posted
+inside once you are through it.
+
+Two things worth knowing before you decide. Your viking has to be new and must never load
+another world, because Valheim permanently records every world a character has visited and
+never removes the record, so a single trip into your own save locks that character out of the
+server for good. It is enforced by [Dyrr](https://thunderstore.io/c/valheim/p/Ezomic/Dyrr/),
+which is in this pack and off by default for everyone else.
+
+And none of that is a condition of using the pack. Every mod in here works on your own world,
+alone, with the door policy switched off. The server is an invitation, not the price.
+
 ## Why a pack rather than a profile code
 
-The mods share [Core](../core), which compares versions *and* the compiler's build id at
+The mods share [Core](https://thunderstore.io/c/valheim/p/Ezomic/Longhouse_Core/), which compares versions *and* the compiler's build id at
 connect time and refuses a client that does not match the server. That gate is the whole
 reason a stranger can be handed a folder of DLLs and trusted to join: a mismatch is a closed
 door rather than an hour of play into a world that quietly disagrees with itself.
