@@ -45,7 +45,5 @@ Vaettir, so the pack gets them through that member.
 
 - **Nothing in this pack has been published**, so none of the pins resolve on Thunderstore
   yet. The pack is assembled ahead of the uploads rather than after them.
-- **There is no `icon.png`**, and Thunderstore requires a 256x256 one, so `package-all.ps1`
-  skips the pack.
 - Several members are at 0.x and have never been run in a session. The pack pins what
   exists, not what is finished.
