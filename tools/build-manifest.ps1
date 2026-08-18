@@ -77,7 +77,7 @@ $members = @(
     # played through. Put the line back when it earns its version.
     'stoker',
     'dovetail',
-    'hoard',
+    'yoke',
     'rist',
     # 'utangard', not 'wither': the mod was renamed on 2026-08-16 and this line was not,
     # so every run since has failed on a member with no manifest. The failure was loud,
