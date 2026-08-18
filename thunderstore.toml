@@ -7,7 +7,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "Ezomic"
 name = "Longhouse"
-versionNumber = "0.1.0"
+versionNumber = "1.0.0"
 description = "Every Ezomic mod, pinned to one set that a server will accept."
 websiteUrl = "https://github.com/Ezomic/valheim-longhouse"
 containsNsfwContent = false

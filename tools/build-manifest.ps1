@@ -151,6 +151,18 @@ $manifest = [ordered]@{
 $json = ($manifest | ConvertTo-Json -Depth 4) -replace "`r`n", "`n"
 [System.IO.File]::WriteAllText($manifestPath, $json + "`n", (New-Object System.Text.UTF8Encoding($false)))
 
+# A pack has no files of its own, so thunderstore.toml carries no [[build.copy]] stanza and
+# tcli falls back to mapping .\dist onto the package root. With no dist to find it warns and
+# exits 1 on a build that is otherwise perfect, and a nonzero exit on a good build is what a
+# publish script eventually believes.
+#
+# So the folder is made here, where it costs nothing. It is emphatically NOT a tracked
+# .gitkeep - that was the first fix and it was worse than the problem: the copy maps the
+# folder's *contents* to the package root, so the keep-file shipped inside the zip. An empty
+# build-time folder leaves nothing in git and nothing in the package.
+$distPath = Join-Path $here 'dist'
+if (-not (Test-Path $distPath)) { New-Item -ItemType Directory -Path $distPath | Out-Null }
+
 Write-Host "Longhouse $PackVersion" -ForegroundColor Cyan
 foreach ($d in $dependencies) { Write-Host "  $d" -ForegroundColor DarkGray }
 Write-Host "`nWrote $manifestPath" -ForegroundColor Green
