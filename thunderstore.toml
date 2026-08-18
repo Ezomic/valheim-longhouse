@@ -15,14 +15,11 @@ containsNsfwContent = false
 [package.dependencies]
 denikson-BepInExPack_Valheim = "5.4.2333"
 Ezomic-Longhouse_Core = "0.2.0"
-Ezomic-Thralls = "1.0.0"
-Ezomic-Stow = "0.3.0"
 Ezomic-Stoker = "0.3.0"
-Ezomic-Dovetail = "1.0.0"
-Ezomic-Hoard = "1.0.0"
-Ezomic-Furrow = "0.1.0"
-Ezomic-Rist = "1.0.0"
-Ezomic-Utangard = "1.0.0"
+Ezomic-Dovetail = "0.9.0"
+Ezomic-Hoard = "0.12.1"
+Ezomic-Rist = "1.0.1"
+Ezomic-Utangard = "1.1.0"
 Ezomic-Vaettir = "1.0.0"
 Ezomic-Dyrr = "1.0.0"
 

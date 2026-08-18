@@ -37,8 +37,8 @@ $ErrorActionPreference = 'Stop'
 $here = Split-Path -Parent $PSScriptRoot
 if (-not $Root) { $Root = Split-Path -Parent $here }
 
-# The mods the pack ships. Deliberately not "every folder with a manifest" - three separate
-# reasons keep a mod out, and all three are decisions rather than oversights:
+# The mods the pack ships. Deliberately not "every folder with a manifest" - several separate
+# reasons keep a mod out, and every one of them is a decision rather than an oversight:
 #
 #   Devkit    is the menu these are tested through, and never goes to a player.
 #   Surge     is published on its own.
@@ -65,6 +65,10 @@ if (-not $Root) { $Root = Split-Path -Parent $here }
 # Tether is out of the pack for now. It is free from the first minute, with no cost to make
 # a link and nothing to earn first, and it has never been played. A pack member is a promise
 # about how a server plays, and that is not one to make yet.
+# Saga is out for the same reason as Thralls and Tether: it is at 0.1.0, it has never been
+# run in a session, and its effect layer is not shipped. It is also the one member that
+# would be awkward to withdraw later - it writes per-player achievement state - so it
+# joins once it has been played, not once it compiles.
 $members = @(
     'core',
     # Thralls is out of the pack as of 2026-08-17, back at 0.5.0 with its piece being
@@ -75,7 +79,11 @@ $members = @(
     'dovetail',
     'hoard',
     'rist',
-    'wither',
+    # 'utangard', not 'wither': the mod was renamed on 2026-08-16 and this line was not,
+    # so every run since has failed on a member with no manifest. The failure was loud,
+    # which is the point - but it also meant the pins below could not be regenerated and
+    # went stale by hand instead.
+    'utangard',
     'vaettir',
     'dyrr'
 )
