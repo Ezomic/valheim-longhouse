@@ -8,6 +8,26 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.0.2] - 2026-08-18
+
+Page text only. **No member changed and no pin moved** - the set shipped in 1.0.1 is the set
+here, byte for byte.
+
+This is against the rule three paragraphs up, which says the pack's version moves when the set
+changes. It moves anyway because Thunderstore versions are immutable: the page cannot be
+corrected without a release, so the choice is a version that means nothing or a page that stays
+wrong. The rule is about not renumbering the pack to track a member's bump, and that still
+holds.
+
+### Changed
+
+- The page now says there is a server, near the top rather than buried under bug reporting.
+  It carries the character rule up front, because finding that out after joining is how you
+  lose a player rather than gain one, and it says plainly that the pack works alone so the
+  page does not read as a recruitment funnel to everyone who only wanted the mods.
+- Fixed `[Core](../core)`, a relative link that resolves in the repo and 404s on the package
+  page, which is the only place this file is read by anyone who is not me.
+
 ## [0.1.0] - 2026-08-16
 
 First assembly of the pack. **Not published.**
