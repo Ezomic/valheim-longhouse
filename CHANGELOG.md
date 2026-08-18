@@ -14,14 +14,21 @@ First assembly of the pack. **Not published.**
 
 ### Members
 
-Fifteen mods, every one meant for a player. Devkit is deliberately absent.
+Eight mods. Devkit is deliberately absent, and so is every mod that is published on its
+own or has not been played.
 
 | | |
 | --- | --- |
 | Core | the version gate the rest depend on |
-| Thralls, Stow, Stoker, Tether, Dovetail, Hoard, Furrow | the quality-of-life half |
-| Rist, Wither, Surge | progression and pressure |
-| Nidling, Fiends, Vaettir, Delve | things living in the world, and places to go down into |
+| Stoker, Dovetail, Hoard | the quality-of-life half |
+| Rist, Utangard | progression and pressure |
+| Vaettir, Dyrr | the spirits, and the door policy |
+
+Held out, each for its own reason: Thralls and Tether have never been played through;
+Surge, Fiends and Delve are published on their own; Nidling is a creature, and a
+published creature commits the suite to its prefab name forever; Saga writes per-player
+state and is at 0.1.0. Stow and Furrow are not separate mods any more - both ship inside
+Vaettir, so the pack gets them through that member.
 
 ### Generated pins
 
@@ -30,13 +37,15 @@ Fifteen mods, every one meant for a player. Devkit is deliberately absent.
 - A missing or malformed member is a loud failure rather than a shorter pack. A pack one
   mod short leaves every player failing Core's version gate for a reason none of them can
   see from inside the game.
+- That failure did its job and was then ignored: the list named `wither` after the mod
+  became Utangard, so the generator refused to run and the manifest was hand-edited for
+  two days instead. The pins here are generated again.
 
 ### Known limits
 
 - **Nothing in this pack has been published**, so none of the pins resolve on Thunderstore
   yet. The pack is assembled ahead of the uploads rather than after them.
+- **There is no `icon.png`**, and Thunderstore requires a 256x256 one, so `package-all.ps1`
+  skips the pack.
 - Several members are at 0.x and have never been run in a session. The pack pins what
   exists, not what is finished.
-- The Core dependency string is unsettled: Core's own manifest declares its package name as
-  `Core`, and Rist currently pins `Ezomic-EzomicCore`. One of the two has to move before
-  anything resolves.

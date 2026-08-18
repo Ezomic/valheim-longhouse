@@ -23,8 +23,12 @@ is gone. A pack has a version, a changelog, and every previous version stays on 
 
 ## What is in it
 
-Every mod meant for a player. **Devkit is deliberately absent**: it is the in-game menu the
-others are tested through, and it has no business on someone else's machine.
+The set a server holds everyone to - not the whole shelf. **Devkit is deliberately absent**:
+it is the in-game menu the others are tested through, and it has no business on someone
+else's machine. Some mods are published on their own and are nobody's obligation to install;
+others are held back because they have not been played, and a pack member is a promise about
+how a server plays. The member list in `tools/build-manifest.ps1` carries the reason for each
+one, beside the mod it applies to.
 
 Some of these do their work on the server rather than the client, and are in the pack anyway.
 That is not an oversight. A client without a content mod's prefabs cannot resolve the hashes
