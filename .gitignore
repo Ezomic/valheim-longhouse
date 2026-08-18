@@ -18,3 +18,9 @@ dist/
 # Thunderstore packaging: staging folder and the zips tcli writes.
 package/
 build/
+
+# ...but keep the empty folder. With no [[build.copy]] stanza - and a pack has no payload to
+# copy - tcli falls back to mapping ./dist onto the package root. Without a dist to find it
+# warns and exits 1 on a build that is otherwise perfect, which is the kind of false failure
+# a publish script later treats as real.
+!dist/.gitkeep
