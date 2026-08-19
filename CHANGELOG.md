@@ -8,6 +8,31 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.0.4] - 2026-08-19
+
+**Two pins move: Utangard to 1.2.0 and Dyrr to 1.1.0.** No member joins or leaves, and the
+other four are the versions 1.0.3 already named.
+
+Both moves are forced rather than chosen. Core's version gate compares the compiler's build
+id, so a client on Utangard 1.1.0 and a server on 1.2.0 do not merely play by different rules -
+the connection is refused. Leaving either pin behind while a server runs the new build locks
+out everybody who installed the pack, which is the failure this pack exists to prevent.
+
+What is inside the two, in one line each; the reasoning is in their own changelogs.
+
+- **Utangard 1.2.0** widens the gate to a five metre band and stops health regeneration inside
+  it, and gives the rules a compendium page so the person losing their food can read why. Both
+  new rules are configurable and host-synced.
+- **Dyrr 1.1.0** makes the client refuse a join into the wrong world on its own, whatever the
+  server does, and names a character's home world on the select screen.
+
+### The published pack is still 1.0.1
+
+1.0.2 and 1.0.3 were assembled here and never uploaded, so a publish of this version carries
+all three changes at once: the rewritten page, the Rist repin, and these two. Nothing is lost
+by skipping the numbers - Thunderstore only requires that a version go up - and the entries
+below stay where they are because they are the pack's history, not its release log.
+
 ## [1.0.3] - 2026-08-18
 
 **Rist repinned to 1.1.0.** One pin moved, nothing else.
