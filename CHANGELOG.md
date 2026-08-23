@@ -8,6 +8,28 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.0.5] - 2026-08-19
+
+**Core repinned to 1.0.2, for one fix: dying no longer eats what was on the extra rows.**
+Nothing else moved, and Core itself moved as little as it could - 1.0.2 was cut from the
+1.0.1 commit with that single patch applied on top, not from Core's current branch.
+
+The bug was the worse half of one already fixed. Extra inventory rows survived a relog
+because Core widened the player's grid before `Player.Load`; a **grave** got no such
+treatment. A grave is born the right size and then round-trips through a ZDO that does not
+carry the height, so it is rebuilt at the tombstone prefab's vanilla height and every item
+below that line is instantiated, refused by a bounds check whose result vanilla discards, and
+destroyed. Silent, and delayed: loot your grave straight away and it all looks fine; walk
+away or relog first and the bottom row is gone. Which is why it read as random rather than as
+a rule.
+
+### This one is worth updating for
+
+Every pin in a pack matters, but this one costs items rather than convenience, and it costs
+them at exactly the moment a player is least able to tell what happened. **The server needs
+it too** - Core's gate compares build ids, so a client on 1.0.2 and a server on 1.0.1 do not
+disagree about graves, they do not connect at all.
+
 ## [1.0.4] - 2026-08-19
 
 **Two pins move: Utangard to 1.2.0 and Dyrr to 1.1.0.** No member joins or leaves, and the
