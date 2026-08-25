@@ -1,16 +1,16 @@
 {
     "name":  "Longhouse",
     "author":  "Robbin Thijssen",
-    "version_number":  "1.0.5",
+    "version_number":  "1.0.6",
     "website_url":  "https://github.com/Ezomic/valheim-longhouse",
     "description":  "Every Ezomic mod, pinned to one set that a server will accept.",
     "dependencies":  [
                          "denikson-BepInExPack_Valheim-5.4.2333",
-                         "Ezomic-Longhouse_Core-1.0.2",
-                         "Ezomic-Yoke-1.0.0",
+                         "Ezomic-Longhouse_Core-1.1.0",
+                         "Ezomic-Yoke-1.0.1",
                          "Ezomic-Rist-1.1.0",
-                         "Ezomic-Utangard-1.2.0",
-                         "Ezomic-Vaettir-1.0.0",
-                         "Ezomic-Dyrr-1.1.0"
+                         "Ezomic-Utangard-1.2.1",
+                         "Ezomic-Vaettir-1.1.0",
+                         "Ezomic-Dyrr-1.1.1"
                      ]
 }

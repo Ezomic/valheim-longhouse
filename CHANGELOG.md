@@ -8,6 +8,47 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.0.6] - 2026-08-25
+
+**Five pins move.** Two of them fix a bug that was doing damage on the server, and the other
+three are work that had been sitting unreleased.
+
+### The one that matters
+
+A biome could latch open for the whole group off a half-loaded world, permanently. It did: on
+25 August the Swamp opened while seven of the nine characters on the roster had never met the
+Elder, and because the gate never regresses, it stayed open.
+
+`ZoneSystem.RPC_GlobalKeys` clears every global key and re-adds them one at a time, on every
+client, every time anybody sets any key. Yoke's hook on `GlobalKeyAdd` fires inside that loop
+and asked Utangard whether the group had cleared a boss - once per key, against a world that
+was still filling in. With a partial roster the counted members can be exactly the two who had
+just killed the Elder, and the latch saw a cleared group.
+
+The same window made Yoke write **vanilla stack sizes** for bosses the group had already
+killed, and nothing arrived afterwards to correct them, so they stayed wrong for the session.
+
+**Utangard 1.2.1** refuses to latch while the keys are settling and no longer caches a roster
+built from a half-filled list. **Yoke 1.0.1** marks on a key and acts once at end of frame.
+Neither changes a rule, a number or a saved value. **A gate already latched open stays open** -
+that is what never-regresses means, and unpicking it afterwards would be the worse promise.
+
+### The other three
+
+- **Core 1.1.0** - a host no longer takes your keybinds, and `Prefabs.cs` moves out of the DLL
+  into shared source. The save-on-inventory-change guard is deliberately **not** in it.
+- **Vaettir 1.1.0** - the sapling half. A planted seed draws greydwarfs in ramping waves out
+  of the treeline, costs fifty, will not go in a base, and is Black Forest only.
+- **Dyrr 1.1.1** - a refusal now says who was turned away, name and platform id, so the line
+  that reaches Discord names a person rather than only a rule.
+
+### Updating
+
+Everyone has to. All five are inside Core's version gate, so a client on the old set is
+refused rather than merely out of date. The Utangard fix in particular only does anything with
+more than one player connected - it needs a key broadcast arriving at a client that did not
+set it.
+
 ## [1.0.5] - 2026-08-19
 
 **Core repinned to 1.0.2, for one fix: dying no longer eats what was on the extra rows.**
