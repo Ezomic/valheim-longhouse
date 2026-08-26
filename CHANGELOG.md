@@ -8,6 +8,21 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.0.7] - 2026-08-26
+
+**Two pins move.**
+
+- **Yoke 1.0.1 to 1.0.2.** Coins are back at their vanilla stack of 999. The stack cap
+  was written as a ceiling on the multiplied result, which quietly cut anything whose
+  vanilla stack already exceeded it - and coins, at 999, were the one item that did.
+  The cap now limits growth only.
+
+- **Dyrr 1.1.1 to 1.2.0.** The door works in both directions now: a player who is
+  genuinely still - no movement, no camera - for 5 minutes is kicked, after a warning
+  in their chat two minutes ahead. An AFK body holds a slot, keeps its zones simulated
+  and blocks the night from being skipped. The disconnect screen says why, and the
+  departure is posted to Discord like any other.
+
 ## [1.0.6] - 2026-08-25
 
 **Five pins move.** Two of them fix a bug that was doing damage on the server, and the other
