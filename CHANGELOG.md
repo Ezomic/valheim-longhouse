@@ -8,6 +8,14 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.0.8] - 2026-08-26
+
+**One pin moves, urgently.** Yoke 1.0.2 to 1.0.3: stored stacks survive loading. A relog
+could destroy the top half of any stack above its vanilla limit - 100 greydwarf eyes in a
+chest read 50/100 afterwards - because stack limits are briefly vanilla in the moment
+after login, and the game's inventory loader clamps to the limit of that moment. The
+clamp is removed from the load path; nothing else changes.
+
 ## [1.0.7] - 2026-08-26
 
 **Two pins move.**
