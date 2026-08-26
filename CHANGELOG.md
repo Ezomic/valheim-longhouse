@@ -8,6 +8,12 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.0.9] - 2026-08-26
+
+**One pin moves: Yoke 1.0.3 to 1.0.4.** 1.0.8 pinned a Yoke whose package carried the
+previous version's DLL - the stack-loss fix it announced never actually shipped. 1.0.4
+is the same fix in an honestly packaged form. Skip 1.0.8.
+
 ## [1.0.8] - 2026-08-26
 
 **One pin moves, urgently.** Yoke 1.0.2 to 1.0.3: stored stacks survive loading. A relog
