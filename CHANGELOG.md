@@ -8,7 +8,15 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [1.1.0] - 2026-08-28
+## [1.1.1] - 2026-08-27
+
+**Two repins, no set change.**
+
+- **Vaettir 1.2.0 to 1.2.1.** Grid rows no longer drift out of line while planting.
+- **Kynda 1.0.0 to 1.0.1.** The Tun is no longer magenta on a fresh world: a missing
+  donor material now streams its carrier location in, and standing pieces heal in place.
+
+## [1.1.0] - 2026-08-27
 
 **Three mods join, and one grows.** The set moves from six to nine.
 
