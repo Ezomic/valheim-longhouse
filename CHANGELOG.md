@@ -8,6 +8,23 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.1.0] - 2026-08-28
+
+**Three mods join, and one grows.** The set moves from six to nine.
+
+- **Sinka 1.0.0** (was Dovetail). Chests and fences that line up: snap points on every
+  corner, and a ladder of them up fence ends so a fence can climb a hill.
+- **Kynda 1.0.0** (was Stoker). Feed smelters and kilns by the batch, and build their
+  two upgrades: the Tun beside a smelter, the Woodrack beside a kiln.
+- **Taum 1.0.0.** Alt+E on a tamed boar or hen and it follows you; again and it stays -
+  the wolves' own follow, opened to the farm animals.
+- **Vaettir 1.1.0 to 1.2.0.** Thicket: dig up wild berry bushes and walk them home in
+  your arms. Bonemeal: two bones and an entrail, richer harvests. And from Farming 10,
+  the cultivator plants in a grid.
+
+The two renames are new packages: Dovetail and Stoker were never published, so nothing
+breaks - the names simply arrive in Old Norse like the rest of the set.
+
 ## [1.0.9] - 2026-08-26
 
 **One pin moves: Yoke 1.0.3 to 1.0.4.** 1.0.8 pinned a Yoke whose package carried the
