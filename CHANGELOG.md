@@ -8,6 +8,14 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.1.2] - 2026-08-27
+
+**One repin, no set change.**
+
+- **Kynda 1.0.1 to 1.0.2.** The Tun's borrowed material is loaded by name now rather
+  than by summoning the vendor camp around it, so it is painted correctly from the first
+  moment instead of arriving magenta and healing.
+
 ## [1.1.1] - 2026-08-27
 
 **Two repins, no set change.**

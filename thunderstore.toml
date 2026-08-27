@@ -7,7 +7,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "Ezomic"
 name = "Longhouse"
-versionNumber = "1.1.0"
+versionNumber = "1.1.1"
 description = "Every Ezomic mod, pinned to one set that a server will accept."
 websiteUrl = "https://github.com/Ezomic/valheim-longhouse"
 containsNsfwContent = false
@@ -18,10 +18,10 @@ Ezomic-Longhouse_Core = "1.1.0"
 Ezomic-Yoke = "1.0.4"
 Ezomic-Rist = "1.1.0"
 Ezomic-Utangard = "1.2.1"
-Ezomic-Vaettir = "1.2.0"
+Ezomic-Vaettir = "1.2.1"
 Ezomic-Dyrr = "1.2.0"
 Ezomic-Sinka = "1.0.0"
-Ezomic-Kynda = "1.0.0"
+Ezomic-Kynda = "1.0.1"
 Ezomic-Taum = "1.0.0"
 
 [build]
