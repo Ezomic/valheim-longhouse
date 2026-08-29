@@ -8,6 +8,17 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.1.5] - 2026-08-29
+
+**One repin, no set change: Vaettir 1.3.1 to 1.4.0.**
+
+Shift+E on a ripe crop now harvests the bed, reaching two metres at Farming 15 and
+eight by 80. Plain E still picks exactly one, and only crops are ever taken - the grown
+stage of something plantable, read from the game rather than from a list, so wild
+berries, mushrooms, thistle and dandelion are untouched.
+
+Nothing else in the set moved.
+
 ## [1.1.4] - 2026-08-29
 
 **One repin, no set change: Vaettir 1.3.0 to 1.3.1.**
