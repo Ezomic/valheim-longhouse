@@ -87,7 +87,22 @@ $members = @(
     # went stale by hand instead.
     'utangard',
     'vaettir',
-    'dyrr'
+    'dyrr',
+    # Sinka, Kynda and Taum joined the set in pack 1.1.0 on 2026-08-27 - the comment
+    # above about Stoker and Dovetail being 0.x is what was true before they were
+    # renamed and finished - and this list was not updated with them. The pins were
+    # hand-written into manifest.json instead, so the generator and the file it
+    # generates disagreed for two releases and nothing said so.
+    #
+    # It was found on 2026-08-29 by running the generator for the first time since:
+    # it silently produced a SEVEN member pack from a nine member set. That is the one
+    # failure mode this script is supposed to be immune to, and it is worse than the
+    # stale 'wither' line above, which at least refused to run. A member missing from
+    # the pack is not "fewer mods on the server" - it is every player refused by Core's
+    # version gate, for a reason none of them can see from inside the game.
+    'sinka',
+    'kynda',
+    'taum'
 )
 
 # BepInEx is pinned by the pack as well as by each mod. A pack that named only the mods

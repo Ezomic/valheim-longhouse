@@ -8,6 +8,44 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.1.3] - 2026-08-29
+
+**Five repins, no set change.** The set is the same nine mods.
+
+- **Vaettir 1.2.1 to 1.3.0.** Transplant digs up the plant you are actually pointing
+  at; the planting grid can be lined up with what you have built, drawn on the ground
+  before you commit, and turned with the middle mouse button; and a ring says whether a
+  sapling will have room to grow before the seed is spent - which the game itself does
+  not check until ten seconds after it is too late.
+- **Yoke 1.0.4 to 1.0.5.** Stack sizes were wrong for a lot of items, permanently and
+  quietly: nineteen recipe outputs frozen at the wrong biome and twelve rows of
+  Mistlands and Ashlands drops sitting in the meadows tier.
+- **Dyrr 1.2.0 to 1.3.0.** The mod rule can be watched without being enforced, instead
+  of the choice being enforce-everything or nothing.
+- **Kynda 1.0.2 to 1.0.3.** A dedicated server stops chasing materials it can never
+  load - 68,000 log lines a day on the live server, which had drowned a real fault.
+- **Rist 1.1.0 to 1.1.1.** The plugin announced itself as 1.0.1 while packaged as
+  1.1.0. Harmless while everyone runs the same build, and not harmless otherwise.
+
+Core, Utangard, Sinka and Taum are unchanged. Core's only commit adds shared source
+that is compiled into Yoke rather than into Core's DLL, so its bytes and its build id
+are the same and nobody is forced to update by it.
+
+### The generator had been wrong for two releases
+
+The pins here are produced by `tools/build-manifest.ps1` from each member's own
+manifest, precisely so a pack cannot pin a version nobody has. Sinka, Kynda and Taum
+joined the set in 1.1.0 and were never added to the generator's member list - their
+pins were hand-written into the manifest instead - so the generator and the file it
+generates had disagreed ever since.
+
+Running it for this release silently produced a **seven member pack from a nine member
+set**. That is the one failure this script exists to prevent, and it is quieter than
+the stale member name that broke it in 1.0.x, which at least refused to run. A pack one
+member short is not a smaller pack: it is every player refused by Core's version gate,
+for a reason none of them can see from inside the game. The list is corrected and the
+pins below are generated.
+
 ## [1.1.2] - 2026-08-27
 
 **One repin, no set change.**
