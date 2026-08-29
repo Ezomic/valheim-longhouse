@@ -8,6 +8,29 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.1.7] - 2026-08-29
+
+**One repin, no set change: Yoke 1.0.5 to 1.1.0.**
+
+Metals now get their bigger stacks when the boss of their own biome falls, instead of
+all of them waiting on Bonemass. Copper and tin at the Elder, iron at Bonemass, silver
+at Moder, black metal at Yagluth - the same rule every other item already followed.
+Anyone past the Elder gets bigger copper and tin stacks as soon as they log in.
+
+Nothing else in the set moved.
+
+## [1.1.6] - 2026-08-29
+
+**One repin, no set change: Vaettir 1.4.0 to 1.4.1.**
+
+The planting grid would not turn on a server while turning perfectly in singleplayer.
+Its angle is a float, so Core's config sync treated it as a rule the host decides and
+put the host's value back every time a scroll changed it. It is declared personal now,
+the way a keybind already was. The rules a server should decide - spacing, the skill
+gates, the harvest numbers - are untouched and still host-decided.
+
+Nothing else in the set moved.
+
 ## [1.1.5] - 2026-08-29
 
 **One repin, no set change: Vaettir 1.3.1 to 1.4.0.**
