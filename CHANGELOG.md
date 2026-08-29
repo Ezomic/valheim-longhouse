@@ -8,6 +8,20 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [1.1.4] - 2026-08-29
+
+**One repin, no set change: Vaettir 1.3.0 to 1.3.1.**
+
+The planting grid shipped in 1.1.3 and did not survive first contact. It drew nothing
+until the second plant of a bed, so the one plant that most needed aiming was placed
+blind and fixed the rows for every plant after it; and its turn key was never received
+at all, because Furrow read keys through the legacy Input class while Valheim runs on
+the new Input System. Both are fixed, and the mouse wheel now turns the rows - which
+costs nothing, since the game re-randomises a crop's facing after every placement
+anyway.
+
+Worth updating for anyone who plants. Nothing else in the set moved.
+
 ## [1.1.3] - 2026-08-29
 
 **Five repins, no set change.** The set is the same nine mods.
