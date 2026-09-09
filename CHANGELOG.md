@@ -71,9 +71,29 @@ with it - that change caught the ambiguity above on its first run rather than ea
 - **Yoke** and **Hirsla** now say when a biome carries items no boss will ever unlock, instead
   of leaving it silent. Deep North is the first case.
 
+### Also fixed, from an audit of the released mods
+
+Ten paths to permanently destroyed save data and four that refused players, found by auditing
+the twelve published mods against the failure classes Valheim 1.0 exposed. The ones a player
+would have met:
+
+- **Rist** granted its extra inventory rows before proving the guard that protects them was
+  installed, and would delete every player's card history if its catalogue failed to load.
+- **Yoke** raised stack sizes whether or not the guard that keeps stored stacks whole had
+  actually replaced anything. It now ships vanilla sizes rather than unprotected ones.
+- **Kynda** and **Vaettir** each had a config switch that skipped a prefab declaration rather
+  than hiding a feature - and an undeclared prefab is not a missing piece, it is every one
+  already built discarded from the world. Both register unconditionally now.
+- **Utangard** put thirteen patches on with one call, so one changed signature took all of
+  them; it also starved people when the seams that make the penalty escapable were missing.
+- **Dyrr** refused every player at the door, with an accusation, when a client could not read
+  its own travel record.
+- **Lur** was offered by Hildir at a placeholder price and could not be bought at all.
+
 ### Unchanged
 
-Sinka, Taum, Vaka and Lur needed no changes and keep their versions.
+Sinka, Taum and Vaka needed no changes and keep their versions. Lur is at 1.1.0 for the store
+fix above.
 
 ## [1.1.7] - 2026-08-29
 
