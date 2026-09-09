@@ -8,41 +8,72 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [Unreleased] - 2.0.0
+## [2.0.0] - 2026-09-09
 
-**The Valheim 1.0 pack. The set grows from nine to twelve, and the version goes major.**
+**The Valheim 1.0 pack. Twelve mods instead of nine, and every member rebuilt against the
+new game.**
 
-Not yet published, and not publishable until every member has been rebuilt and republished
-against Valheim 1.0 - the pinned versions below are the pre-1.0 ones and are placeholders.
+Valheim left Early Access on 2026-09-09 with Deep North, an achievements system, crossplay
+across six platforms and a balance pass. **This pack does not work on pre-1.0 Valheim and the
+1.1.x line does not work on 1.0.** Core compares the compiler build id, so a mismatch is a
+refused connection rather than a degraded session. If you are staying on an older game build,
+pin 1.1.7 and do not take this.
 
-**Why 2.0.0 and not 1.2.0.** This pack's version has always moved with the set, and by that rule
-adding three members is a minor bump. It is a major one anyway, because a Valheim 1.0 pack and a
-pre-1.0 pack cannot interoperate at all: Core compares the compiler's build id, so it is not that
-some things behave differently, it is a refused connection. That is what a major version is for,
-and it is the only signal a mod manager conveys. It also leaves the whole 1.x line as the pre-1.0
-pack, so anyone holding their game back on an old branch can pin 1.1.x and stay there.
+Major rather than minor, against this pack own rule that the version moves with the set,
+because that break is what a major version is for and the version number is the only signal a
+mod manager conveys.
 
-**Joining.**
+### Joining
 
-- **Lur** - sound a horn in one of Hildir's dungeons and its mini-boss wakes again. Published
-  2026-09-08. It registers an item prefab and sits on Core's gate at Requirement.Everyone.
-- **Skaft** - hammer repair reaches further the higher your Crafting skill. Published 2026-09-02
-  and held out ever since for a reason that turned out not to be Skaft's: it is marked HostOnly,
-  but Core read each mod's requirement off the manifest and discarded it, so a Core server
-  without Skaft refused every client that had it. Fixed in Core; the marking now means what it
-  says in both directions.
-- **Vaka** - fires keep while you are away, and a single absence costs one fuel however long it
-  was. Published 2026-09-04. Requirement.Everyone.
+- **Lur** - sound a horn in one of Hildir dungeons and its mini-boss wakes again.
+- **Skaft** - hammer repair reaches further the higher your Crafting skill. It was published
+  standalone on 2026-09-02 and held out since, for a reason that turned out not to be Skaft:
+  it is marked HostOnly, but Core read each mod requirement off the manifest and discarded it,
+  so a Core server without Skaft refused every client that had it. Fixed in Core 1.2.0.
+- **Vaka** - fires keep while you are away, and a single absence costs one fuel however long
+  it was.
 
-**Not joining. Surge stays out**, as it has since the pack began. Published and in-the-pack are
-different facts.
+**Surge stays out**, as it has since the pack began.
 
-**The set, twelve Ezomic packages:** Longhouse_Core, Yoke, Rist, Utangard, Vaettir, Dyrr, Sinka,
-Kynda, Taum, Lur, Skaft, Vaka.
+### What 1.0 broke, and what it cost
 
-Both build lists carry the three additions as of this change - `own-profile/build-all.ps1` and
-`own-profile/server.ps1` - because a mod in one and not the other is a refused connection rather
-than a missing feature.
+Four members did not compile against the new game: Hoverable gained a member, Inventory.AddItem
+gained a required flag, and PlayerProfile stat record became an array of ten as part of the
+achievements system. Those are the loud failures.
+
+Three more compiled and then failed at runtime, which is the half worth reading:
+
+- **Yoke** was clamping over-limit stacks back down on load and saving them clamped, destroying
+  the excess permanently. Its load-path guard targets one exact method, and 1.0 moved the clamp
+  onto a different overload - so the guard silently stopped guarding.
+- **Utangard** was entirely inert. One changed method signature threw out of PatchAll and took
+  all twelve of its patches with it, while it still registered on the gate and still refused
+  mismatched clients on behalf of a mod that was not running.
+- **Core** could not apply its inventory load protection, because 1.0 added a second
+  Inventory.Load overload and the patch became ambiguous.
+
+All three are fixed. Core also now isolates its patch groups and applies the inventory pair
+first, so a handshake failure can no longer take the protection that keeps items out of the bin
+with it - that change caught the ambiguity above on its first run rather than eating a row.
+
+### Also in this release
+
+- **Kynda** no longer destroys what you built when its upgrades setting is switched off. That
+  setting used to skip prefab registration, and ZNetScene discards any ZDO whose prefab name
+  does not resolve - so one config edit deleted every Tun and Woodrack standing, and because the
+  file is host-imposed a host could do it to everyone. It gates the build menu now and nothing
+  else.
+- **Skaft** and **Auki** were reading the wrong global key: GlobalKeys is the one implicitly
+  numbered enum in the game API and 1.0 inserted ten members, moving NoWorkbench from 22 to 27.
+  Read by name now.
+- **Rist** works out which stat fields count from 1 by asking the game rather than from a list,
+  so a rebalance cannot make it write 0.03 where it means 1.03.
+- **Yoke** and **Hirsla** now say when a biome carries items no boss will ever unlock, instead
+  of leaving it silent. Deep North is the first case.
+
+### Unchanged
+
+Sinka, Taum, Vaka and Lur needed no changes and keep their versions.
 
 ## [1.1.7] - 2026-08-29
 
