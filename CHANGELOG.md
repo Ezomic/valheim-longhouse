@@ -8,6 +8,42 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [Unreleased] - 2.0.0
+
+**The Valheim 1.0 pack. The set grows from nine to twelve, and the version goes major.**
+
+Not yet published, and not publishable until every member has been rebuilt and republished
+against Valheim 1.0 - the pinned versions below are the pre-1.0 ones and are placeholders.
+
+**Why 2.0.0 and not 1.2.0.** This pack's version has always moved with the set, and by that rule
+adding three members is a minor bump. It is a major one anyway, because a Valheim 1.0 pack and a
+pre-1.0 pack cannot interoperate at all: Core compares the compiler's build id, so it is not that
+some things behave differently, it is a refused connection. That is what a major version is for,
+and it is the only signal a mod manager conveys. It also leaves the whole 1.x line as the pre-1.0
+pack, so anyone holding their game back on an old branch can pin 1.1.x and stay there.
+
+**Joining.**
+
+- **Lur** - sound a horn in one of Hildir's dungeons and its mini-boss wakes again. Published
+  2026-09-08. It registers an item prefab and sits on Core's gate at Requirement.Everyone.
+- **Skaft** - hammer repair reaches further the higher your Crafting skill. Published 2026-09-02
+  and held out ever since for a reason that turned out not to be Skaft's: it is marked HostOnly,
+  but Core read each mod's requirement off the manifest and discarded it, so a Core server
+  without Skaft refused every client that had it. Fixed in Core; the marking now means what it
+  says in both directions.
+- **Vaka** - fires keep while you are away, and a single absence costs one fuel however long it
+  was. Published 2026-09-04. Requirement.Everyone.
+
+**Not joining. Surge stays out**, as it has since the pack began. Published and in-the-pack are
+different facts.
+
+**The set, twelve Ezomic packages:** Longhouse_Core, Yoke, Rist, Utangard, Vaettir, Dyrr, Sinka,
+Kynda, Taum, Lur, Skaft, Vaka.
+
+Both build lists carry the three additions as of this change - `own-profile/build-all.ps1` and
+`own-profile/server.ps1` - because a mod in one and not the other is a refused connection rather
+than a missing feature.
+
 ## [1.1.7] - 2026-08-29
 
 **One repin, no set change: Yoke 1.0.5 to 1.1.0.**
