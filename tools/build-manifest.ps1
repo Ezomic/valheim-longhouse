@@ -108,7 +108,7 @@ $members = @(
 # BepInEx is pinned by the pack as well as by each mod. A pack that named only the mods
 # would still work, because their own manifests carry it, but naming it here means the
 # pack states its whole world in one file.
-$bepinex = 'denikson-BepInExPack_Valheim-5.4.2333'
+$bepinex = 'denikson-BepInExPack_Valheim-5.4.2350'
 
 $manifestPath = Join-Path $here 'manifest.json'
 
