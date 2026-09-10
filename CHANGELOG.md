@@ -8,6 +8,20 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.1] - 2026-09-10
+
+Repins Core to 1.2.1. **Anyone on 2.0.0 should update**: the Longhouse_Core 1.2.0 that pack
+pins contains the 1.1.0 assembly, so the inventory row protection is missing from it and
+items placed in a Rist-granted row can be destroyed on relog.
+
+### Fixed
+
+- **Longhouse_Core 1.2.0 -> 1.2.1.** No gameplay change in the pack itself. Core 1.2.0's
+  package was built from a stale staging folder and shipped August's 1.1.0 binary under
+  September's version number; 1.2.1 is the same release with the assembly it always claimed
+  to have. Found by updating the live server to 2.0.0 and watching Core announce itself as
+  1.1.0 on boot.
+
 ## [2.0.0] - 2026-09-10
 
 **The Valheim 1.0 pack. Thirteen mods instead of nine, and every member rebuilt against the
