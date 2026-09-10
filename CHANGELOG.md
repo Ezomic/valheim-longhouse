@@ -8,6 +8,29 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.3] - 2026-09-10
+
+Repins Rist to 1.2.1.
+
+### Fixed
+
+- **Rist's experience bar disappeared and did not come back.** On a server it went before you
+  ever saw it; in singleplayer it went the first time you died or hid the HUD. The bar is a
+  clone of the eitr panel, which vanilla keeps switched off for a character with no eitr, and
+  the one write that brought it up was lost the first time the bar was hidden. Nothing was
+  wrong with anyone's experience or levels - it was the display only, and the panel kept
+  showing the right numbers throughout.
+
+### Changed
+
+- The "rist waiting" note now sits above the bar and follows it, rather than at a fixed screen
+  position it had drifted away from.
+- **Rist's bar positions are measured against your HUD's canvas scale now instead of in raw
+  screen pixels**, so the position a server sets is the same visual position on every
+  player's screen. If you had tuned `BarPosX` or `BarPosY` by hand in singleplayer, they mean
+  something slightly different after this and may want re-nudging once. On a server the host's
+  values apply either way.
+
 ## [2.0.2] - 2026-09-10
 
 Repins Core to 1.2.2 and moves the BepInEx dependency to 5.4.2350.
