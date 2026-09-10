@@ -33,6 +33,10 @@ icon = "./icon.png"
 readme = "./README.md"
 outdir = "./build"
 
+[[build.copy]]
+source = "./CHANGELOG.md"
+target = "CHANGELOG.md"
+
 [publish]
 repository = "https://thunderstore.io"
 communities = [ "valheim" ]
