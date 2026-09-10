@@ -32,6 +32,9 @@ mod manager conveys.
   so a Core server without Skaft refused every client that had it. Fixed in Core 1.2.0.
 - **Vaka** - fires keep while you are away, and a single absence costs one fuel however long
   it was.
+- **Dvala** - a dungeon left alone for thirty in-game days fills back up: chests restock, veins
+  come back, and a spent spawner wakes. It registers no prefab, so unlike the rest of the set
+  it can be added or pulled without costing anybody a built thing.
 
 **Surge stays out**, as it has since the pack began.
 
