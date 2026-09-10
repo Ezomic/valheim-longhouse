@@ -8,6 +8,15 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.4] - 2026-09-10
+
+Repins Rist to 1.2.2.
+
+### Fixed
+
+- Quick study's capstone read "+2 m_skillLevelModifier at rank 5" instead of "+2 skill levels".
+  The card was working; it was the label that was missing.
+
 ## [2.0.3] - 2026-09-10
 
 Repins Rist to 1.2.1.
