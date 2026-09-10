@@ -8,6 +8,26 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.2] - 2026-09-10
+
+Repins Core to 1.2.2 and moves the BepInEx dependency to 5.4.2350.
+
+### Fixed
+
+- **A fifteen row inventory on the first login after the update.** Valheim 1.0.7 only asserts
+  the row count for a character that already carries an `invrows` key, and writes the key
+  without asserting anything for one that does not. Every character made before 1.0 is in that
+  state exactly once, on its first 1.0 login, so Core never learned the real height and the
+  grid came up fifteen tall. Nothing could be lost - the eviction fence held - and it cleared
+  itself on the next login, but it was alarming and it was going to happen to everybody once.
+  Core 1.2.2 learns the height on that login too.
+
+### Changed
+
+- **BepInEx dependency 5.4.2333 -> 5.4.2350.** 5.4.2333 predates Valheim 1.0; denikson rebuilt
+  the pack for 1.0 on the day it shipped. Harmony is 2.9 in both, so nothing about how these
+  mods patch the game changes.
+
 ## [2.0.1] - 2026-09-10
 
 Repins Core to 1.2.1. **Anyone on 2.0.0 should update**: the Longhouse_Core 1.2.0 that pack
