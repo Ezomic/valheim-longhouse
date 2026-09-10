@@ -8,9 +8,9 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [2.0.0] - 2026-09-09
+## [2.0.0] - 2026-09-10
 
-**The Valheim 1.0 pack. Twelve mods instead of nine, and every member rebuilt against the
+**The Valheim 1.0 pack. Thirteen mods instead of nine, and every member rebuilt against the
 new game.**
 
 Valheim left Early Access on 2026-09-09 with Deep North, an achievements system, crossplay
