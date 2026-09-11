@@ -8,6 +8,18 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.8] - 2026-09-11
+
+Repins Vaettir to 1.5.3.
+
+### Fixed
+
+- The stowing post could not see the chests in a real base. Its search used a fixed
+  256-collider buffer with no layer mask, and a buffer that fills is a truncation that reports
+  nothing - every wall, beam, floor and terrain collider competed for those slots. Measured in
+  a real base: over 1,024 colliders within 12m of one post, and all 24 of its chests invisible.
+  It failed exactly where the mod is used and passed exactly where it is tested.
+
 ## [2.0.7] - 2026-09-11
 
 Repins Vaettir to 1.5.2.
