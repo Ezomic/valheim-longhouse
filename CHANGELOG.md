@@ -8,6 +8,20 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.7] - 2026-09-11
+
+Repins Vaettir to 1.5.2.
+
+### Fixed
+
+- The stowing post would not send its spirit anywhere: it sat idle beside a correctly
+  configured chest, reporting that it had nowhere to go. 1.5.1 fixed that question for the
+  destination chests and left the post asking it about itself, so the chests became reachable
+  and the post still never set off.
+- The post's hover counted everything it held and called that "with nowhere to go", so a post
+  holding one placeable stack read the same as one holding something nothing wanted. It counts
+  what it claims now.
+
 ## [2.0.6] - 2026-09-11
 
 Repins Core to 1.2.3.
