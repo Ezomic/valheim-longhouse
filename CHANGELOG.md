@@ -8,6 +8,21 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.5] - 2026-09-11
+
+Repins Vaettir to 1.5.1.
+
+### Fixed
+
+- The stowing post could report having nowhere to go while a correctly configured chest stood
+  in range, could send its spirit back and forth without ever delivering, and - once trips
+  started landing again - could duplicate what it moved. Three bugs, each one hidden by the one
+  before it, all older than Valheim 1.0.
+
+  The duplication is the reason to update rather than to wait: it needed a trip to actually
+  land, which the second bug made rare, so a post on 1.5.0 could be quietly multiplying a stack
+  larger than ItemsPerTrip with nothing in the log to show for it.
+
 ## [2.0.4] - 2026-09-10
 
 Repins Rist to 1.2.2.
