@@ -8,6 +8,21 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.6] - 2026-09-11
+
+Repins Core to 1.2.3.
+
+### Fixed
+
+- A row bought from the trader drew its slots with no wooden panel behind them, and stayed
+  that way for the rest of the session. Reported by a player; the panel only ever grew for
+  rows a *mod* claimed, and buying one moves the baseline those are counted from.
+- Every chest window was a row of wood too tall, above and below. The container window is a
+  child of the player window, so the search for the inventory backdrop was finding the chest
+  panel as well and growing it too.
+- A chest window could end up below the screen once a character had bought every row a trader
+  sells. It overlaps the inventory instead now, which is awkward and reachable.
+
 ## [2.0.5] - 2026-09-11
 
 Repins Vaettir to 1.5.1.
