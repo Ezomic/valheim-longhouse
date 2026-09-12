@@ -10,20 +10,11 @@ changelog.
 
 ## [2.0.10] - 2026-09-12
 
-Repins every member. The only code change in the set is in Rist and Kynda, both carried by
-2.0.9; the rest are documentation releases, so a profile on 2.0.9 plays identically to one on
-2.0.10.
+Repins every member.
 
-### Changed
-
-- Every member mod has a rewritten README. What the mod does and how to install it come first,
-  then configuration, multiplayer behaviour, compatibility and troubleshooting. Config tables
-  were checked against each plugin's own Config.Bind calls. Thunderstore renders the README
-  from the uploaded package, so reaching the mod pages needed a version each.
-
-## [2.0.9] - 2026-09-12
-
-Repins Rist to 1.3.0 and Kynda to 1.1.1.
+Rist and Kynda carry the only code changes in the set. The other eleven are documentation
+releases: Thunderstore renders a README from the uploaded package, so putting a rewritten one
+on a mod page needs a version.
 
 ### Added
 
@@ -41,6 +32,12 @@ Repins Rist to 1.3.0 and Kynda to 1.1.1.
 - A blast furnace could be filled past its capacity, and stayed that way. Vanilla checks
   capacity only on the client, and the value it checks is a round trip behind on a dedicated
   server.
+
+### Changed
+
+- Every member mod has a rewritten README. What the mod does and how to install it come first,
+  then configuration, multiplayer behaviour, compatibility and troubleshooting. Config tables
+  were checked against each plugin's own Config.Bind calls.
 
 ## [2.0.8] - 2026-09-11
 
