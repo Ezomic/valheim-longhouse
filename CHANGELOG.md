@@ -8,6 +8,27 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.9] - 2026-09-12
+
+Repins Rist to 1.3.0 and Kynda to 1.1.1.
+
+### Added
+
+- Rist gains two runestones. **Far sight** widens the map reveal radius as you walk;
+  **Weatherly** lets a ship point nearer the wind before the sail dies, with a tacking speed
+  capstone. Rist's catalogue is also rebalanced: no runestone grants an inventory row any more,
+  since Valheim 1.0 sells rows from the trader, and move speed is capped at 10% from a single
+  source.
+
+### Fixed
+
+- Kynda's batch modifier did nothing. The key was read through the legacy Input class, which
+  Valheim's new Input System does not reliably answer, so holding Shift at a smelter added one
+  ore rather than three.
+- A blast furnace could be filled past its capacity, and stayed that way. Vanilla checks
+  capacity only on the client, and the value it checks is a round trip behind on a dedicated
+  server.
+
 ## [2.0.8] - 2026-09-11
 
 Repins Vaettir to 1.5.3.
