@@ -8,6 +8,25 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.11] - 2026-09-12
+
+**Fixes a broken 2.0.10.** If you installed 2.0.10, update. It was missing four mods and a
+server running the full set will refuse you.
+
+### Fixed
+
+- **Dvala, Lur, Skaft and Vaka were missing from the pack.** They had been added to the set
+  during 2.0.x by hand-editing `manifest.json`, and were never added to the member list in
+  `tools/build-manifest.ps1`. Regenerating the pins for 2.0.10 rebuilt the file from that list
+  and silently dropped all four, so 2.0.10 installed nine mods where the server expects
+  thirteen. Updating the pack in a mod manager also left those four behind, because the pack no
+  longer mentioned them.
+- **The generator now refuses to drop a member.** It compares what it is about to write against
+  the pack it is overwriting, and any package that would disappear is a hard error naming it.
+  Taking a mod out of the pack needs `-AllowRemoval` and has to be meant. This is the second
+  time a hand-edited manifest and the member list have disagreed, and the first time it reached
+  Thunderstore.
+
 ## [2.0.10] - 2026-09-12
 
 Repins every member.

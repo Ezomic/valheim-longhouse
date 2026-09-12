@@ -29,7 +29,9 @@
 [CmdletBinding()]
 param(
     [string]$Root,
-    [string]$PackVersion
+    [string]$PackVersion,
+    # Taking a mod OUT of the pack has to be said out loud. See the removal check below.
+    [switch]$AllowRemoval
 )
 
 $ErrorActionPreference = 'Stop'
@@ -102,7 +104,24 @@ $members = @(
     # version gate, for a reason none of them can see from inside the game.
     'sinka',
     'kynda',
-    'taum'
+    'taum',
+    # Dvala, Lur, Skaft and Vaka joined the set during 2.0.x and were hand-written into
+    # manifest.json, exactly as Sinka, Kynda and Taum had been - so this list said nine while
+    # the published pack said thirteen, and nothing compared the two.
+    #
+    # It caught someone out again on 2026-09-12. Running the generator to repin Rist and Kynda
+    # regenerated the whole file from this list and silently produced a NINE member pack from a
+    # thirteen member set, and it was published before anyone noticed. The tell was a player
+    # updating the pack in r2modman and still being refused: the pack no longer mentioned the
+    # four, so the manager had nothing to update them to.
+    #
+    # That is the second time the same hand-edit has done this, which is why there is now a
+    # check below that refuses to drop a member rather than a third comment asking people to
+    # remember.
+    'dvala',
+    'lur',
+    'skaft',
+    'vaka'
 )
 
 # BepInEx is pinned by the pack as well as by each mod. A pack that named only the mods
@@ -150,6 +169,44 @@ foreach ($member in $members) {
 if ($missing.Count -gt 0) {
     Write-Error ("Cannot build the pack manifest. Unresolved members:`n  " + ($missing -join "`n  "))
     exit 1
+}
+
+# A member that is in the pack today and not in the regenerated set is a REMOVAL, and a removal
+# is never what a repin meant. Twice now the member list above has been shorter than the
+# published pack, because mods were hand-written into manifest.json and not into the list, and
+# both times regenerating quietly dropped them. A dropped member is not "fewer mods" - it is
+# every player refused by the version gate, or worse, a pack that installs a set the server
+# will not accept.
+#
+# So the file being overwritten gets a vote. Anything it names that this run does not is a
+# hard stop, and taking a mod out of the pack means passing -AllowRemoval and meaning it.
+if (Test-Path $manifestPath) {
+    $previous = (Get-Content $manifestPath -Raw | ConvertFrom-Json).dependencies
+
+    $dropped = New-Object System.Collections.Generic.List[string]
+
+    foreach ($old in $previous) {
+        # Compare on the package name only. The version is expected to move - that is what a
+        # repin is - so matching whole strings would call every bumped mod a removal.
+        $oldName = ($old -replace '-[0-9]+\.[0-9]+\.[0-9]+$', '')
+        $stillThere = $false
+        foreach ($new in $dependencies) {
+            if (($new -replace '-[0-9]+\.[0-9]+\.[0-9]+$', '') -eq $oldName) { $stillThere = $true; break }
+        }
+        if (-not $stillThere) { $dropped.Add($oldName) }
+    }
+
+    if ($dropped.Count -gt 0 -and -not $AllowRemoval) {
+        Write-Error ("Refusing to write a pack that drops members the current one has:`n  " +
+            ($dropped -join "`n  ") +
+            "`n`nAdd them to `$members above, or pass -AllowRemoval if you really mean to take them out.")
+        exit 1
+    }
+
+    if ($dropped.Count -gt 0) {
+        Write-Host "Removing from the pack (-AllowRemoval):" -ForegroundColor Yellow
+        foreach ($d in $dropped) { Write-Host "  $d" -ForegroundColor Yellow }
+    }
 }
 
 $manifest = [ordered]@{
