@@ -8,6 +8,16 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.12] - 2026-09-12
+
+Repins Rist to 1.3.1.
+
+### Fixed
+
+- Rist's Far sight and Weatherly runestones did nothing in 2.0.11. Both work now, and ranks already
+  carved take effect. Weatherly also makes you faster to windward and its capstone rows faster, and
+  runestone values read as percentages. Details are in Rist's own changelog.
+
 ## [2.0.11] - 2026-09-12
 
 **Fixes a broken 2.0.10.** If you installed 2.0.10, update. It was missing four mods and a
