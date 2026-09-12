@@ -8,6 +8,19 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.10] - 2026-09-12
+
+Repins every member. The only code change in the set is in Rist and Kynda, both carried by
+2.0.9; the rest are documentation releases, so a profile on 2.0.9 plays identically to one on
+2.0.10.
+
+### Changed
+
+- Every member mod has a rewritten README. What the mod does and how to install it come first,
+  then configuration, multiplayer behaviour, compatibility and troubleshooting. Config tables
+  were checked against each plugin's own Config.Bind calls. Thunderstore renders the README
+  from the uploaded package, so reaching the mod pages needed a version each.
+
 ## [2.0.9] - 2026-09-12
 
 Repins Rist to 1.3.0 and Kynda to 1.1.1.
