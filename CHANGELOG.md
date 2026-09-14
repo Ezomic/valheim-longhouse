@@ -8,6 +8,14 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.14] - 2026-09-14
+
+Repins Rist to 1.4.1.
+
+### Changed
+
+- Rist's panel sits at the top of the screen instead of in the middle.
+
 ## [2.0.13] - 2026-09-14
 
 Repins Rist to 1.4.0.
