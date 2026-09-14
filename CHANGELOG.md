@@ -8,6 +8,22 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.13] - 2026-09-14
+
+Repins Rist to 1.4.0.
+
+### Fixed
+
+- Six of Rist's runestones did less than their tile said, or the opposite. Tireless, Long wind and
+  Long stride now make sprinting cheaper, Quick draw now draws a bow faster, and Soft step and Quiet
+  wake now make you harder to see instead of easier. Ranks already carved take effect.
+
+### Changed
+
+- Rist's panel stands the runestones in five groups, Combat, Survival, Endurance, Stealth and
+  Utility, and fits the screen it is on, so it no longer runs off the bottom of a short window.
+  Details are in Rist's own changelog.
+
 ## [2.0.12] - 2026-09-12
 
 Repins Rist to 1.3.1.
