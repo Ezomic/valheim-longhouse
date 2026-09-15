@@ -1,7 +1,7 @@
 {
     "name":  "Longhouse",
     "author":  "Robbin Thijssen",
-    "version_number":  "2.0.15",
+    "version_number":  "2.0.16",
     "website_url":  "https://github.com/Ezomic/valheim-longhouse",
     "description":  "Every Ezomic mod, pinned to one set that a server will accept.",
     "dependencies":  [
@@ -12,7 +12,7 @@
                          "Ezomic-Utangard-1.3.1",
                          "Ezomic-Vaettir-1.5.4",
                          "Ezomic-Dyrr-1.4.1",
-                         "Ezomic-Sinka-1.0.1",
+                         "Ezomic-Sinka-1.1.0",
                          "Ezomic-Kynda-1.1.1",
                          "Ezomic-Taum-1.0.1",
                          "Ezomic-Dvala-1.0.1",

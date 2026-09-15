@@ -8,6 +8,15 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.16] - 2026-09-15
+
+Repins Sinka to 1.1.0.
+
+### Added
+
+- A standing wood torch aimed at the top of a 1m or 2m wood pole snaps down into it, centred,
+  with its head showing above the pole. Details are in Sinka's own changelog.
+
 ## [2.0.15] - 2026-09-15
 
 Repins Rist to 1.5.0.
