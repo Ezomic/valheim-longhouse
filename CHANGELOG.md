@@ -8,6 +8,21 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.15] - 2026-09-15
+
+Repins Rist to 1.5.0.
+
+### Added
+
+- Six new Rist runestones: Quick chant (faster staff casting), Answering blow (a perfect dodge arms
+  your next hit), Low draw (drawing a bow from a crouch keeps you sneaking), Unseen blow (harder sneak
+  attacks), Deep draught (longer buff meads) and Oath-bound (a shorter forsaken power cooldown).
+
+### Changed
+
+- Rist's Quick draw also reloads crossbows faster, and its capstone is bow and crossbow damage.
+  Details are in Rist's own changelog.
+
 ## [2.0.14] - 2026-09-14
 
 Repins Rist to 1.4.1.
