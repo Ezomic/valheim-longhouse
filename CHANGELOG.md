@@ -8,6 +8,16 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.17] - 2026-09-16
+
+Repins Vaettir to 1.5.5.
+
+### Fixed
+
+- Thicket's Transplant entry is drawn in the cultivator's menu again. Valheim 1.0 rebuilt the
+  build menu and stopped drawing entries of its kind on that tool. Details are in Vaettir's own
+  changelog.
+
 ## [2.0.16] - 2026-09-15
 
 Repins Sinka to 1.1.0.
