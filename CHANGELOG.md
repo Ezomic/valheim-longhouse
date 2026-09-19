@@ -8,6 +8,15 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.20] - 2026-09-20
+
+Repins Rist to 1.5.1.
+
+### Changed
+
+- Rist repinned to 1.5.1: the runestone panel keeps its runes after a logout to the main menu,
+  and a long capstone line wraps instead of being cut off.
+
 ## [2.0.19] - 2026-09-19
 
 Repins Core to 1.2.5.
