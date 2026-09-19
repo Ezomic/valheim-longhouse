@@ -8,6 +8,15 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.18] - 2026-09-19
+
+Repins Dvala to 1.0.2.
+
+### Fixed
+
+- Restocked dungeons get their creatures back on the server, not just their chests and pickables.
+  Details are in Dvala's own changelog.
+
 ## [2.0.17] - 2026-09-16
 
 Repins Vaettir to 1.5.5.
