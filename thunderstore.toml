@@ -7,14 +7,14 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "Ezomic"
 name = "Longhouse"
-versionNumber = "2.0.18"
+versionNumber = "2.0.19"
 description = "Every Ezomic mod, pinned to one set that a server will accept."
 websiteUrl = "https://github.com/Ezomic/valheim-longhouse"
 containsNsfwContent = false
 
 [package.dependencies]
 denikson-BepInExPack_Valheim = "5.4.2350"
-Ezomic-Longhouse_Core = "1.2.4"
+Ezomic-Longhouse_Core = "1.2.5"
 Ezomic-Yoke = "1.2.1"
 Ezomic-Rist = "1.5.0"
 Ezomic-Utangard = "1.3.1"

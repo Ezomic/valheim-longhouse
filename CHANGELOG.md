@@ -8,6 +8,16 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.0.19] - 2026-09-19
+
+Repins Core to 1.2.5.
+
+### Added
+
+- Chat written on the Longhouse site can arrive in the in-game chat box, under the writer's
+  name and "(site)", instead of the top-left corner. Core draws the line; the server sends it.
+  Details are in Core's own changelog.
+
 ## [2.0.18] - 2026-09-19
 
 Repins Dvala to 1.0.2.
