@@ -10,9 +10,44 @@ changelog.
 
 ## [2.1.0] - 2026-09-20
 
-Adds **Jafna 1.0.0** and repins **Sinka 1.2.0**. A minor bump rather than a patch because the
-set grew: the pack's version moves when a mod is added, removed or repinned, and the previous
-release was a repin.
+Adds **Jafna 1.0.0** and repins **Sinka 1.2.0** and **Vaettir 1.6.0**. A minor bump rather
+than a patch because the set grew: the pack's version moves when a mod is added, removed or
+repinned, and the previous release was a repin.
+
+### Vaettir 1.6.0
+
+A stowing post is something you improve now rather than something you finish. Three pieces
+stand beside it, each changing what it does, and the game's own station-extension motes show
+which post a piece is serving - the same thing a chopping block draws to its workbench.
+
+A **creel rail** makes the post hold exactly what a reinforced chest holds, 6x2 becoming 6x4,
+and its spirit carry twenty items a trip instead of ten. 25 fine wood, 10 iron nails and 8
+leather scraps: no heartwood, because it is joinery and it should be buildable the same
+evening as the post. A **spirit perch** puts a second courier in the air for a heartwood, 25
+fine wood, 6 iron nails and 6 silver. Taking either one down hands everything back.
+
+A **hod jib** is the one that changes how crafting works. While a crafting station stands
+within 20m of the post, the crafting panel counts what is in the chests around **that post**
+and crafting spends out of them - but only materials from a biome whose boss is dead. Eikthyr
+opens the Meadows, the Elder the Black Forest, and so on to Fader and the Ashlands, so a chest
+full of black metal is not a shortcut past the Plains. Which biome an item belongs to is
+derived from where it grows and what drops it rather than from a list, so a mod that adds an
+ore lands somewhere sensible without being told. Benches only: not the hammer, not smelter or
+kiln fuel. 1 heartwood, 35 fine wood, 10 iron nails and 2 chain.
+
+**Three new prefab names become permanent for anyone who builds one** - `stow_rail`, `hod_jib`
+and `stow_perch` - the same way `stow_post` already is. A world that loads without the mod
+discards them silently.
+
+Taking a rail down now spills what will not fit rather than refusing to shrink, which is what
+breaking a chest has always done. And a post remembers its own size, so it opens at the size
+it really is instead of opening at the widest a post can ever be and settling five seconds
+later.
+
+Two chests, two players and one craft were the part that had never been exercised. They are
+now, on a second client against the dev server: a craft paid for out of a chest somebody else
+owns, and two players spending from one chest with only one craft's worth in it. The material
+goes down exactly once.
 
 ### Sinka 1.2.0
 
