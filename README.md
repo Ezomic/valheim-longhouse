@@ -27,6 +27,7 @@ themselves.
 | [Lur](https://thunderstore.io/c/valheim/p/Ezomic/Lur/) | Sound a horn in one of Hildir's dungeons and its mini-boss wakes again. |
 | [Skaft](https://thunderstore.io/c/valheim/p/Ezomic/Skaft/) | Hammer repair reaches further the higher your Crafting skill. |
 | [Vaka](https://thunderstore.io/c/valheim/p/Ezomic/Vaka/) | Fires keep while you are away. A single absence costs one fuel, however long it was. |
+| [Jafna](https://thunderstore.io/c/valheim/p/Ezomic/Jafna/) | The hoe levels to the flat ground it is touching instead of to your crosshair, and Crafting decides how wide a swing is. |
 
 The exact versions are in [manifest.json](manifest.json), and Thunderstore lists them on the
 pack's page. Each mod has its own README and its own changelog.

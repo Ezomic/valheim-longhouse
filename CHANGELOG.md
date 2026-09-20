@@ -8,6 +8,29 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.1.0] - 2026-09-20
+
+Adds **Jafna 1.0.0**. A minor bump rather than a patch because the set grew: the pack's
+version moves when a mod is added, removed or repinned, and the previous release was a repin.
+
+Levelling with the hoe stops chasing your crosshair. Vanilla eases every point under the tool
+toward the placement ghost's height, and the ghost sits wherever you last looked at the ground,
+so two swings a step apart pull their shared overlap toward two different heights - which is
+the real reason a large flat area is miserable to make, rather than the tool being small.
+Jafna reads the flag the game already saves per grid point for "a terrain operation touched
+this", and a swing covering ground an earlier swing shaped takes that height instead. Flat then
+spreads outward from wherever it started, across sessions and across players.
+
+It also adds a held height on Left Alt, a reach that grows with Crafting on the same curve
+Skaft uses, the numbers on the build panel while a levelling tool is out, and a ward test
+against the whole footprint rather than the single point vanilla checks.
+
+Two things about it worth knowing before anyone reports them as faults, both documented in
+Jafna's own README. Flattening is capped near a metre per point by vanilla's own clamp, so a
+held height further than that is approached and not reached - raise the ground first. And Left
+Alt is shared with vanilla's alt-placement key; it tested clean, and `HoldKey` is configurable
+if a ghost ever misbehaves.
+
 ## [2.0.20] - 2026-09-20
 
 Repins Rist to 1.5.1.
