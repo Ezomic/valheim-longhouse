@@ -8,6 +8,34 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.1.1] - 2026-09-20
+
+Repins **Vaettir 1.6.1**, which is the fix for the three pieces 2.1.0 put in the hammer for
+free. Update before building anything beside a stowing post.
+
+### Vaettir 1.6.1
+
+The creel rail, the spirit perch and the hod jib cost nothing at all in 2.1.0. Their recipes
+are written out of resolved items rather than names, so they are written again once the item
+database has loaded - and the code that did the writing read a field nothing ever assigned,
+found nothing on every frame, and skipped all three in silence. Each piece kept the recipe it
+got at build time, which on a client joining a server is written while the item database is
+still the empty stub, so nothing resolved and the list came out empty. An empty requirement
+list is a buildable that costs nothing, and it also reads as known, so all three stood in
+everybody's hammer whether or not they had ever seen a heartwood.
+
+The stowing post had the same hole and hid it better: its own cost came out empty too and the
+heartwood was merged into nothing, leaving a post that cost one heartwood, or no post in the
+menu at all for anyone who has never held one.
+
+Both are priced from a loaded database now, per world, and a recipe is written only when every
+name in it resolved.
+
+The post's cost also moves on machines that have already run the mod. It went to 40 fine wood
+and 20 bronze nails in 1.6.0, but BepInEx keeps the saved value, so no existing install ever
+saw the new number - servers included. The config now carries a revision and a moved default
+is applied once, only where the old one is still there untouched.
+
 ## [2.1.0] - 2026-09-20
 
 Adds **Jafna 1.0.0** and repins **Sinka 1.2.0** and **Vaettir 1.6.0**. A minor bump rather

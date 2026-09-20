@@ -121,7 +121,12 @@ $members = @(
     'dvala',
     'lur',
     'skaft',
-    'vaka'
+    'vaka',
+    # Jafna joined in 2.1.0 and was hand-written into manifest.json like the seven before
+    # it, so the very next run of this script refused - correctly - rather than dropping it.
+    # That refusal is the check added after the 2.0.x repeat, working as intended, and this
+    # line is the answer to it.
+    'jafna'
 )
 
 # BepInEx is pinned by the pack as well as by each mod. A pack that named only the mods
