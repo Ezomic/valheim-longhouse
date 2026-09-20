@@ -10,8 +10,31 @@ changelog.
 
 ## [2.1.0] - 2026-09-20
 
-Adds **Jafna 1.0.0**. A minor bump rather than a patch because the set grew: the pack's
-version moves when a mod is added, removed or repinned, and the previous release was a repin.
+Adds **Jafna 1.0.0** and repins **Sinka 1.2.0**. A minor bump rather than a patch because the
+set grew: the pack's version moves when a mod is added, removed or repinned, and the previous
+release was a repin.
+
+### Sinka 1.2.0
+
+Chests stack. Vanilla refuses a chest on a chest outright - the placement test reads the
+`m_supports` flag of the piece you are aiming at, and every chest has it off - and the wear
+tick then destroys any piece that ends up unsupported, contents and all. Sinka answers both,
+and narrowly: a chest holds up a chest and nothing else, so a wall or a torch on one is still
+refused. **On this server it is safe because every player here runs the pack.** A player
+without Sinka standing near a stack computes it the vanilla way and destroys the top chest,
+which is why the setting carries that warning and why it is worth knowing before anyone
+builds a wall of them on a server that is not this one.
+
+Sharp stakes chain again. They never have: the piece keeps its colliders outside the subtree
+Sinka measured, so it fell back to mesh bounds, came out deeper than it is wide, and put its
+snap points on the panel's front and back faces rather than its two ends. Four pieces measure
+from their colliders now and chain tighter than they did - the black metal, grausten and
+warderobe chests, and the stakes themselves.
+
+Every standing torch sinks into every pole, where 1.1.0 knew one torch and two poles. How much
+of a torch shows is measured off its own fire rather than typed, which is what makes that
+possible without standing each one on a pole first. And `Gap` is per prefab now, so a stake
+wall can stand a hand apart in the same world where the chests sit flush.
 
 Levelling with the hoe stops chasing your crosshair. Vanilla eases every point under the tool
 toward the placement ghost's height, and the ghost sits wherever you last looked at the ground,

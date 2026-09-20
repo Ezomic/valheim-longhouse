@@ -103,6 +103,13 @@ the server lacks is a refused connection rather than a missing feature. Two exce
 only has to be on the host, and clients without it are let in; Sinka only affects placement on
 the client and stays out of the check entirely.
 
+Sinka has one consequence worth knowing since 1.2.0, because it is the exception to that. A
+chest stacked on another chest is only held up while the player whose game owns it has Sinka,
+and ownership follows whoever is nearby. Everyone running this pack has it, so a stack here is
+safe; a player who joined with a partial install would destroy the top chest and its contents
+without ever touching it. `StackContainers = false` in Sinka's config turns the feature off if
+that is ever a risk worth avoiding.
+
 On a server the host's config values are applied to connected clients in memory. Client config
 files are not modified and the client's own values come back on disconnect. Keybinds are held
 back from that: the host's keys are not applied to yours.
