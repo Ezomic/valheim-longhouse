@@ -8,6 +8,22 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.1.3] - 2026-09-21
+
+Repins **Core 1.3.0**: a line the server sends can arrive in a voice.
+
+### Core 1.3.0
+
+A server can now say how a chat line it sends should be drawn: the ordinary voice as before, a
+shout, which the game draws in yellow and in capitals, or a whisper, which it dims. It goes out
+under a second name beside the old one, so a server still sending the old one is unaffected and
+an older Core simply does not answer to the new name.
+
+No mod in the pack sends a voice. The first thing to use it is the Longhouse server itself:
+chat written on the site arrives as a shout from now on, which is honest about what it is,
+because a site line reaches everybody wherever they happen to be standing. Dyrr's warning
+before an idle kick stays in the ordinary voice, because that one is meant for one player.
+
 ## [2.1.2] - 2026-09-21
 
 Repins **Dyrr 1.4.2**: the warning before an idle kick reaches the player it is about.
