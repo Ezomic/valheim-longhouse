@@ -8,6 +8,22 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.1.2] - 2026-09-21
+
+Repins **Dyrr 1.4.2**: the warning before an idle kick reaches the player it is about.
+
+### Dyrr 1.4.2
+
+The warning was sent as a chat message from a sender called "Server", and no client would draw
+it - that name is not a platform user id, Valheim checks the sender's permission before it
+shows anything, and an invalid id fails that check. The server said it, every client threw it
+away, and the only warning before a disconnect was one nobody ever saw.
+
+It goes through Core's chat line now, to that one player and nobody else, in the ordinary voice
+rather than as a shout: a shout is what the whole world hears, and this is meant for one
+person. It is written to the server log as well, so an admin can see it after the fact. This is
+the half of the fix that needs Core 1.2.5, which the pack has carried since 2.0.19.
+
 ## [2.1.1] - 2026-09-20
 
 Repins **Vaettir 1.6.1**, which is the fix for the three pieces 2.1.0 put in the hammer for
