@@ -1,40 +1,20 @@
 # Pending pack updates
 
-Four, in this order. Each waits on a Thunderstore publish that has not happened yet, which is
+Two, in this order. Each waits on a Thunderstore publish that has not happened yet, which is
 why the manifest is untouched: a pack that pins a version nobody can download is a pack that
 fails to install, and `tcli` will build it happily.
 
-## 2.1.4 - waits on Skaft 1.2.0, Core 1.4.0 and Vaettir 1.6.2
+It was four until 2026-09-22, when the two repin patches were folded into the two minors that
+were queued behind them. The repins had nothing of their own to wait for that the minors were
+not already waiting on, and a minor carries everything a patch would, so publishing them first
+would have been two extra releases for no extra information. 2.1.4 and 2.1.5 no longer exist
+and never will.
 
-Three repins in one patch. All three are prepared: versions bumped in every file that carries
-one, changelog headings written and marked pending.
+## 2.2.0 - adds Kvedja and repins three, waits on Kvedja 1.0.0, Skaft 1.2.0, Core 1.4.0 and Vaettir 1.6.2
 
-1. Publish **Skaft 1.2.0** from `skaft` on `main`. The zip is already built and validated
-   (`dist\Ezomic-Skaft-1.2.0.zip`, 6 entries, 0 blocking).
-2. Publish **Core 1.4.0** and **Vaettir 1.6.2**. Date their changelog headings first.
-3. In `manifest.json`: `version_number` to `2.1.4`, and repin
-   `Ezomic-Skaft-1.1.1` to `1.2.0`, `Ezomic-Longhouse_Core-1.3.0` to `1.4.0`, and
-   `Ezomic-Vaettir-1.6.1` to `1.6.2`.
-4. Date the `## [2.1.4]` heading in CHANGELOG.md - the entry is already written.
-5. `package.ps1 -Mod Longhouse`, then publish.
-
-**Core first, or at least not last.** Every client and server on the pack has to be on the same
-Core build for the version gate to let anyone in, and Core is the one member that is a
-dependency of the others on Thunderstore. Publishing the pack before Core is up means a pack
-that pins something nobody can download.
-
-## 2.1.5 - waits on Skaft 1.3.0
-
-1. Merge `damaged-in-reach` into `main` in `skaft`, publish **Skaft 1.3.0**.
-2. In `manifest.json`: `version_number` to `2.1.5`, and `Ezomic-Skaft-1.2.0` to
-   `Ezomic-Skaft-1.3.0`.
-3. Date the `## [2.1.5]` heading.
-4. Package and publish.
-
-## 2.2.0 - adds Kvedja, and waits on Kvedja 1.0.0
-
-**A minor, not a patch**, and it is the only one of the three that is: the set grows from
-fifteen members to sixteen. See "Which digit moves" below.
+**A minor, not a patch**: the set grows from fifteen members to sixteen. The three repins
+ride along and do not change that - a minor already carries everything a patch would. See
+"Which digit moves" below.
 
 Kvedja is the chat message of the day. When you appear in the world it reads
 `longhouse.thijssensoftware.nl/api/motd` and prints it into the chat window, under a name in
@@ -63,26 +43,31 @@ Three things it does not have yet, and all three are blockers rather than polish
    `github.com/Ezomic/valheim-kvedja` and nothing is there. It goes up **public**, because the
    repo goes public when the mod reaches 1.0.
 
-Then:
+Then, with the three repins in the same sitting:
 
 4. Add `@{ Name = 'Kvedja'; Path = 'kvedja'; Assembly = 'Kvedja'; Standalone = $true }` to
    `$repos` in `own-profile\package.ps1`. Leave this until now on purpose: a bare `package.ps1`
    with no `-Mod` builds everything on that list, and until the three above are done a Kvedja
    entry would only ever fail the run for the other mods.
 5. `package.ps1 -Mod Kvedja`, then publish **Kvedja 1.0.0**.
-6. Add `'kvedja'` to `$members` in `longhouse\tools\build-manifest.ps1`. This is also deliberately
-   last: the generator reads each member's own `manifest.json`, so a `kvedja` line added early
-   would pull an unpublished 1.0.0 into the 2.1.4 or 2.1.5 pins the next time anything regenerates
-   the file - which is exactly the failure the top of this document is about.
-7. `.\tools\build-manifest.ps1 -PackVersion 2.2.0`, which rewrites every pin from the members'
-   own manifests. Check the dependency count comes out at **sixteen plus BepInEx**.
-8. Date the `## [2.2.0]` heading in CHANGELOG.md - the entry is already written.
-9. `package.ps1 -Mod Longhouse`, then publish.
+6. Publish **Core 1.4.0**, **Vaettir 1.6.2** and **Skaft 1.2.0**. All three are prepared -
+   versions bumped in every file that carries one, changelog headings written and marked
+   pending - so each is a dated heading and an upload. Skaft's zip is already built and
+   validated (`dist\Ezomic-Skaft-1.2.0.zip`, 6 entries, 0 blocking).
+7. Add `'kvedja'` to `$members` in `longhouse\tools\build-manifest.ps1`. This is also
+   deliberately late: the generator reads each member's own `manifest.json`, so a `kvedja` line
+   added early would pull an unpublished 1.0.0 into whichever pack version regenerates next -
+   which is exactly the failure the top of this document is about.
+8. `.\tools\build-manifest.ps1 -PackVersion 2.2.0`, which rewrites every pin from the members'
+   own manifests. Check the dependency count comes out at **sixteen plus BepInEx**, and that
+   Skaft, Core and Vaettir moved to 1.2.0, 1.4.0 and 1.6.2 beside Kvedja appearing.
+9. Date the `## [2.2.0]` heading in CHANGELOG.md - the entry is already written.
+10. `package.ps1 -Mod Longhouse`, then publish.
 
-**Publish after 2.1.5, not instead of it.** Nothing technically stops Kvedja riding along with a
-repin, but 2.1.4 and 2.1.5 are already written as two releases so that somebody on the pack can
-tell Skaft's two halves apart, and folding a new member into either would hide the one change in
-this queue that actually changes what the set *is*.
+**Core before the pack, and ideally before the rest.** Every client and server on the pack has
+to be on the same Core build for the version gate to let anyone in, and Core is the one member
+the others depend on through Thunderstore. Publishing the pack before Core is up means a pack
+pinning something nobody can download.
 
 **Look at it once before publishing**, beyond the scenario. `kvedja-greets-you-in-chat` reads the
 scrollback, which proves the line arrived and says nothing about whether anybody saw it - the chat
@@ -90,7 +75,7 @@ window opening itself is a reflected write to `Chat.m_hideTimer`, and if that bi
 wrong the message is in the buffer, invisible, with every log line reporting success. One login
 answers it.
 
-## 2.3.0 - adds Stund, and waits on Stund 1.0.0
+## 2.3.0 - adds Stund and repins Skaft, waits on Stund 1.0.0 and Skaft 1.3.0
 
 **A minor**, same as 2.2.0 and for the same reason: the set grows again, sixteen members to
 seventeen.
@@ -100,10 +85,12 @@ default and in any corner you like. Valheim's own clock is the sun and it is a g
 stops working the moment you are underground, which is where the questions that turn on the
 time actually get asked.
 
-**It goes in a release of its own, one behind Kvedja.** Two new members in one pack version
-would be a bigger change to the set than anything since 2.0.0, and the two have nothing to do
-with each other - one draws on your HUD and the other reads a web page. Separate releases mean
-a player who dislikes one of them can say which.
+**It goes in a release of its own, one behind Kvedja**, and two reasons agree on that. Two new
+members in one pack version would be a bigger change to the set than anything since 2.0.0, and
+the two have nothing to do with each other - one draws on your HUD and the other reads a web
+page - so apart, a player who dislikes one of them can say which. And each pack version repins
+one Skaft version, which is why 1.2.0 rides with Kvedja and 1.3.0 rides here: somebody sitting
+on 2.2.0 gets the bench half and the crosshair count as two things they can tell apart.
 
 Prepared as far as a mod with no remote can be: **1.0.0** in `manifest.json`, `Stund.csproj`
 and `PluginVersion`, and a changelog heading written and marked pending.
@@ -117,18 +104,19 @@ both are going up:
 3. **No git remote.** `website_url` already points at `github.com/Ezomic/valheim-stund` and
    nothing is there. Public, because the repo goes public when the mod reaches 1.0.
 
-Then:
+Then, with the Skaft repin in the same sitting:
 
 4. Add `@{ Name = 'Stund'; Path = 'stund'; Assembly = 'Stund'; Standalone = $true }` to
    `$repos` in `own-profile\package.ps1`.
 5. `package.ps1 -Mod Stund`, then publish **Stund 1.0.0**.
-6. Add `'stund'` to `$members` in `longhouse\tools\build-manifest.ps1`.
-7. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check the count comes out at **seventeen
-   plus BepInEx**.
-8. Date the `## [2.3.0]` heading in CHANGELOG.md - the entry is already written.
-9. `package.ps1 -Mod Longhouse`, then publish.
+6. Merge `damaged-in-reach` into `main` in `skaft`, then publish **Skaft 1.3.0**.
+7. Add `'stund'` to `$members` in `longhouse\tools\build-manifest.ps1`.
+8. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check the count comes out at **seventeen
+   plus BepInEx**, and that Skaft moved to 1.3.0.
+9. Date the `## [2.3.0]` heading in CHANGELOG.md - the entry is already written.
+10. `package.ps1 -Mod Longhouse`, then publish.
 
-Steps 4 and 6 are last here for the same reason they are last in 2.2.0: `build-manifest.ps1`
+Steps 4 and 7 are late here for the same reason they are late in 2.2.0: `build-manifest.ps1`
 reads each member's own `manifest.json`, so an early `stund` line pulls an unpublished 1.0.0
 into whichever pack version regenerates next, and a `package.ps1` entry before the icon exists
 fails a bare run for every other mod.
@@ -155,17 +143,24 @@ with it - a pack cannot pin a version that is not on Thunderstore.
 **The order of 2.2.0 and 2.3.0 is a proposal as well.** Kvedja first is not a technical
 constraint; they are independent and either could go first, or both could ride one version. It
 is written this way because two new members in one release would be the biggest change to the
-set since 2.0.0, and splitting them means a player who dislikes one can say which.
+set since 2.0.0, and splitting them means a player who dislikes one can say which. Which Skaft
+version rides with which is downstream of that and nothing else - 1.2.0 has to precede 1.3.0,
+so it lands in whichever of the two goes first.
 
 ## Which digit moves
 
-A repin is a **patch**. 2.1.4 and 2.1.5 are repins of mods already in the set, so they are
-2.1.4 and 2.1.5 rather than 2.2.0 and 2.3.0 - that is what every repin since 2.0.15 has done,
-and 2.1.0 is the one minor bump, which earned it by **adding** Jafna. A minor bump means the
-set grew or shrank; a patch means the set is the same mods at different versions.
+A repin is a **patch** and a member joining or leaving is a **minor**. That is the whole rule,
+and every repin since 2.0.15 has followed it; 2.1.0 is the one minor so far, which earned it by
+**adding** Jafna.
 
 **2.2.0 and 2.3.0 are the second and third minors**, and both earn it the same way 2.1.0 did:
 Kvedja is a sixteenth member and Stund a seventeenth, not new versions of existing ones.
+
+**A minor absorbs repins for free**, which is what folding the two patches in on 2026-09-22
+rests on. The rule says what the *smallest* correct bump is, so a version that has to move the
+middle digit anyway can carry any number of repins without moving anything further - four
+repins inside 2.2.0 and 2.3.0 rather than two patches in front of them. The reverse is not
+true: a patch can never carry a member.
 
 ## Before each publish
 

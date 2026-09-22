@@ -8,14 +8,16 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [2.3.0] - pending Stund 1.0.0
+## [2.3.0] - pending Stund 1.0.0 and Skaft 1.3.0
 
-Adds **Stund**, the seventeenth member. A minor, because the set grew again.
+Adds **Stund**, the seventeenth member, and repins **Skaft 1.3.0**.
 
-Separate from 2.2.0 on purpose. Two new members in one release would be the biggest change to
-the set since 2.0.0, and these two have nothing to do with each other - one draws on your HUD
-and the other reads a web page - so shipping them apart means a player who dislikes one of
-them can say which.
+Separate from 2.2.0 on purpose, and for two reasons that happen to agree. Two new members in
+one release would be the biggest change to the set since 2.0.0, and Kvedja and Stund have
+nothing to do with each other - one draws on your HUD, the other reads a web page - so
+shipping them apart means a player who dislikes one of them can say which. And each pack
+version repins one Skaft version, so somebody sitting on 2.2.0 gets the bench half and the
+crosshair count as two separate things they can tell apart.
 
 ### Stund 1.0.0
 
@@ -43,10 +45,31 @@ Nobody else needs it. It is `Requirement.HostOnly` and every setting is marked a
 reads a clock your client is already given and draws a label, and a server does not know it is
 there or get to decide where on your screen it sits.
 
-## [2.2.0] - pending Kvedja 1.0.0
+### Skaft 1.3.0
 
-Adds **Kvedja**, the sixteenth member. A minor rather than a patch, because the set grew - the
-same thing 2.1.0 did when it added Jafna.
+With the hammer out and Repair selected, pointing at a piece now says how many damaged pieces
+are within your current reach of it: `Damaged in reach: 13`. Point at a whole one and it says
+`aim at a damaged piece` instead, which is the mod's oldest piece of small print made visible -
+a swing at an intact wall does nothing however much is broken beside it, because the sweep only
+follows a repair the game itself just made.
+
+It earns its place because damage is mostly invisible. Valheim swaps in the worn model below
+three quarters health and the broken one below a quarter, and shows nothing at all above that,
+so a wall at 90% looks new. The count is damage and distance only - stamina, hammer durability,
+wards and a missing station can still cut the swing short.
+
+At Crafting 0 there is no line at all, which is deliberate and is the thing most likely to be
+reported as a fault. Skaft's own troubleshooting section names it first.
+
+## [2.2.0] - pending Kvedja 1.0.0, Skaft 1.2.0, Core 1.4.0 and Vaettir 1.6.2
+
+Adds **Kvedja**, the sixteenth member, and repins **Skaft 1.2.0**, **Core 1.4.0** and
+**Vaettir 1.6.2**.
+
+A minor rather than a patch, because the set grew - the same thing 2.1.0 did when it added
+Jafna. The three repins ride along rather than going up first as a patch of their own: a
+minor already carries everything a patch would, and three of the four were waiting on the
+same afternoon's publishing anyway.
 
 ### Kvedja 1.0.0
 
@@ -73,35 +96,6 @@ Nobody has to have it. It is `Requirement.HostOnly`, registers no prefab and inv
 so deleting the DLL costs a greeting and nothing else, and every one of its settings is marked as
 yours rather than the host's - a server does not get to decide what your client reads, or where
 from.
-
-## [2.1.5] - pending Skaft 1.3.0
-
-Repins **Skaft 1.3.0**: the crosshair says how much is broken within reach.
-
-Publish after 2.1.4, not instead of it. Each pack version repins one Skaft version, so
-somebody sitting on 2.1.4 gets the bench half and the count as two separate things they can
-tell apart - which is the whole reason these ship as two releases.
-
-### Skaft 1.3.0
-
-With the hammer out and Repair selected, pointing at a piece now says how many damaged pieces
-are within your current reach of it: `Damaged in reach: 13`. Point at a whole one and it says
-`aim at a damaged piece` instead, which is the mod's oldest piece of small print made visible -
-a swing at an intact wall does nothing however much is broken beside it, because the sweep only
-follows a repair the game itself just made.
-
-It earns its place because damage is mostly invisible. Valheim swaps in the worn model below
-three quarters health and the broken one below a quarter, and shows nothing at all above that,
-so a wall at 90% looks new. The count is damage and distance only - stamina, hammer durability,
-wards and a missing station can still cut the swing short.
-
-At Crafting 0 there is no line at all, which is deliberate and is the thing most likely to be
-reported as a fault. Skaft's own troubleshooting section names it first.
-
-## [2.1.4] - pending Skaft 1.2.0, Core 1.4.0 and Vaettir 1.6.2
-
-Repins **Skaft 1.2.0**, **Core 1.4.0** and **Vaettir 1.6.2**. Still a patch: three repins, and
-the set is the same mods it was.
 
 ### Skaft 1.2.0
 
