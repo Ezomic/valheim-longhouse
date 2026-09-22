@@ -126,7 +126,16 @@ $members = @(
     # it, so the very next run of this script refused - correctly - rather than dropping it.
     # That refusal is the check added after the 2.0.x repeat, working as intended, and this
     # line is the answer to it.
-    'jafna'
+    'jafna',
+    # Kvedja and Merki joined in 2.2.0, and this line was added AFTER both were on
+    # Thunderstore - which is the whole discipline of this file. The generator reads
+    # each member's own manifest.json, so a name added here early pins a version that
+    # does not exist yet and the pack fails to install for everybody.
+    #
+    # Two members in one pack version is a first. The rule still gives one minor: it
+    # asks for the smallest correct bump, not one bump per thing.
+    'kvedja',
+    'merki'
 )
 
 # BepInEx is pinned by the pack as well as by each mod. A pack that named only the mods

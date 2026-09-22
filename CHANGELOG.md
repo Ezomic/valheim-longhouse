@@ -49,7 +49,7 @@ can still cut the swing short.
 
 No line at all at Crafting 0. Skaft's troubleshooting section names that first.
 
-## [2.2.0] - pending Kvedja 1.0.0, Merki 1.0.0, Skaft 1.2.0, Core 1.4.0, Vaettir 1.6.2 and Rist 1.6.0
+## [2.2.0] - 2026-09-22
 
 Adds **Kvedja** and **Merki**, the fifteenth and sixteenth members, and repins **Skaft 1.2.0**,
 **Core 1.4.0**, **Vaettir 1.6.2** and **Rist 1.6.0**.
