@@ -126,6 +126,12 @@ registrar declare their names for free, so no member mod changed.
 
 ### Vaettir 1.6.2
 
+The creel rail's baskets have an inside. They were built as open shells with no thickness, and
+the game draws one side of a surface and discards the other, so each basket showed the world
+behind it where its far wall and its floor should have been. Every coil has a wall now, grown
+inward so the outside of the basket is the shape it always was. The chute post had the same
+hole and is mended with it.
+
 Eleven warnings on a healthy launch, gone. The rail, the perch, the jib and the post each
 warned per ingredient that an item "nothing can find" was named in their cost: Fine wood, Iron
 nails, Leather scraps. They fired while the mod was still checking the price and all resolved a
