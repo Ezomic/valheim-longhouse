@@ -194,10 +194,10 @@ Then, in order, and each step really does block the one after it:
    the top of this document is about.
 9. `.\tools\build-manifest.ps1 -PackVersion 2.4.0`. Check it comes out at **seventeen mods plus
    BepInEx - eighteen dependency lines**, and that Merki is one of them.
-10. **Write the `## [2.4.0]` entry in CHANGELOG.md**, then date it. Unlike 2.2.0 and 2.3.0 this
-    one is not written, deliberately: release notes for a mod nobody has watched run would be a
-    description of the source rather than of the thing, and the two are only the same until they
-    are not.
+10. Date the `## [2.4.0]` heading in CHANGELOG.md - the entry is written, and **read it again
+    before dating it**. It is the only entry in this file describing a mod nobody has watched
+    run, so it is a description of the source rather than of the thing, and those are the same
+    only until they are not. The site already shows it, under "any of it can still change".
 11. `package.ps1 -Mod Longhouse`, then publish.
 
 Tracked as **LHM-22**, which carries the same sequence from Merki's side. **LHM-7 is the test**,
