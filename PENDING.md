@@ -16,10 +16,12 @@ and never will.
 ride along and do not change that - a minor already carries everything a patch would. See
 "Which digit moves" below.
 
-**Rist 1.6.0** joined the list on 2026-09-22 and is the fourth repin. Thick-hided became a
-percentage, +3% armour a rank and another 5% at rank 5, because the flat +2 a rank stopped
-being felt by the Plains. It is prepared: 1.6.0 in all four files and a dated changelog
-heading. The version is Robbin's, not a proposal.
+**Rist 1.6.0** joined the list on 2026-09-22 and is the fourth repin. Armour is a percentage
+now: Thick-hided gives +3% a rank and another 5% at rank 5, and Steady footing's capstone is
++5% rather than +2, so no card grants flat armour any more. The flat number stopped being felt
+by the Plains, which a player said on the ideas board and the game's own damage curve agrees
+with. It is prepared: 1.6.0 in all four files and a dated changelog heading. The version is
+Robbin's, not a proposal.
 
 Kvedja is the chat message of the day. When you appear in the world it reads
 `longhouse.thijssensoftware.nl/api/motd` and prints it into the chat window, under a name in
