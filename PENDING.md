@@ -81,6 +81,32 @@ Then, with the three repins in the same sitting:
 11. **Put Crier 0.8.0 on live in the same sitting.** Robbin asked for it to ride this update
     rather than go on its own, on 2026-09-22.
 
+### Prepared on 2026-09-22 - what is left is the uploads
+
+Everything that is not a publish is done. Stated as facts rather than ticks, because the
+useful question later is what was checked:
+
+- **Six zips built and validated**, every one with the same entry count as its predecessor -
+  the check that catches a stale staging folder, which is the failure `-SkipBuild` produces
+  while printing success.
+
+  | Core 1.4.0 | Kvedja 1.0.0 | Merki 1.0.0 | Rist 1.6.0 | Skaft 1.2.0 | Vaettir 1.6.2 |
+
+- **Skaft 1.2.0 needs no worktree and no rollback**, which was an open question. Its zip was
+  built when the tree was at 1.2.0 and is self-contained: the DLL inside reports
+  `1.2.0+0da48291` and the manifest inside says 1.2.0. The tree has since moved to 1.3.0 on
+  the `damaged-in-reach` branch and that does not touch this package.
+- **Merki is at 1.0.0** in all four files, with its changelog rewritten - it had opened with
+  "Built and deployed; never run in a game" and would have shipped saying so.
+- **Kvedja has an icon**, drawn flat in Jafna and Dvala's style rather than rendered, since it
+  has no model. Robbin picked it from three.
+- **Both repos are public and pushed**: github.com/Ezomic/valheim-kvedja and
+  github.com/Ezomic/valheim-merki, on `master` like every repo new-mod.ps1 makes.
+- **Both are on write-tomls.ps1 and package.ps1**, and their tomls are generated.
+
+So steps 1 to 6 below are done. What remains is the publishes, then step 7 onward - the
+members line and the manifest - which stay last for the reason at the top of this file.
+
 ### Merki joins this one too
 
 Moved here from a 2.4.0 of its own on 2026-09-22, at Robbin's word, the same day it was first
