@@ -60,22 +60,11 @@ rather than going out as a patch of their own.
 
 ### Kvedja 1.0.0
 
-A line in the chat window when you log in, read from the Longhouse site. One sentence or three,
-under a name in orange, once per login. It does not repeat and it does not follow you around,
-and if the site has nothing to say it says nothing. By default it stays quiet when you respawn
-after dying, since being greeted right after losing everything reads as mockery.
+A line in your chat window when you log in, read from the Longhouse site. It points at the two
+boards, one for voting on what a mod should do next and one for bugs.
 
-It is there to point at the boards, one for voting on what a mod should do next and one for
-bugs, because almost nobody knows either exists. A README link gets read once, while installing.
-
-**The text is not in the mod.** It lives on the site and is edited there, so it changes without
-an update to install or a server restart. One small web request per login, to that one address,
-carrying nothing about you. Point `Url` somewhere else and it is a message of the day for any
-server that wants one, as long as the far end answers plain text. Set `Enabled` to false and it
-never asks.
-
-`Requirement.HostOnly`, no prefab, no ZDO key. Delete the DLL and you lose a greeting. Every
-setting is marked as yours, so a server cannot decide what your client reads or where from.
+The text is not in the mod. It lives on the site and is edited there, so it changes without an
+update to install or a server restart. `Enabled` false and it never asks.
 
 ### Skaft 1.2.0
 
