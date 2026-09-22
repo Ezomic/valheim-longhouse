@@ -8,12 +8,12 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [2.3.0] - pending Skaft 1.3.0
+## [2.1.5] - pending Skaft 1.3.0
 
 Repins **Skaft 1.3.0**: the crosshair says how much is broken within reach.
 
-Publish after 2.2.0, not instead of it. Each pack version repins one Skaft version, so
-somebody sitting on 2.2.0 gets the bench half and the count as two separate things they can
+Publish after 2.1.4, not instead of it. Each pack version repins one Skaft version, so
+somebody sitting on 2.1.4 gets the bench half and the count as two separate things they can
 tell apart - which is the whole reason these ship as two releases.
 
 ### Skaft 1.3.0
@@ -32,7 +32,7 @@ wards and a missing station can still cut the swing short.
 At Crafting 0 there is no line at all, which is deliberate and is the thing most likely to be
 reported as a fault. Skaft's own troubleshooting section names it first.
 
-## [2.2.0] - pending Skaft 1.2.0
+## [2.1.4] - pending Skaft 1.2.0
 
 Repins **Skaft 1.2.0**: one press of the Repair button at a bench fixes a kit, not an item.
 
