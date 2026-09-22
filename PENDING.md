@@ -1,8 +1,13 @@
 # Pending pack updates
 
-Two, in this order. Each waits on a Thunderstore publish that has not happened yet, which is
+Three, in this order. Each waits on a Thunderstore publish that has not happened yet, which is
 why the manifest is untouched: a pack that pins a version nobody can download is a pack that
 fails to install, and `tcli` will build it happily.
+
+The third is **Merki**, added on 2026-09-22. It is further back than the other two, and by more
+than a step: those are prepared and waiting on uploads, and Merki has never been started in a
+world. That is written out in its own section rather than softened here, because it is the one
+fact that decides where it lands.
 
 It was four until 2026-09-22, when the two repin patches were folded into the two minors that
 were queued behind them. The repins had nothing of their own to wait for that the minors were
@@ -12,7 +17,7 @@ and never will.
 
 ## 2.2.0 - adds Kvedja and repins four, waits on Kvedja 1.0.0, Skaft 1.2.0, Core 1.4.0, Vaettir 1.6.2 and Rist 1.6.0
 
-**A minor, not a patch**: the set grows from fifteen members to sixteen. The four repins
+**A minor, not a patch**: the set grows from fourteen mods to fifteen. The four repins
 ride along and do not change that - a minor already carries everything a patch would. See
 "Which digit moves" below.
 
@@ -67,8 +72,9 @@ Then, with the three repins in the same sitting:
    added early would pull an unpublished 1.0.0 into whichever pack version regenerates next -
    which is exactly the failure the top of this document is about.
 8. `.\tools\build-manifest.ps1 -PackVersion 2.2.0`, which rewrites every pin from the members'
-   own manifests. Check the dependency count comes out at **sixteen plus BepInEx**, and that
-   Skaft, Core, Vaettir and Rist moved to 1.2.0, 1.4.0, 1.6.2 and 1.6.0 beside Kvedja appearing.
+   own manifests. Check it comes out at **fifteen mods plus BepInEx - sixteen dependency lines**,
+   and that Skaft, Core, Vaettir and Rist moved to 1.2.0, 1.4.0, 1.6.2 and 1.6.0 beside Kvedja
+   appearing. 2.1.3 is fourteen mods and fifteen lines, so the number to beat is exactly one.
 9. Date the `## [2.2.0]` heading in CHANGELOG.md - the entry is already written.
 10. `package.ps1 -Mod Longhouse`, then publish.
 
@@ -85,8 +91,8 @@ answers it.
 
 ## 2.3.0 - adds Stund and repins Skaft, waits on Stund 1.0.0 and Skaft 1.3.0
 
-**A minor**, same as 2.2.0 and for the same reason: the set grows again, sixteen members to
-seventeen.
+**A minor**, same as 2.2.0 and for the same reason: the set grows again, fifteen mods to
+sixteen.
 
 Stund is the clock. `Day 43   17:45` on the HUD, in the game's own typeface, top centre by
 default and in any corner you like. Valheim's own clock is the sun and it is a good one; it
@@ -119,8 +125,8 @@ Then, with the Skaft repin in the same sitting:
 5. `package.ps1 -Mod Stund`, then publish **Stund 1.0.0**.
 6. Merge `damaged-in-reach` into `main` in `skaft`, then publish **Skaft 1.3.0**.
 7. Add `'stund'` to `$members` in `longhouse\tools\build-manifest.ps1`.
-8. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check the count comes out at **seventeen
-   plus BepInEx**, and that Skaft moved to 1.3.0.
+8. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check it comes out at **sixteen mods plus
+   BepInEx - seventeen dependency lines**, and that Skaft moved to 1.3.0.
 9. Date the `## [2.3.0]` heading in CHANGELOG.md - the entry is already written.
 10. `package.ps1 -Mod Longhouse`, then publish.
 
@@ -135,6 +141,68 @@ the clock shipped unreadable while its scenario passed. What remains uncovered i
 label is visible at all, which no scenario can answer for any HUD element - `Hud.SetVisible`
 parks its root off the screen rather than disabling it.
 
+## 2.4.0 - adds Merki, waits on Merki reaching a version
+
+**A minor**, for the third time running: sixteen mods to seventeen.
+
+Merki is the map. The server decides who is on it - the checkbox goes grey and everybody is
+visible, the listen host included - and a death leaves a named gravestone on everyone else's
+map for up to half an hour. It never overwrites a player's own answer to the checkbox, so a
+server that turns the rule off, or drops the mod, hands everyone back the choice they had made.
+
+**Its own release, behind Stund**, on the argument that already split Kvedja and Stund: one new
+member at a time, so a player who dislikes one of them can say which. Nothing technical puts it
+last, and the order is as movable as theirs.
+
+**It is not prepared, and the gap is not paperwork.** Merki has never been started in a world -
+LHM-7 is the first in-game test and it is still open - and it registers at
+`Requirement.Everyone`. A fault in it is not a missing feature, it is every player refused at the
+door for a reason none of them can see. Every other member was played before it joined, and the
+comments in `build-manifest.ps1` holding Thralls, Tether and Saga out of the pack say exactly
+that. None of those three is further from ready than Merki is today.
+
+What is already done, on 2026-09-22: it is in **both build lists**, `build-all.ps1` and
+`server.ps1`, which is what makes the test possible at all. They are paired on purpose - at
+Requirement.Everyone one end carrying it and the other not is a refused connection rather than a
+difference - so move both or move neither. It is in `package-all.ps1` as well, which stages a zip
+and publishes nothing. It has its **`icon.png`**, which is the one blocker Kvedja and Stund both
+still carry.
+
+Then, in order, and each step really does block the one after it:
+
+1. **Run it.** LHM-7, numbered steps with an expected result each. Everything below is cheap and
+   this is not, which is the whole reason it is first.
+2. **Write a scenario.** Kvedja and Stund have one each; Merki has no `scenarios\` folder at all.
+   Most of LHM-7 is scriptable - whether the checkbox is forced, and who the map is drawing - so
+   this buys back the sittings every later version would otherwise cost. The death half needs a
+   second player and stays a sitting.
+3. **Pick a version.** It is at 0.1.0 in `manifest.json`, `Merki.csproj` and `PluginVersion`. The
+   house rule is 1.0.0 and the repo public at the same moment. That is the rule, not a decision -
+   say if you want it lower, and it stays private and out of the pack until it is not.
+4. **No `thunderstore.toml`.** Generated - add `'merki'` to `own-profile\write-tomls.ps1` and run
+   it. Never hand-written; the file says so at the top.
+5. **No git remote.** `manifest.json` already points `website_url` at
+   `github.com/Ezomic/valheim-merki` and nothing is there.
+6. Add `@{ Name = 'Merki'; Path = 'merki'; Assembly = 'Merki'; Standalone = $true }` to `$repos`
+   in `own-profile\package.ps1`. Late for the same reason as the other two: a bare `package.ps1`
+   builds that whole list, so an entry added before the toml exists fails the run for every other
+   mod.
+7. `package.ps1 -Mod Merki`, then publish **Merki**.
+8. Add `'merki'` to `$members` in `longhouse\tools\build-manifest.ps1`. Late for the usual
+   reason - the generator reads each member's own `manifest.json`, so a `merki` line added now
+   pulls an unpublished 0.1.0 into whichever pack version regenerates next, which is the failure
+   the top of this document is about.
+9. `.\tools\build-manifest.ps1 -PackVersion 2.4.0`. Check it comes out at **seventeen mods plus
+   BepInEx - eighteen dependency lines**, and that Merki is one of them.
+10. **Write the `## [2.4.0]` entry in CHANGELOG.md**, then date it. Unlike 2.2.0 and 2.3.0 this
+    one is not written, deliberately: release notes for a mod nobody has watched run would be a
+    description of the source rather than of the thing, and the two are only the same until they
+    are not.
+11. `package.ps1 -Mod Longhouse`, then publish.
+
+Tracked as **LHM-22**, which carries the same sequence from Merki's side. **LHM-7 is the test**,
+and it is the only step here that cannot be done at a keyboard in ten minutes.
+
 ## Versions still to be confirmed
 
 **Core 1.4.0** and **Vaettir 1.6.2** are proposals rather than decisions - a new public API is a
@@ -147,6 +215,11 @@ rather than the diff: every mod in the suite has gone up at 1.0.0 and gone publi
 moment, so a first release at 0.x would be a new precedent rather than a smaller promise. Say
 if you want either to ship at something lower and stay private, and its pack entry comes out
 with it - a pack cannot pin a version that is not on Thunderstore.
+
+**Merki has no number proposed at all**, and that is the one difference between it and those
+two. Both of them are finished and tested and waiting on an upload, so a version is the only
+thing left to decide about them. Merki has not been run, and a version is a claim about a mod
+somebody has watched work. Run LHM-7 and the number follows in a sentence.
 
 **The order of 2.2.0 and 2.3.0 is a proposal as well.** Kvedja first is not a technical
 constraint; they are independent and either could go first, or both could ride one version. It
@@ -161,8 +234,9 @@ A repin is a **patch** and a member joining or leaving is a **minor**. That is t
 and every repin since 2.0.15 has followed it; 2.1.0 is the one minor so far, which earned it by
 **adding** Jafna.
 
-**2.2.0 and 2.3.0 are the second and third minors**, and both earn it the same way 2.1.0 did:
-Kvedja is a sixteenth member and Stund a seventeenth, not new versions of existing ones.
+**2.2.0, 2.3.0 and 2.4.0 are the second, third and fourth minors**, and all three earn it the
+same way 2.1.0 did: Kvedja is a fifteenth mod, Stund a sixteenth and Merki a seventeenth, not new
+versions of existing ones. 2.1.3 ships fourteen.
 
 **A minor absorbs repins for free**, which is what folding the two patches in on 2026-09-22
 rests on. The rule says what the *smallest* correct bump is, so a version that has to move the
@@ -172,7 +246,9 @@ true: a patch can never carry a member.
 
 ## Before each publish
 
-Run the Devkit scenario suite for every mod whose version moves. **Rist has two now**, written
+Run the Devkit scenario suite for every mod whose version moves. **Merki has no scenarios**,
+which is step 2 of 2.4.0 above and is why that release is behind the other two rather than beside
+them. **Rist has two now**, written
 the same day for this release and not yet run: `rist-armour-scales` and
 `rist-steady-footing-capstone`. Both need **singleplayer**, because ranks live on the server and
 the `rist rank` command they drive refuses on a client. They read the armour ratio the game
