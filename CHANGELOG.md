@@ -12,71 +12,61 @@ changelog.
 
 Adds **Stund**, the seventeenth member, and repins **Skaft 1.3.0**.
 
-Separate release from 2.2.0. Two new members at once would be the biggest change to the set
-since 2.0.0, and Kvedja and Stund have nothing to do with each other, so apart you can say
-which one you object to. It also keeps one Skaft version per pack release, so the bench repair
-and the crosshair count arrive separately.
+Kept apart from 2.2.0. Two new members in one release would be the biggest change to the set
+since 2.0.0, and Kvedja and Stund have nothing to do with each other. It also puts one Skaft
+version in each release.
 
 ### Stund 1.0.0
 
 `Day 43   17:45` on screen, in the game's own typeface. Top centre by default, any corner you
 like.
 
-The sun already tells you the time and does it well, since sunrise and sunset land on the same
-fractions of the day every time. It is no use in a crypt, a mine, a fog bank or below deck,
-which is where you want to know whether there is light left to sail home, whether one more
+The sun already tells you the time, and it is no use in a crypt, a mine, a fog bank or below
+deck. That is where you want to know whether there is light left to sail home, whether one more
 corridor is worth starting, or how much of the night is left.
 
 Midnight is 00:00 and midday is 12:00, so sunrise falls near 06:15 and sunset near 17:45. That
-is Valheim's day mapped onto twenty-four hours.
-
-The day number comes from the same place the game reads it for the dawn message. The time is
-taken off the world clock rather than the smoothed value the sun and fog are drawn with, which
-lags a couple of seconds of real time. On a twenty minute day that is minutes of game time.
+is Valheim's day mapped onto twenty-four hours. The day number comes from the same place the
+game reads it for the dawn message. The time is taken off the world clock rather than the
+smoothed value the sun and fog are drawn with, which lags a couple of seconds of real time, or
+minutes of game time on a twenty minute day.
 
 Hides with the rest of the HUD, so cutscenes and the death screen stay clean.
 
-Nobody else needs it. `Requirement.HostOnly`, and every setting is marked as yours rather than
-the host's, so a server cannot decide where on your screen the clock sits. It reads a clock
-your client already has and draws a label. The server has no idea it is there.
+Nobody else needs it. `Requirement.HostOnly`, every setting marked as yours, so a server cannot
+decide where on your screen the clock sits or know that it is there.
 
 ### Skaft 1.3.0
 
-Hammer out, Repair selected, point at a piece and you get `Damaged in reach: 13`. Point at an
-undamaged one and it says `aim at a damaged piece` instead. The sweep only follows a repair the
-game itself just made, so a swing at an intact wall does nothing however much is broken beside
-it.
+Hammer out, Repair selected, point at a piece: `Damaged in reach: 13`. Point at an undamaged
+one and it says `aim at a damaged piece`, since the sweep only follows a repair the game itself
+just made. A swing at an intact wall does nothing however much is broken beside it.
 
-Damage is hard to see in Valheim. The worn model appears below three quarters health, the
-broken one below a quarter, and nothing shows above that, so a wall at 90% looks new.
+The worn model appears below three quarters health and the broken one below a quarter, with
+nothing shown above that, so a wall at 90% looks new.
 
 The count is damage and distance only. Stamina, hammer durability, wards and a missing station
 can still cut the swing short.
 
-At Crafting 0 there is no line at all. Skaft's troubleshooting section names that first, since
-it is the thing most likely to get reported as a fault.
+No line at all at Crafting 0. Skaft's troubleshooting section names that first.
 
 ## [2.2.0] - pending Kvedja 1.0.0, Skaft 1.2.0, Core 1.4.0 and Vaettir 1.6.2
 
 Adds **Kvedja**, the sixteenth member, and repins **Skaft 1.2.0**, **Core 1.4.0** and
 **Vaettir 1.6.2**.
 
-A minor rather than a patch because the set grew, same as 2.1.0 when it added Jafna. The three
-repins ride along instead of going out as a patch first, since a minor covers everything a
-patch would and three of the four were waiting on the same afternoon's publishing anyway.
+A minor because the set grew, same as 2.1.0 when it added Jafna. The three repins ride along
+rather than going out as a patch of their own.
 
 ### Kvedja 1.0.0
 
-A line in the chat window when you log in, read from the Longhouse site.
+A line in the chat window when you log in, read from the Longhouse site. One sentence or three,
+under a name in orange, once per login. It does not repeat and it does not follow you around,
+and if the site has nothing to say it says nothing. By default it stays quiet when you respawn
+after dying, since being greeted right after losing everything reads as mockery.
 
-One sentence or three, under a name in orange, once per login. It does not repeat and it does
-not follow you around, and if the site has nothing to say it says nothing. By default it stays
-quiet when you respawn after dying, since being greeted right after losing everything reads as
-mockery.
-
-The point is the boards. There is one for voting on what a mod should do next and one for bugs,
-and almost nobody knows either exists. A README link gets read once, while installing, months
-before you have an opinion worth casting.
+It is there to point at the boards, one for voting on what a mod should do next and one for
+bugs, because almost nobody knows either exists. A README link gets read once, while installing.
 
 **The text is not in the mod.** It lives on the site and is edited there, so it changes without
 an update to install or a server restart. One small web request per login, to that one address,
@@ -84,9 +74,8 @@ carrying nothing about you. Point `Url` somewhere else and it is a message of th
 server that wants one, as long as the far end answers plain text. Set `Enabled` to false and it
 never asks.
 
-`Requirement.HostOnly`, no prefab, no ZDO key, so deleting the DLL costs you a greeting and
-nothing else. Every setting is marked as yours rather than the host's, so a server cannot
-decide what your client reads or where from.
+`Requirement.HostOnly`, no prefab, no ZDO key. Delete the DLL and you lose a greeting. Every
+setting is marked as yours, so a server cannot decide what your client reads or where from.
 
 ### Skaft 1.2.0
 
@@ -99,32 +88,30 @@ Repairs are free in vanilla, no materials, no durability, no stamina, so the ski
 how many items go in one press. Which items can be repaired is still the game's call, from the
 recipe, the station and its level. A bench too low for your armour still refuses it.
 
-Skill is vanilla's and granted per item, so ten items in one press raise Crafting by exactly
-what ten presses would.
+Skill is granted per item, so ten items in one press raise Crafting by what ten presses would.
 
 ### Core 1.4.0
 
-A mod can declare the prefabs it puts into the world, and anything can read them back. The game
-cannot answer that on its own: ZNetScene holds a name and a GameObject, ObjectDB the same for
-items, ZoneSystem the same for locations, and none of them records who added what. A mod that
-failed to register looks the same as a mod whose piece you have not found yet.
+A mod can declare the prefabs it puts into the world, and anything can read them back.
+ZNetScene holds a name and a GameObject, ObjectDB the same for items, ZoneSystem the same for
+locations, and none of them records who added what, so a failed registration is
+indistinguishable from a prefab you have not found yet.
 
-Nothing in the pack behaves differently. The first thing using it is the development menu,
-which can now list what each mod put in the world and whether it is there. Mods on the shared
+Nothing in the pack behaves differently. The development menu is the first thing using it and
+can now list what each mod put in the world and whether it is there. Mods on the shared
 registrar declare their names for free, so no member mod changed.
 
 ### Vaettir 1.6.2
 
 Eleven warnings on a healthy launch, gone. The rail, the perch, the jib and the post each
 warned per ingredient that an item "nothing can find" was named in their cost: Fine wood, Iron
-nails, Leather scraps. They fired while the mod was still checking the price, and every one of
-them resolved a pass later.
+nails, Leather scraps. They fired while the mod was still checking the price and all resolved a
+pass later.
 
-`ObjectDB.GetItemPrefab` goes through a table that is built once, and the table is not ready
-the instant the item list has something in it, so an early pass misses Fine wood and finds it
-on the next. Prices are unchanged. The warning that matters, a real misspelling in a config
-line, still fires once after five tries against a loaded database, and it now names the item
-that was wrong.
+`ObjectDB.GetItemPrefab` goes through a table that is built once and is not ready the instant
+the item list has something in it, so an early pass misses Fine wood and finds it on the next.
+Prices are unchanged. A real misspelling in a config line still warns, once, after five tries
+against a loaded database, and now names the item that was wrong.
 
 ## [2.1.3] - 2026-09-21
 
