@@ -8,6 +8,37 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.2.0] - pending Kvedja 1.0.0
+
+Adds **Kvedja**, the sixteenth member. A minor rather than a patch, because the set grew - the
+same thing 2.1.0 did when it added Jafna.
+
+### Kvedja 1.0.0
+
+A line in the chat window when you log in, read from the Longhouse site.
+
+It is one sentence or three, under a name in orange, once per login - and then it stops. It does
+not repeat, it does not follow you around, and if there is nothing to say it says nothing at all.
+By default it stays quiet when you respawn after dying, because being greeted at the moment you
+have just lost everything reads as mockery.
+
+What it is for is not the greeting. There is a board where you vote on what a mod should do next,
+and a board for bugs, and almost nobody knows either exists. A link in a README is read once, by
+the person installing, months before they have an opinion worth casting. The moment that actually
+matters is when you are in the game having just been annoyed by something, and that is the moment
+the address is worth having in front of you.
+
+**The text is not in the mod.** It lives on the site and is edited there, so what it says can
+change without an update to install and without a server restart. It also means one small web
+request per login, to that one address, carrying nothing about you. Point `Url` somewhere else in
+the config and it is a message of the day for any server that wants one; the only requirement at
+the far end is that the answer is plain text. Set `Enabled` to false and it never asks.
+
+Nobody has to have it. It is `Requirement.HostOnly`, registers no prefab and invents no ZDO key,
+so deleting the DLL costs a greeting and nothing else, and every one of its settings is marked as
+yours rather than the host's - a server does not get to decide what your client reads, or where
+from.
+
 ## [2.1.5] - pending Skaft 1.3.0
 
 Repins **Skaft 1.3.0**: the crosshair says how much is broken within reach.
