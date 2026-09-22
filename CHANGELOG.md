@@ -84,12 +84,12 @@ can still cut the swing short.
 
 No line at all at Crafting 0. Skaft's troubleshooting section names that first.
 
-## [2.2.0] - pending Kvedja 1.0.0, Skaft 1.2.0, Core 1.4.0 and Vaettir 1.6.2
+## [2.2.0] - pending Kvedja 1.0.0, Skaft 1.2.0, Core 1.4.0, Vaettir 1.6.2 and Rist 1.6.0
 
-Adds **Kvedja**, the fifteenth member, and repins **Skaft 1.2.0**, **Core 1.4.0** and
-**Vaettir 1.6.2**.
+Adds **Kvedja**, the fifteenth member, and repins **Skaft 1.2.0**, **Core 1.4.0**,
+**Vaettir 1.6.2** and **Rist 1.6.0**.
 
-A minor because the set grew, same as 2.1.0 when it added Jafna. The three repins ride along
+A minor because the set grew, same as 2.1.0 when it added Jafna. The four repins ride along
 rather than going out as a patch of their own.
 
 ### Kvedja 1.0.0
@@ -135,6 +135,30 @@ pass later.
 the item list has something in it, so an early pass misses Fine wood and finds it on the next.
 Prices are unchanged. A real misspelling in a config line still warns, once, after five tries
 against a loaded database, and now names the item that was wrong.
+
+### Rist 1.6.0
+
+Armour from a runestone is a percentage now. **Thick-hided** gives +3% armour a rank instead of
+a flat +2, and its rank 5 carving is another 5% rather than the stagger it used to grant, so a
+fully carved stone is +20%. **Steady footing**'s carving is +5% armour for the same reason: it
+has always granted a dose of whatever Thick-hided gives, and no stone hands out flat armour any
+more.
+
+The flat number was worth less the further you got, which is not what a stone you carve five
+times should do. Once your armour is at least half the hit, the game works out what you take as
+`damage x damage / (4 x armour)`, so what reaches you is inversely proportional to your armour
+rather than reduced by a fixed amount: the old +10 took about a third off a hit at 20 armour and
+under a tenth off the same hit at 100. It stopped being felt around the Plains, which is where
+somebody raised it on the ideas board.
+
+Ranks already carved are kept and buy the percentage instead. The flat value was better in
+exactly one place - a hit more than twice your armour, where the game subtracts rather than
+divides - and there +2 saves 2 damage against +5% of your armour, so it only won below 40.
+
+There is also a `rist` console command for singleplayer and whoever is hosting, behind
+`devcommands`. It prints a character's level, ranks and the armour the game is really using, and
+can force a stone to a rank. The game's own cheat gate is "am I the server", so a client cannot
+point it at Longhouse's records.
 
 ## [2.1.3] - 2026-09-21
 
