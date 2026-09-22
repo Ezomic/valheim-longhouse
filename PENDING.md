@@ -77,6 +77,31 @@ Then, with the three repins in the same sitting:
    appearing. 2.1.3 is fourteen mods and fifteen lines, so the number to beat is exactly one.
 9. Date the `## [2.2.0]` heading in CHANGELOG.md - the entry is already written.
 10. `package.ps1 -Mod Longhouse`, then publish.
+11. **Put Crier 0.8.0 on live in the same sitting.** Robbin asked for it to ride this update
+    rather than go on its own, on 2026-09-22.
+
+### Crier 0.8.0 rides this one, and it is not a pack member
+
+Worth saying plainly, because everything else in this file is a Thunderstore publish and this
+is not one. **Crier is server-only, is in no pack manifest and has never been on Thunderstore** -
+it is built straight onto the live box by hand, which is how 0.7.1 got there earlier on
+2026-09-22. So it does not repin anything, it does not move the pack's version, and nothing in
+the manifest mentions it. It is here only because it needs the live server stopped, and the
+pack update stops it anyway.
+
+What it adds: a death is announced to everybody in the world, top-left, the way joins and
+leaves already were. `TellPlayersDeaths` and `DeathNotice`, both new, both defaulting on - so
+**the cfg on live has to gain the two lines**, which happens by itself on the first boot with
+the new DLL, since BepInEx writes every bound entry on first run.
+
+It needs nothing on any client. The line is MessageHud's own `ShowMessage`, which every stock
+client registers for itself, so this reaches vanilla players and needs no pack membership to
+work. That is the whole reason it can ride a pack update without being in the pack.
+
+The deploy is the same shape as 0.7.1's: build it, copy the DLL to
+`/home/valheim/server/BepInEx/plugins/Crier/Crier.dll` as `valheim:valheim` mode 755, keep the
+previous one beside it as a backup, restart, and check the boot line says 0.8.0. The version
+is a proposal - a feature rather than a fix - and it is Robbin's to change.
 
 **Core before the pack, and ideally before the rest.** Every client and server on the pack has
 to be on the same Core build for the version gate to let anyone in, and Core is the one member
