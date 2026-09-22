@@ -10,11 +10,16 @@ not already waiting on, and a minor carries everything a patch would, so publish
 would have been two extra releases for no extra information. 2.1.4 and 2.1.5 no longer exist
 and never will.
 
-## 2.2.0 - adds Kvedja and repins three, waits on Kvedja 1.0.0, Skaft 1.2.0, Core 1.4.0 and Vaettir 1.6.2
+## 2.2.0 - adds Kvedja and repins four, waits on Kvedja 1.0.0, Skaft 1.2.0, Core 1.4.0, Vaettir 1.6.2 and Rist 1.6.0
 
-**A minor, not a patch**: the set grows from fifteen members to sixteen. The three repins
+**A minor, not a patch**: the set grows from fifteen members to sixteen. The four repins
 ride along and do not change that - a minor already carries everything a patch would. See
 "Which digit moves" below.
+
+**Rist 1.6.0** joined the list on 2026-09-22 and is the fourth repin. Thick-hided became a
+percentage, +3% armour a rank and another 5% at rank 5, because the flat +2 a rank stopped
+being felt by the Plains. It is prepared: 1.6.0 in all four files and a dated changelog
+heading. The version is Robbin's, not a proposal.
 
 Kvedja is the chat message of the day. When you appear in the world it reads
 `longhouse.thijssensoftware.nl/api/motd` and prints it into the chat window, under a name in
@@ -50,17 +55,18 @@ Then, with the three repins in the same sitting:
    with no `-Mod` builds everything on that list, and until the three above are done a Kvedja
    entry would only ever fail the run for the other mods.
 5. `package.ps1 -Mod Kvedja`, then publish **Kvedja 1.0.0**.
-6. Publish **Core 1.4.0**, **Vaettir 1.6.2** and **Skaft 1.2.0**. All three are prepared -
-   versions bumped in every file that carries one, changelog headings written and marked
-   pending - so each is a dated heading and an upload. Skaft's zip is already built and
-   validated (`dist\Ezomic-Skaft-1.2.0.zip`, 6 entries, 0 blocking).
+6. Publish **Core 1.4.0**, **Vaettir 1.6.2**, **Skaft 1.2.0** and **Rist 1.6.0**. All four are
+   prepared - versions bumped in every file that carries one, changelog headings written and
+   marked pending - so each is a dated heading and an upload. Skaft's zip is already built and
+   validated (`dist\Ezomic-Skaft-1.2.0.zip`, 6 entries, 0 blocking). Rist's heading is dated
+   already, since its version was settled rather than proposed.
 7. Add `'kvedja'` to `$members` in `longhouse\tools\build-manifest.ps1`. This is also
    deliberately late: the generator reads each member's own `manifest.json`, so a `kvedja` line
    added early would pull an unpublished 1.0.0 into whichever pack version regenerates next -
    which is exactly the failure the top of this document is about.
 8. `.\tools\build-manifest.ps1 -PackVersion 2.2.0`, which rewrites every pin from the members'
    own manifests. Check the dependency count comes out at **sixteen plus BepInEx**, and that
-   Skaft, Core and Vaettir moved to 1.2.0, 1.4.0 and 1.6.2 beside Kvedja appearing.
+   Skaft, Core, Vaettir and Rist moved to 1.2.0, 1.4.0, 1.6.2 and 1.6.0 beside Kvedja appearing.
 9. Date the `## [2.2.0]` heading in CHANGELOG.md - the entry is already written.
 10. `package.ps1 -Mod Longhouse`, then publish.
 
@@ -164,7 +170,11 @@ true: a patch can never carry a member.
 
 ## Before each publish
 
-Run the Devkit scenario suite for every mod whose version moves. Skaft's two both pass as of
+Run the Devkit scenario suite for every mod whose version moves. **Rist has no scenarios at
+all** - no `scenarios\` folder - so its change is checked by hand: carve Thick-hided and read
+the tile, which should say +15% armour at rank 5 with +5% armour on the capstone line, and
+watch a hit land. Writing one is worth doing before the next Rist release rather than this one.
+Skaft's two both pass as of
 22 September 2026 - `skaft-bench-repair` and `skaft-sweep-and-crosshair`. Kvedja's one passes
 as of the same day - `kvedja-greets-you-in-chat` - with the caveat written into 2.2.0 above:
 it needs the site reachable and `/admin/motd` non-empty, so a failure there is as likely to be
