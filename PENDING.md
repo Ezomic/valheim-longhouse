@@ -172,11 +172,12 @@ true: a patch can never carry a member.
 
 ## Before each publish
 
-Run the Devkit scenario suite for every mod whose version moves. **Rist has no scenarios at
-all** - no `scenarios\` folder - so its change is checked by hand: carve Thick-hided and read
-the tile, which should say +15% armour at rank 5 with +5% armour on the capstone line, and
-watch a hit land. Writing one is worth doing before the next Rist release rather than this one.
-Skaft's two both pass as of
+Run the Devkit scenario suite for every mod whose version moves. **Rist has two now**, written
+the same day for this release and not yet run: `rist-armour-scales` and
+`rist-steady-footing-capstone`. Both need **singleplayer**, because ranks live on the server and
+the `rist rank` command they drive refuses on a client. They read the armour ratio the game
+itself is using rather than Rist's own total, which is why `rist show` prints those two numbers
+apart. Skaft's two both pass as of
 22 September 2026 - `skaft-bench-repair` and `skaft-sweep-and-crosshair`. Kvedja's one passes
 as of the same day - `kvedja-greets-you-in-chat` - with the caveat written into 2.2.0 above:
 it needs the site reachable and `/admin/motd` non-empty, so a failure there is as likely to be
