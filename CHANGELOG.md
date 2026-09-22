@@ -149,7 +149,7 @@ times should do. Once your armour is at least half the hit, the game works out w
 `damage x damage / (4 x armour)`, so what reaches you is inversely proportional to your armour
 rather than reduced by a fixed amount: the old +10 took about a third off a hit at 20 armour and
 under a tenth off the same hit at 100. It stopped being felt around the Plains, which is where
-somebody raised it on the ideas board.
+Rattennest raised it on the ideas board.
 
 Ranks already carved are kept and buy the percentage instead. The flat value was better in
 exactly one place - a hit more than twice your armour, where the game subtracts rather than
