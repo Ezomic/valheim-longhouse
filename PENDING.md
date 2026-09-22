@@ -112,10 +112,19 @@ What is left is the same paperwork Kvedja has, in the same order and for the sam
 5. Add `'merki'` to `$members` in `longhouse\tools\build-manifest.ps1` - at step 7 of the list
    above, beside `'kvedja'`, and just as late and for the same reason.
 
-**What is still untested, and it is not nothing.** The listen host path (a host who is also
-playing is decided from the plugin's Update rather than from a position report), the
-new-character intro flag, and SameBiome. Those are plan steps 23 to 30 in `merki\TESTPLAN.md`
-and no scenario can reach them. LHM-7 stays open until they are done.
+**One thing is untested and it is named rather than counted.** A **listen host with a guest** -
+somebody hosting a world from their own game rather than running a dedicated server. A host who
+is also playing is decided from the plugin's Update instead of from a position report, which is
+its own code path, and the comments in `Visibility.ForceHostEntry` record two earlier versions
+of it that were wrong in different ways. Singleplayer covers the host half of it already, since
+that is also `IsServer()`; what nobody has run is a host with somebody else connected. It does
+not affect Longhouse, which is dedicated.
+
+**Two other plan steps were dropped rather than done, and the reason is in the code.** The
+new-character intro flag (step 23) and SameBiome (step 24) both sit behind `Visibility.Scoping`,
+which is `Range > 0 || SameBiome` - and both are off by default. They are not untested live
+paths; they do not execute at all unless a server turns a scope on. Longhouse will not. Testing
+them would have proved nothing about what ships, which Robbin said before I did.
 
 Tracked as **LHM-22**.
 
