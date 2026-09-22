@@ -32,9 +32,10 @@ wards and a missing station can still cut the swing short.
 At Crafting 0 there is no line at all, which is deliberate and is the thing most likely to be
 reported as a fault. Skaft's own troubleshooting section names it first.
 
-## [2.1.4] - pending Skaft 1.2.0
+## [2.1.4] - pending Skaft 1.2.0, Core 1.4.0 and Vaettir 1.6.2
 
-Repins **Skaft 1.2.0**: one press of the Repair button at a bench fixes a kit, not an item.
+Repins **Skaft 1.2.0**, **Core 1.4.0** and **Vaettir 1.6.2**. Still a patch: three repins, and
+the set is the same mods it was.
 
 ### Skaft 1.2.0
 
@@ -51,6 +52,32 @@ refuses it.
 
 The skill it pays out is vanilla's, granted per item, so ten items in one press raise Crafting by
 exactly what ten presses raised it by. The mod never pays you for pressing less.
+
+### Core 1.4.0
+
+A mod can declare the prefabs it puts into the world, and anything can read them back. Nothing
+in the game can answer that question: ZNetScene holds a name and a GameObject, ObjectDB the same
+for items and ZoneSystem the same for locations, and none of them has ever recorded who added
+it. The consequence is worse than it sounds, because a mod that failed to register looks exactly
+like a mod whose piece you have not found yet.
+
+Nothing in the pack behaves differently for this. It is plumbing, and the first thing using it
+is the development menu, which can now say what each mod put in the world and whether it is
+actually there. The mods on the shared registrar declare their names without a line of their
+own, so no member mod changed to get it.
+
+### Vaettir 1.6.2
+
+Eleven warnings on a healthy launch, gone. The rail, the perch, the jib and the post each warned
+per ingredient that an item "nothing can find" was named in their cost - Fine wood, Iron nails,
+Leather scraps - while the mod was in the middle of making sure the price was right. Every one of
+them resolved a pass later.
+
+Nothing about the prices changed and nothing needed to. `ObjectDB.GetItemPrefab` answers through
+a table built once, which is not ready the instant the item list has something in it, so an early
+pass fails to find Fine wood, of all things, and finds it on the next. The warning that matters -
+a genuine misspelling in a config line - still fires, once, after five tries against a loaded
+database, and now names the item that was wrong.
 
 ## [2.1.3] - 2026-09-21
 
