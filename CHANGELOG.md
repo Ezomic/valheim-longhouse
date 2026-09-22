@@ -12,132 +12,126 @@ changelog.
 
 Adds **Stund**, the seventeenth member, and repins **Skaft 1.3.0**.
 
-Separate from 2.2.0 on purpose, and for two reasons that happen to agree. Two new members in
-one release would be the biggest change to the set since 2.0.0, and Kvedja and Stund have
-nothing to do with each other - one draws on your HUD, the other reads a web page - so
-shipping them apart means a player who dislikes one of them can say which. And each pack
-version repins one Skaft version, so somebody sitting on 2.2.0 gets the bench half and the
-crosshair count as two separate things they can tell apart.
+Kept separate from 2.2.0. Two new members in one release would be the biggest change to the set
+since 2.0.0, and Kvedja and Stund have nothing to do with each other, one draws on your HUD and
+the other reads a web page. Apart, a player who dislikes one of them can say which. It also
+keeps one Skaft version per pack release, so somebody on 2.2.0 gets the bench half and the
+crosshair count as two separate things.
 
 ### Stund 1.0.0
 
-`Day 43   17:45` on the screen, in the game's own typeface, top centre by default and in any
-corner you like.
+`Day 43   17:45` on screen, in the game's own typeface. Top centre by default, any corner you
+like.
 
-Valheim already has a clock and it is a good one. The sun rises and sets at the same fractions
-of the day every day, and after a few hours nobody has to be told how to read it. Then you go
-into a crypt, or a mine, or a fog bank, or below deck. There is no sun down there and no
-horizon, and the questions that actually turn on the time are the ones you ask in exactly
-those places: whether there is light left to sail home, whether one more corridor is worth
-starting, whether night is nearly over or has just begun.
+The sun is already a clock and a good one, since sunrise and sunset land on the same fractions
+of the day every time. It stops being useful the moment you are in a crypt, a mine, a fog bank
+or below deck, which is where you want to know whether there is light left to sail home,
+whether one more corridor is worth starting, or whether night is nearly over or has just begun.
 
 Midnight is 00:00 and midday is 12:00, which puts sunrise near 06:15 and sunset near 17:45.
-Those are not chosen numbers. They fall out of mapping Valheim's day straight onto twenty-four
-hours, which is what makes the clock agree with the sky rather than argue with it. The day
-number is the game's own, read from the same place it announces at dawn, and the time comes
-off the world clock rather than the smoothed value the sun and the fog are drawn with - that
-one lags a couple of seconds of real time, which on a twenty minute day is minutes of game
-time, and a clock that is minutes out at dawn is a clock people stop trusting.
+That falls out of mapping Valheim's day onto twenty-four hours, so the clock agrees with the
+sky rather than arguing with it.
 
-It hides when the rest of the HUD hides, so cutscenes and the death screen stay clean.
+The day number is the game's own, read from the same place it announces at dawn. The time comes
+off the world clock, not the smoothed value the sun and fog are drawn with. That one lags a
+couple of seconds of real time, which is minutes of game time on a twenty minute day, and a
+clock that is minutes out at dawn is a clock people stop trusting.
 
-Nobody else needs it. It is `Requirement.HostOnly` and every setting is marked as yours: it
-reads a clock your client is already given and draws a label, and a server does not know it is
-there or get to decide where on your screen it sits.
+Hides when the rest of the HUD hides, so cutscenes and the death screen stay clean.
+
+Nobody else needs it. `Requirement.HostOnly`, every setting marked as yours. It reads a clock
+your client already has and draws a label, and the server never knows it is there or gets to
+decide where on your screen it sits.
 
 ### Skaft 1.3.0
 
-With the hammer out and Repair selected, pointing at a piece now says how many damaged pieces
-are within your current reach of it: `Damaged in reach: 13`. Point at a whole one and it says
-`aim at a damaged piece` instead, which is the mod's oldest piece of small print made visible -
-a swing at an intact wall does nothing however much is broken beside it, because the sweep only
-follows a repair the game itself just made.
+With the hammer out and Repair selected, pointing at a piece now tells you how many damaged
+pieces are within your current reach of it: `Damaged in reach: 13`. Point at an undamaged one
+and you get `aim at a damaged piece` instead. That is the mod's oldest bit of small print made
+visible, since a swing at an intact wall does nothing no matter how much is broken next to it.
+The sweep only follows a repair the game itself just made.
 
-It earns its place because damage is mostly invisible. Valheim swaps in the worn model below
-three quarters health and the broken one below a quarter, and shows nothing at all above that,
-so a wall at 90% looks new. The count is damage and distance only - stamina, hammer durability,
-wards and a missing station can still cut the swing short.
+Damage is mostly invisible in Valheim. The worn model appears below three quarters health and
+the broken one below a quarter, with nothing shown above that, so a wall at 90% looks new.
 
-At Crafting 0 there is no line at all, which is deliberate and is the thing most likely to be
-reported as a fault. Skaft's own troubleshooting section names it first.
+The count is damage and distance only. Stamina, hammer durability, wards and a missing station
+can all still cut the swing short.
+
+At Crafting 0 there is no line at all. That is intended, and it is the thing most likely to get
+reported as a fault, so Skaft's troubleshooting section names it first.
 
 ## [2.2.0] - pending Kvedja 1.0.0, Skaft 1.2.0, Core 1.4.0 and Vaettir 1.6.2
 
 Adds **Kvedja**, the sixteenth member, and repins **Skaft 1.2.0**, **Core 1.4.0** and
 **Vaettir 1.6.2**.
 
-A minor rather than a patch, because the set grew - the same thing 2.1.0 did when it added
-Jafna. The three repins ride along rather than going up first as a patch of their own: a
-minor already carries everything a patch would, and three of the four were waiting on the
-same afternoon's publishing anyway.
+A minor rather than a patch, because the set grew, same as 2.1.0 did when it added Jafna. The
+three repins ride along instead of going out first as their own patch. A minor already covers
+everything a patch would, and three of the four were waiting on the same afternoon's publishing
+anyway.
 
 ### Kvedja 1.0.0
 
 A line in the chat window when you log in, read from the Longhouse site.
 
-It is one sentence or three, under a name in orange, once per login - and then it stops. It does
-not repeat, it does not follow you around, and if there is nothing to say it says nothing at all.
-By default it stays quiet when you respawn after dying, because being greeted at the moment you
-have just lost everything reads as mockery.
+One sentence or three, under a name in orange, once per login. It does not repeat and it does
+not follow you around, and if there is nothing to say it says nothing at all. By default it
+stays quiet when you respawn after dying, since being greeted right after losing everything
+reads as mockery.
 
-What it is for is not the greeting. There is a board where you vote on what a mod should do next,
-and a board for bugs, and almost nobody knows either exists. A link in a README is read once, by
-the person installing, months before they have an opinion worth casting. The moment that actually
-matters is when you are in the game having just been annoyed by something, and that is the moment
-the address is worth having in front of you.
+The point is the boards. There is one for voting on what a mod should do next and one for bugs,
+and almost nobody knows either exists. A link in a README gets read once, by the person
+installing, months before they have an opinion worth casting.
 
-**The text is not in the mod.** It lives on the site and is edited there, so what it says can
-change without an update to install and without a server restart. It also means one small web
-request per login, to that one address, carrying nothing about you. Point `Url` somewhere else in
-the config and it is a message of the day for any server that wants one; the only requirement at
-the far end is that the answer is plain text. Set `Enabled` to false and it never asks.
+**The text is not in the mod.** It lives on the site and is edited there, so it can change
+without an update to install or a server restart. That means one small web request per login,
+to that one address, carrying nothing about you. Point `Url` somewhere else in the config and
+you have a message of the day for any server that wants one, as long as the far end answers
+plain text. Set `Enabled` to false and it never asks.
 
-Nobody has to have it. It is `Requirement.HostOnly`, registers no prefab and invents no ZDO key,
-so deleting the DLL costs a greeting and nothing else, and every one of its settings is marked as
-yours rather than the host's - a server does not get to decide what your client reads, or where
-from.
+Nobody has to have it. `Requirement.HostOnly`, no prefab, no ZDO key, so deleting the DLL costs
+you a greeting and nothing else. Every setting is marked as yours rather than the host's: a
+server does not get to decide what your client reads, or where from.
 
 ### Skaft 1.2.0
 
-The bench half of the same idea the mod already had at the hammer. One press of Repair at a
-crafting station now repairs as many worn items as your Crafting allows: one at level 0, three
-around 25, seven around 50 and ten from 60, where ten is a full kit - helmet, chest, legs, cape,
-weapon, shield, bow and the three tools.
+The bench half of what the mod already did at the hammer. One press of Repair at a crafting
+station repairs as many worn items as your Crafting allows: one at level 0, three around 25,
+seven around 50 and ten from 60. Ten is a full kit, so helmet, chest, legs, cape, weapon,
+shield, bow and the three tools.
 
-There is no price to cut here and that shapes the whole thing. Vanilla charges no materials, no
-durability and no stamina to repair an item at a bench, so the presses were the entire cost, and
-the count is what the skill buys down. Which items may be repaired is still the game's own
-decision, with the recipe, the station and its level - a bench too low for your armour still
+Repairs are free in vanilla, no materials, no durability, no stamina, so the presses were the
+only cost and the count is what the skill buys down. Which items can be repaired is still the
+game's call, from the recipe, the station and its level. A bench too low for your armour still
 refuses it.
 
-The skill it pays out is vanilla's, granted per item, so ten items in one press raise Crafting by
+The skill payout is vanilla's, granted per item, so ten items in one press raise Crafting by
 exactly what ten presses raised it by. The mod never pays you for pressing less.
 
 ### Core 1.4.0
 
-A mod can declare the prefabs it puts into the world, and anything can read them back. Nothing
-in the game can answer that question: ZNetScene holds a name and a GameObject, ObjectDB the same
-for items and ZoneSystem the same for locations, and none of them has ever recorded who added
-it. The consequence is worse than it sounds, because a mod that failed to register looks exactly
-like a mod whose piece you have not found yet.
+A mod can declare the prefabs it puts into the world, and anything can read them back. The game
+has no way to answer that question: ZNetScene holds a name and a GameObject, ObjectDB does the
+same for items, ZoneSystem the same for locations, and none of them records who added what. So
+a mod that failed to register looks exactly like a mod whose piece you have not found yet.
 
-Nothing in the pack behaves differently for this. It is plumbing, and the first thing using it
-is the development menu, which can now say what each mod put in the world and whether it is
-actually there. The mods on the shared registrar declare their names without a line of their
-own, so no member mod changed to get it.
+Nothing in the pack behaves differently for this. It is plumbing. The first thing using it is
+the development menu, which can now say what each mod put in the world and whether it is there.
+Mods on the shared registrar declare their names without a line of their own, so no member mod
+had to change.
 
 ### Vaettir 1.6.2
 
-Eleven warnings on a healthy launch, gone. The rail, the perch, the jib and the post each warned
-per ingredient that an item "nothing can find" was named in their cost - Fine wood, Iron nails,
-Leather scraps - while the mod was in the middle of making sure the price was right. Every one of
-them resolved a pass later.
+Eleven warnings on a healthy launch, gone. The rail, the perch, the jib and the post each
+warned, per ingredient, that an item "nothing can find" was named in their cost. Fine wood,
+Iron nails, Leather scraps. They were warning while the mod was still working out whether the
+price was right, and every one of them resolved a pass later.
 
-Nothing about the prices changed and nothing needed to. `ObjectDB.GetItemPrefab` answers through
-a table built once, which is not ready the instant the item list has something in it, so an early
-pass fails to find Fine wood, of all things, and finds it on the next. The warning that matters -
-a genuine misspelling in a config line - still fires, once, after five tries against a loaded
-database, and now names the item that was wrong.
+Prices are unchanged and did not need changing. `ObjectDB.GetItemPrefab` goes through a table
+that is built once, and that table is not ready the instant the item list has something in it,
+so an early pass fails to find Fine wood, of all things, and finds it on the next. The warning
+that matters, a real misspelling in a config line, still fires once after five tries against a
+loaded database, and now it names the item that was wrong.
 
 ## [2.1.3] - 2026-09-21
 
