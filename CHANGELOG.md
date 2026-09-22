@@ -8,6 +8,50 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.3.0] - pending Skaft 1.3.0
+
+Repins **Skaft 1.3.0**: the crosshair says how much is broken within reach.
+
+Publish after 2.2.0, not instead of it. Each pack version repins one Skaft version, so
+somebody sitting on 2.2.0 gets the bench half and the count as two separate things they can
+tell apart - which is the whole reason these ship as two releases.
+
+### Skaft 1.3.0
+
+With the hammer out and Repair selected, pointing at a piece now says how many damaged pieces
+are within your current reach of it: `Damaged in reach: 13`. Point at a whole one and it says
+`aim at a damaged piece` instead, which is the mod's oldest piece of small print made visible -
+a swing at an intact wall does nothing however much is broken beside it, because the sweep only
+follows a repair the game itself just made.
+
+It earns its place because damage is mostly invisible. Valheim swaps in the worn model below
+three quarters health and the broken one below a quarter, and shows nothing at all above that,
+so a wall at 90% looks new. The count is damage and distance only - stamina, hammer durability,
+wards and a missing station can still cut the swing short.
+
+At Crafting 0 there is no line at all, which is deliberate and is the thing most likely to be
+reported as a fault. Skaft's own troubleshooting section names it first.
+
+## [2.2.0] - pending Skaft 1.2.0
+
+Repins **Skaft 1.2.0**: one press of the Repair button at a bench fixes a kit, not an item.
+
+### Skaft 1.2.0
+
+The bench half of the same idea the mod already had at the hammer. One press of Repair at a
+crafting station now repairs as many worn items as your Crafting allows: one at level 0, three
+around 25, seven around 50 and ten from 60, where ten is a full kit - helmet, chest, legs, cape,
+weapon, shield, bow and the three tools.
+
+There is no price to cut here and that shapes the whole thing. Vanilla charges no materials, no
+durability and no stamina to repair an item at a bench, so the presses were the entire cost, and
+the count is what the skill buys down. Which items may be repaired is still the game's own
+decision, with the recipe, the station and its level - a bench too low for your armour still
+refuses it.
+
+The skill it pays out is vanilla's, granted per item, so ten items in one press raise Crafting by
+exactly what ten presses raised it by. The mod never pays you for pressing less.
+
 ## [2.1.3] - 2026-09-21
 
 Repins **Core 1.3.0**: a line the server sends can arrive in a voice.
