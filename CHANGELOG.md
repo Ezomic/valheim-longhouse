@@ -8,47 +8,12 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [2.4.0] - pending Merki
-
-Adds **Merki**, the seventeenth member.
-
-Kept apart from 2.3.0 for the same reason 2.3.0 is kept apart from 2.2.0: one new member at a
-time, so a player who dislikes one of them can say which.
-
-### Merki
-
-Everyone is on everyone's map, and the server is the one that decides. The "share position"
-box is ticked and greyed out, and unticking it is not something a client can do - the server
-overwrites the flag on its way in, so the box is no longer where the answer is kept.
-
-Your own answer to it is kept as it was, not written over. A server that turns the rule off,
-or drops the mod, hands everybody back the choice they had made.
-
-When somebody dies, their gravestone appears on the other players' maps at the spot they fell,
-with their name under it, for up to half an hour. Yours is already pinned by the game, so you
-are never sent your own. Only the latest death is shown: dying again moves the gravestone
-rather than adding a second. The server remembers it until it expires, so somebody who logs in
-ten minutes later to help still gets it, with the time that is left rather than a fresh half
-hour.
-
-Two settings are off by default and make the map a local thing instead: a range in metres, and
-same biome only. Both apply to the gravestones as well, so a death out of sight is a death you
-are not told about.
-
-Nothing is saved. A restarted server has forgotten every gravestone, and your own map drops
-them when you log out.
-
-The death half is reported by the client that dies, because a server never runs player death
-code. That is why everybody needs it rather than just the host: somebody playing without it is
-still on the map, and their deaths go unannounced.
-
 ## [2.3.0] - pending Stund 1.0.0 and Skaft 1.3.0
 
-Adds **Stund**, the sixteenth member, and repins **Skaft 1.3.0**.
+Adds **Stund**, the seventeenth member, and repins **Skaft 1.3.0**.
 
-Kept apart from 2.2.0. Two new members in one release would be the biggest change to the set
-since 2.0.0, and Kvedja and Stund have nothing to do with each other. It also puts one Skaft
-version in each release.
+Kept apart from 2.2.0 so that each release carries one Skaft version: 1.2.0 went with 2.2.0 and
+1.3.0 goes here, and 1.3.0 could not have gone first anyway.
 
 ### Stund 1.0.0
 
@@ -84,13 +49,13 @@ can still cut the swing short.
 
 No line at all at Crafting 0. Skaft's troubleshooting section names that first.
 
-## [2.2.0] - pending Kvedja 1.0.0, Skaft 1.2.0, Core 1.4.0, Vaettir 1.6.2 and Rist 1.6.0
+## [2.2.0] - pending Kvedja 1.0.0, Merki 1.0.0, Skaft 1.2.0, Core 1.4.0, Vaettir 1.6.2 and Rist 1.6.0
 
-Adds **Kvedja**, the fifteenth member, and repins **Skaft 1.2.0**, **Core 1.4.0**,
-**Vaettir 1.6.2** and **Rist 1.6.0**.
+Adds **Kvedja** and **Merki**, the fifteenth and sixteenth members, and repins **Skaft 1.2.0**,
+**Core 1.4.0**, **Vaettir 1.6.2** and **Rist 1.6.0**.
 
-A minor because the set grew, same as 2.1.0 when it added Jafna. The four repins ride along
-rather than going out as a patch of their own.
+A minor because the set grew, same as 2.1.0 when it added Jafna. Two members in one release is
+still one minor, and the four repins ride along rather than going out as a patch of their own.
 
 ### Kvedja 1.0.0
 
@@ -99,6 +64,33 @@ boards, one for voting on what a mod should do next and one for bugs.
 
 The text is not in the mod. It lives on the site and is edited there, so it changes without an
 update to install or a server restart. `Enabled` false and it never asks.
+
+### Merki 1.0.0
+
+Everyone is on everyone's map, and the server is the one that decides. The "share position"
+box is ticked and greyed out, and unticking it is not something a client can do - the server
+overwrites the flag on its way in, so the box is no longer where the answer is kept.
+
+Your own answer to it is kept as it was, not written over. A server that turns the rule off,
+or drops the mod, hands everybody back the choice they had made.
+
+When somebody dies, their gravestone appears on the other players' maps at the spot they fell,
+with their name under it, for up to half an hour. Yours is already pinned by the game, so you
+are never sent your own. Only the latest death is shown: dying again moves the gravestone
+rather than adding a second. The server remembers it until it expires, so somebody who logs in
+ten minutes later to help still gets it, with the time that is left rather than a fresh half
+hour.
+
+Two settings are off by default and make the map a local thing instead: a range in metres, and
+same biome only. Both apply to the gravestones as well, so a death out of sight is a death you
+are not told about.
+
+Nothing is saved. A restarted server has forgotten every gravestone, and your own map drops
+them when you log out.
+
+The death half is reported by the client that dies, because a server never runs player death
+code. That is why everybody needs it rather than just the host: somebody playing without it is
+still on the map, and their deaths go unannounced.
 
 ### Skaft 1.2.0
 
