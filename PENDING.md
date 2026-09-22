@@ -1,6 +1,6 @@
 # Pending pack updates
 
-Three, in this order. Each waits on a Thunderstore publish that has not happened yet, which is
+Four, in this order. Each waits on a Thunderstore publish that has not happened yet, which is
 why the manifest is untouched: a pack that pins a version nobody can download is a pack that
 fails to install, and `tcli` will build it happily.
 
@@ -90,6 +90,55 @@ window opening itself is a reflected write to `Chat.m_hideTimer`, and if that bi
 wrong the message is in the buffer, invisible, with every log line reporting success. One login
 answers it.
 
+## 2.3.0 - adds Stund, and waits on Stund 1.0.0
+
+**A minor**, same as 2.2.0 and for the same reason: the set grows again, sixteen members to
+seventeen.
+
+Stund is the clock. `Day 43   17:45` on the HUD, in the game's own typeface, top centre by
+default and in any corner you like. Valheim's own clock is the sun and it is a good one; it
+stops working the moment you are underground, which is where the questions that turn on the
+time actually get asked.
+
+**It goes in a release of its own, one behind Kvedja.** Two new members in one pack version
+would be a bigger change to the set than anything since 2.0.0, and the two have nothing to do
+with each other - one draws on your HUD and the other reads a web page. Separate releases mean
+a player who dislikes one of them can say which.
+
+Prepared as far as a mod with no remote can be: **1.0.0** in `manifest.json`, `Stund.csproj`
+and `PluginVersion`, and a changelog heading written and marked pending.
+
+The same three blockers Kvedja has, for the same reasons, so do them in the same sitting if
+both are going up:
+
+1. **No `icon.png`.** 256x256, or `tcli` refuses.
+2. **No `thunderstore.toml`.** Generated - add `'stund'` to `own-profile\write-tomls.ps1` and
+   run it. Never hand-written.
+3. **No git remote.** `website_url` already points at `github.com/Ezomic/valheim-stund` and
+   nothing is there. Public, because the repo goes public when the mod reaches 1.0.
+
+Then:
+
+4. Add `@{ Name = 'Stund'; Path = 'stund'; Assembly = 'Stund'; Standalone = $true }` to
+   `$repos` in `own-profile\package.ps1`.
+5. `package.ps1 -Mod Stund`, then publish **Stund 1.0.0**.
+6. Add `'stund'` to `$members` in `longhouse\tools\build-manifest.ps1`.
+7. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check the count comes out at **seventeen
+   plus BepInEx**.
+8. Date the `## [2.3.0]` heading in CHANGELOG.md - the entry is already written.
+9. `package.ps1 -Mod Longhouse`, then publish.
+
+Steps 4 and 6 are last here for the same reason they are last in 2.2.0: `build-manifest.ps1`
+reads each member's own `manifest.json`, so an early `stund` line pulls an unpublished 1.0.0
+into whichever pack version regenerates next, and a `package.ps1` entry before the icon exists
+fails a bare run for every other mod.
+
+**Nothing in this one needs eyeballing before it goes.** Unlike Kvedja, the thing that was only
+checkable by eye is now checkable by scenario: `upright` was added to Devkit precisely because
+the clock shipped unreadable while its scenario passed. What remains uncovered is whether the
+label is visible at all, which no scenario can answer for any HUD element - `Hud.SetVisible`
+parks its root off the screen rather than disabling it.
+
 ## Versions still to be confirmed
 
 **Core 1.4.0** and **Vaettir 1.6.2** are proposals rather than decisions - a new public API is a
@@ -97,11 +146,16 @@ minor and a logging fix is a patch, which is where those two numbers come from. 
 is one line in four files plus the changelog heading, so say if you want different ones before
 they go up.
 
-**Kvedja 1.0.0** is a proposal too, and the reasoning is the house rule rather than the diff:
-every mod in the suite has gone up at 1.0.0 and gone public at the same moment, so a first
-release at 0.x would be a new precedent rather than a smaller promise. Say if you want it to
-ship at something lower and stay private, and the pack entry comes out with it - a pack cannot
-pin a version that is not on Thunderstore.
+**Kvedja 1.0.0** and **Stund 1.0.0** are proposals too, and the reasoning is the house rule
+rather than the diff: every mod in the suite has gone up at 1.0.0 and gone public at the same
+moment, so a first release at 0.x would be a new precedent rather than a smaller promise. Say
+if you want either to ship at something lower and stay private, and its pack entry comes out
+with it - a pack cannot pin a version that is not on Thunderstore.
+
+**The order of 2.2.0 and 2.3.0 is a proposal as well.** Kvedja first is not a technical
+constraint; they are independent and either could go first, or both could ride one version. It
+is written this way because two new members in one release would be the biggest change to the
+set since 2.0.0, and splitting them means a player who dislikes one can say which.
 
 ## Which digit moves
 
@@ -110,8 +164,8 @@ A repin is a **patch**. 2.1.4 and 2.1.5 are repins of mods already in the set, s
 and 2.1.0 is the one minor bump, which earned it by **adding** Jafna. A minor bump means the
 set grew or shrank; a patch means the set is the same mods at different versions.
 
-**2.2.0 is the second minor**, and it earns it the same way 2.1.0 did: Kvedja is a sixteenth
-member, not a new version of an existing one.
+**2.2.0 and 2.3.0 are the second and third minors**, and both earn it the same way 2.1.0 did:
+Kvedja is a sixteenth member and Stund a seventeenth, not new versions of existing ones.
 
 ## Before each publish
 
@@ -119,4 +173,7 @@ Run the Devkit scenario suite for every mod whose version moves. Skaft's two bot
 22 September 2026 - `skaft-bench-repair` and `skaft-sweep-and-crosshair`. Kvedja's one passes
 as of the same day - `kvedja-greets-you-in-chat` - with the caveat written into 2.2.0 above:
 it needs the site reachable and `/admin/motd` non-empty, so a failure there is as likely to be
-the network or an emptied message as it is the mod.
+the network or an emptied message as it is the mod. Stund's passes at 8 steps as of the same
+day - `stund-clock-agrees-with-the-world` - and run it in **singleplayer**, because its time
+steps go through the server and a guest can be refused for reasons that are nothing to do with
+the mod.

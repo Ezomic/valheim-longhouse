@@ -8,6 +8,41 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.3.0] - pending Stund 1.0.0
+
+Adds **Stund**, the seventeenth member. A minor, because the set grew again.
+
+Separate from 2.2.0 on purpose. Two new members in one release would be the biggest change to
+the set since 2.0.0, and these two have nothing to do with each other - one draws on your HUD
+and the other reads a web page - so shipping them apart means a player who dislikes one of
+them can say which.
+
+### Stund 1.0.0
+
+`Day 43   17:45` on the screen, in the game's own typeface, top centre by default and in any
+corner you like.
+
+Valheim already has a clock and it is a good one. The sun rises and sets at the same fractions
+of the day every day, and after a few hours nobody has to be told how to read it. Then you go
+into a crypt, or a mine, or a fog bank, or below deck. There is no sun down there and no
+horizon, and the questions that actually turn on the time are the ones you ask in exactly
+those places: whether there is light left to sail home, whether one more corridor is worth
+starting, whether night is nearly over or has just begun.
+
+Midnight is 00:00 and midday is 12:00, which puts sunrise near 06:15 and sunset near 17:45.
+Those are not chosen numbers. They fall out of mapping Valheim's day straight onto twenty-four
+hours, which is what makes the clock agree with the sky rather than argue with it. The day
+number is the game's own, read from the same place it announces at dawn, and the time comes
+off the world clock rather than the smoothed value the sun and the fog are drawn with - that
+one lags a couple of seconds of real time, which on a twenty minute day is minutes of game
+time, and a clock that is minutes out at dawn is a clock people stop trusting.
+
+It hides when the rest of the HUD hides, so cutscenes and the death screen stay clean.
+
+Nobody else needs it. It is `Requirement.HostOnly` and every setting is marked as yours: it
+reads a clock your client is already given and draws a label, and a server does not know it is
+there or get to decide where on your screen it sits.
+
 ## [2.2.0] - pending Kvedja 1.0.0
 
 Adds **Kvedja**, the sixteenth member. A minor rather than a patch, because the set grew - the
