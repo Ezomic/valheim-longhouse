@@ -26,9 +26,8 @@ stones took a hit down to a twentieth. The version is Robbin's. Prepared: 1.7.0 
 to what the scenarios ran on. All six Rist scenarios pass, 168 steps, `rist-forsaken-powers`
 among them: no forsaken power plus every stone reaches zero on any stat.
 
-**Rist has nothing of its own to wait for.** Stund's blockers and Skaft's merge hold 2.3.0, and
-Rist's fix is for a bug players on live can hit now. Alone it would be a patch, 2.2.1, by the
-rule below. Robbin's call; until he makes it, it rides here.
+**It rides 2.3.0 by Robbin's choice**, made on 2026-09-24 over a 2.2.1 of its own. Rist has
+nothing of its own to wait for, so it goes when Stund's blockers and Skaft's merge are done.
 
 Stund is the clock. `Day 43   17:45` on the HUD, in the game's own typeface, top centre by
 default and in any corner you like. Valheim's own clock is the sun and it is a good one; it
