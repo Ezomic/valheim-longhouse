@@ -35,7 +35,8 @@ power that reaches zero on any stat with every stone carved.
 
 ### Prepared on 2026-09-24 - what is left is the uploads
 
-Everything that is not a publish is done.
+**It goes out on Saturday 2026-09-26**, Robbin's date. Everything that is not a publish or the
+live server is done.
 
 - **Three zips built and validated**, each against the zip before it - the check that catches a
   stale staging folder:
@@ -62,6 +63,22 @@ What remains, in order:
    BepInEx - eighteen dependency lines**, with Stund present, Skaft at 1.3.0 and Rist at 1.7.0.
 4. Date the `## [2.3.0]` heading in CHANGELOG.md - the entry is already written.
 5. `package.ps1 -Mod Longhouse`, then publish.
+6. **Live, in the same sitting - not optional.** Rist is `Everyone`, and Skaft is `HostOnly`,
+   which still checks a client that carries it against the server's copy. So live needs Rist
+   1.7.0 with its `cards.txt` and Skaft 1.3.0, or every player on 2.3.0 is refused - and after a
+   restart, every player still on 2.2.0 instead. Live ran Core 1.4.0, Rist 1.6.0 and Skaft 1.2.0
+   when this was written.
+
+   **Stund goes on live too, though it does nothing there.** Its only patches are on `Hud`,
+   which a dedicated server never builds, and it has no `BepInProcess` to keep it off. It has
+   to be there for Dyrr: `ModPolicy = Allow` refuses a client running a mod the server does
+   not, live's `AllowedMods` is only Devkit and Sinka, and `dyrr-mods.txt` is empty. Kvedja got
+   in the same way, by being on the server.
+
+   Copy the DLLs, and Rist's `cards.txt`, out of the published zips rather than building fresh:
+   the gate compares build ids, and the zips are what the players install. Rist's new
+   `MinRunStaminaCost` writes itself into live's cfg at 0.2 on the first boot. Card ids did not
+   change, so nobody's ranks move. Restart at Robbin's word, with the server empty.
 
 **Nothing in this one needs eyeballing before it goes.** Unlike Kvedja, the thing that was only
 checkable by eye is now checkable by scenario: `upright` was added to Devkit precisely because
