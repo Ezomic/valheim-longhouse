@@ -19,9 +19,11 @@ AllHailPidgey reported from live. `MinRunStaminaCost` now keeps running at a fif
 or more, and none of the three capstones touches running any more. Tireless shortens the pause
 before stamina returns, Long wind adds regen, and Long stride jumps a fifth higher with the
 landing measured from a vanilla jump's height, because the first build of it hurt on every jump
-at Jump 100. The version is Robbin's. Prepared: 1.7.0 in all four files and the heading dated.
-**Its zip has to be rebuilt** after the landing retest - the one built before that fix was
-deleted.
+at Jump 100. The version is Robbin's. Prepared: 1.7.0 in all four files, the heading dated, and
+`rist\dist\Ezomic-Rist-1.7.0.zip` built and validated - 7 entries like 1.6.0's, and its DLL is
+`1.7.0+651a0c0`, byte-identical to the one the landing retest ran on. That retest passed on
+2026-09-24: at Jump 100 with Long stride at rank 5 a jump rose 4.38m and was measured from
+3.04m, so flat-ground jumps no longer hurt.
 
 **Rist has nothing of its own to wait for.** Stund's blockers and Skaft's merge hold 2.3.0, and
 Rist's fix is for a bug players on live can hit now. Alone it would be a patch, 2.2.1, by the
@@ -59,8 +61,8 @@ Then, with the Skaft repin in the same sitting:
    `$repos` in `own-profile\package.ps1`.
 5. `package.ps1 -Mod Stund`, then publish **Stund 1.0.0**.
 6. Merge `damaged-in-reach` into `main` in `skaft`, then publish **Skaft 1.3.0**. In the same
-   sitting, `package.ps1 -Mod Rist`, count the zip's entries against
-   `rist\dist\Ezomic-Rist-1.6.0.zip`, and publish **Rist 1.7.0**.
+   sitting, publish **Rist 1.7.0** from the zip already built. Rebuild it only if Rist has
+   changed since `651a0c0`, and count entries against 1.6.0's if you do.
 7. Add `'stund'` to `$members` in `longhouse\tools\build-manifest.ps1`.
 8. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check it comes out at **seventeen mods plus
    BepInEx - eighteen dependency lines**, and that Skaft moved to 1.3.0 and Rist to 1.7.0.
