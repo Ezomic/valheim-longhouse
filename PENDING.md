@@ -13,66 +13,55 @@ history.
 **A minor**, same as 2.2.0 and for the same reason: the set grows again, sixteen mods to
 seventeen.
 
-**Rist 1.7.0** joined on 2026-09-24 as a repin. Sprinting could be free: Tireless, Long wind and
-Long stride at rank 5 plus Eikthyr's power took the run-stamina discount past 100%, which
-AllHailPidgey reported from live. `MinRunStaminaCost` now keeps running at a fifth of its cost
-or more, and none of the three capstones touches running any more. Tireless shortens the pause
-before stamina returns, Long wind adds regen, and Long stride jumps 15% higher with the
-landing measured from a vanilla jump's height, because the first build of it hurt on every jump
-at Jump 100. Steady footing went to 5% a rank and Ox-backed's capstone from stagger to half the
-overloaded stamina drain, because `rist powers` measured Fader at -0.50 stagger and the two
-stones took a hit down to a twentieth. The version is Robbin's. Prepared: 1.7.0 in all four files, the heading dated, and the zip built and validated on
-2026-09-24 - 7 entries like 1.6.0's, DLL `1.7.0+8777533` and `cards.txt` both byte-identical
-to what the scenarios ran on. All six Rist scenarios pass, 168 steps, `rist-forsaken-powers`
-among them: no forsaken power plus every stone reaches zero on any stat.
-
-**It rides 2.3.0 by Robbin's choice**, made on 2026-09-24 over a 2.2.1 of its own. Rist has
-nothing of its own to wait for, so it goes when Stund's blockers and Skaft's merge are done.
-
 Stund is the clock. `Day 43   17:45` on the HUD, in the game's own typeface, top centre by
 default and in any corner you like. Valheim's own clock is the sun and it is a good one; it
 stops working the moment you are underground, which is where the questions that turn on the
 time actually get asked.
 
-**It goes in a release of its own, behind 2.2.0**, and the reason is the Skaft one rather than
-the member count. Each pack version repins one Skaft version, so 1.2.0 rides with 2.2.0 and
-1.3.0 rides here: somebody sitting on 2.2.0 gets the bench half and the crosshair count as two
-things they can tell apart, and 1.3.0 cannot go out before 1.2.0 anyway.
+It comes after 2.2.0 because each pack version repins one Skaft version: 1.2.0 went with 2.2.0,
+1.3.0 goes here, and 1.3.0 could not have gone first.
 
-The older argument here was one new member at a time, so a player who dislikes one can say
-which. **2.2.0 carries two now** - Kvedja and Merki - so that argument is spent, and it is worth
-saying why rather than quietly deleting it: Robbin moved Merki forward once it had been run, and
-two members in one release was the price. Stund stays behind because of Skaft, not the count.
+**Rist 1.7.0** joined on 2026-09-24 as a repin, and rides here by Robbin's choice over a 2.2.1
+of its own. Sprinting could be free: Tireless, Long wind and Long stride at rank 5 plus
+Eikthyr's power took the run-stamina discount past 100%, which AllHailPidgey reported from
+live. `MinRunStaminaCost` now keeps running at a fifth of its cost or more, and none of the
+three capstones touches running any more - Tireless shortens the pause before stamina returns,
+Long wind adds regen, and Long stride jumps 15% higher with the landing measured from a vanilla
+jump's height, because the first build of it hurt on every jump at Jump 100. Steady footing
+went to 5% a rank and Ox-backed's capstone from stagger to half the overloaded stamina drain,
+because `rist powers` measured Fader at -0.50 stagger and the two stones took a hit down to a
+twentieth. All six Rist scenarios pass, 168 steps, and `rist-forsaken-powers` finds no forsaken
+power that reaches zero on any stat with every stone carved.
 
-Prepared as far as a mod with no remote can be: **1.0.0** in `manifest.json`, `Stund.csproj`
-and `PluginVersion`, and a changelog heading written and marked pending.
+### Prepared on 2026-09-24 - what is left is the uploads
 
-The same three blockers Kvedja had, cleared the same way:
+Everything that is not a publish is done.
 
-1. **No `icon.png`.** 256x256, or `tcli` refuses.
-2. **No `thunderstore.toml`.** Generated - add `'stund'` to `own-profile\write-tomls.ps1` and
-   run it. Never hand-written.
-3. **No git remote.** `website_url` already points at `github.com/Ezomic/valheim-stund` and
-   nothing is there. Public, because the repo goes public when the mod reaches 1.0.
+- **Three zips built and validated**, each against the zip before it - the check that catches a
+  stale staging folder:
 
-Then, with the Skaft repin in the same sitting:
+  | Stund 1.0.0 | Skaft 1.3.0 | Rist 1.7.0 |
+  | --- | --- | --- |
+  | 6 entries, like Kvedja's | 6 entries, like 1.2.0's | 7 entries, like 1.6.0's |
+  | DLL `1.0.0+28cb109` | DLL `1.3.0+6521da3` | DLL `1.7.0+8777533` |
 
-4. Add `@{ Name = 'Stund'; Path = 'stund'; Assembly = 'Stund'; Standalone = $true }` to
-   `$repos` in `own-profile\package.ps1`.
-5. `package.ps1 -Mod Stund`, then publish **Stund 1.0.0**.
-6. Merge `damaged-in-reach` into `main` in `skaft`, then publish **Skaft 1.3.0**. In the same
-   sitting, publish **Rist 1.7.0** from the zip already built. Rebuild only if Rist has
-   changed since `8777533`, and count entries against 1.6.0's if you do.
-7. Add `'stund'` to `$members` in `longhouse\tools\build-manifest.ps1`.
-8. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check it comes out at **seventeen mods plus
-   BepInEx - eighteen dependency lines**, and that Skaft moved to 1.3.0 and Rist to 1.7.0.
-9. Date the `## [2.3.0]` heading in CHANGELOG.md - the entry is already written.
-10. `package.ps1 -Mod Longhouse`, then publish.
+- **Stund** has its icon - a clock face in Kvedja's flat style, picked from three - its
+  generated toml, its `package.ps1` entry, and a public repo, github.com/Ezomic/valheim-stund,
+  on `master` like every repo new-mod.ps1 makes.
+- **Skaft**'s `damaged-in-reach` is merged into `main`, a fast-forward, and pushed. GitHub was
+  nine commits behind until then: 1.2.0, on Thunderstore since 2026-09-22, had never been pushed.
 
-Steps 4 and 7 are late here for the same reason they are late in 2.2.0: `build-manifest.ps1`
-reads each member's own `manifest.json`, so an early `stund` line pulls an unpublished 1.0.0
-into whichever pack version regenerates next, and a `package.ps1` entry before the icon exists
-fails a bare run for every other mod.
+What remains, in order:
+
+1. Publish **Stund 1.0.0**, **Skaft 1.3.0** and **Rist 1.7.0** from the zips in their own
+   `dist\` folders. Rebuild one only if its repo has moved past the commit its DLL names above.
+2. Add `'stund'` to `$members` in `longhouse\tools\build-manifest.ps1`. Late on purpose: the
+   generator reads each member's own `manifest.json`, so an early line pulls an unpublished
+   1.0.0 into whichever pack version regenerates next.
+3. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check it comes out at **seventeen mods plus
+   BepInEx - eighteen dependency lines**, with Stund present, Skaft at 1.3.0 and Rist at 1.7.0.
+4. Date the `## [2.3.0]` heading in CHANGELOG.md - the entry is already written.
+5. `package.ps1 -Mod Longhouse`, then publish.
 
 **Nothing in this one needs eyeballing before it goes.** Unlike Kvedja, the thing that was only
 checkable by eye is now checkable by scenario: `upright` was added to Devkit precisely because
