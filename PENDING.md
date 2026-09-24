@@ -17,13 +17,12 @@ seventeen.
 Long stride at rank 5 plus Eikthyr's power took the run-stamina discount past 100%, which
 AllHailPidgey reported from live. `MinRunStaminaCost` now keeps running at a fifth of its cost
 or more, and none of the three capstones touches running any more. Tireless shortens the pause
-before stamina returns, Long wind adds regen, and Long stride jumps a fifth higher with the
+before stamina returns, Long wind adds regen, and Long stride jumps 15% higher with the
 landing measured from a vanilla jump's height, because the first build of it hurt on every jump
-at Jump 100. The version is Robbin's. Prepared: 1.7.0 in all four files, the heading dated, and
-`rist\dist\Ezomic-Rist-1.7.0.zip` built and validated - 7 entries like 1.6.0's, and its DLL is
-`1.7.0+651a0c0`, byte-identical to the one the landing retest ran on. That retest passed on
-2026-09-24: at Jump 100 with Long stride at rank 5 a jump rose 4.38m and was measured from
-3.04m, so flat-ground jumps no longer hurt.
+at Jump 100. The version is Robbin's. Prepared: 1.7.0 in all four files and the heading dated.
+**Its zip has to be rebuilt**: Long stride changed after the last one was built, from a fifth
+more jump force (44% more height, 4.38m at Jump 100) to 15% more height (about 3.5m), at
+Robbin's word on 2026-09-24. The landing guard passed its retest on the old value and stays.
 
 **Rist has nothing of its own to wait for.** Stund's blockers and Skaft's merge hold 2.3.0, and
 Rist's fix is for a bug players on live can hit now. Alone it would be a patch, 2.2.1, by the
@@ -61,8 +60,8 @@ Then, with the Skaft repin in the same sitting:
    `$repos` in `own-profile\package.ps1`.
 5. `package.ps1 -Mod Stund`, then publish **Stund 1.0.0**.
 6. Merge `damaged-in-reach` into `main` in `skaft`, then publish **Skaft 1.3.0**. In the same
-   sitting, publish **Rist 1.7.0** from the zip already built. Rebuild it only if Rist has
-   changed since `651a0c0`, and count entries against 1.6.0's if you do.
+   sitting, `package.ps1 -Mod Rist`, count the zip's entries against 1.6.0's, and publish
+   **Rist 1.7.0**.
 7. Add `'stund'` to `$members` in `longhouse\tools\build-manifest.ps1`.
 8. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check it comes out at **seventeen mods plus
    BepInEx - eighteen dependency lines**, and that Skaft moved to 1.3.0 and Rist to 1.7.0.

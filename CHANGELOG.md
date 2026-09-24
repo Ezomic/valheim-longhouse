@@ -54,7 +54,7 @@ No line at all at Crafting 0. Skaft's troubleshooting section names that first.
 Sprinting could be free. A full hand of Tireless, Long wind and Long stride plus Eikthyr's power
 took the run-stamina discount past 100%. Running now always costs at least a fifth of normal,
 and none of the three capstones touches running any more: Tireless brings stamina back sooner
-after you stop, Long wind adds regen, and Long stride jumps a fifth higher without making the
+after you stop, Long wind adds regen, and Long stride jumps 15% higher without making the
 landing hurt. Details are in Rist's own changelog.
 
 ## [2.2.0] - 2026-09-22
