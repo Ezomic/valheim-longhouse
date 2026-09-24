@@ -8,10 +8,35 @@ install, and `tcli` will build it happily.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
-## 2.3.0 - adds Stund and repins Skaft and Rist, waits on Stund 1.0.0, Skaft 1.3.0 and Rist 1.7.0
+## 2.3.0 - adds Stund and Vandi and repins Skaft, Rist, Yoke and Vaettir
 
 **A minor**, same as 2.2.0 and for the same reason: the set grows again, sixteen mods to
-seventeen.
+eighteen. Waits on Stund 1.0.0, Vandi 1.0.0, Skaft 1.3.0, Rist 1.7.0, and patch releases of Yoke
+and Vaettir.
+
+**Vandi joined on 2026-09-24, at Robbin's word, for Saturday.** Creatures wear more stars in a
+biome whose boss you keep killing, and that boss comes back a star harder, up to two - your
+kills, credited only to whoever made the offering. `Requirement.Everyone`, because the star roll
+runs on whichever client owns the zone, so it goes on live as well. It had never been run until
+that day: `vandi-stars-per-biome` then passed 23 of 23, and `vandi-summoner-gets-the-credit`
+failed at step 6 in a way that could never have passed (Devkit's `goto` and `use` only find
+building pieces, and an altar is not one). The scenario now spawns its own Eikthyr altar with
+`location` and makes the offering through Devkit's new `offer` step - **it has to pass, and a
+short normal play session has to look right, before Vandi is released.** Then its release needs
+what Stund's did: a version (1.0.0 proposed, the house rule), `'vandi'` in write-tomls.ps1 and
+package.ps1, a public repo (none exists yet), and a zip. Its icon exists. It is in both build
+lists already. Tracked as LHM-8.
+
+**Yoke and Vaettir need patch releases**, because the shared BiomeIndex both link had a bug:
+Valheim 1.0's persistent-event spawn gate was not read, the Jotun invasion's every-biome rows were
+taken for the Meadows, and the Elaking and Jotun trophies, the Elaking hair bundle and the
+Vanguard chestpiece family were filed as Meadows items - Yoke raised their stacks at Eikthyr, and
+Vaettir let them be pulled from containers from Eikthyr on. Fixed in core `ce9aaac`; both mods
+compile against it and carry an Unreleased changelog entry. A rebuild changes their build ids, so
+they cannot sit this one out once built. **Versions are Robbin's: Yoke 1.2.2 and Vaettir 1.6.3
+proposed**, both fixes. Yoke's also carries its README's bugs-and-ideas section, committed after
+1.2.1. Neither is zipped yet - that waits on the numbers. Before zipping, relaunch and read
+Yoke's `ezomic.valheim.yoke.items.txt`: those items should now read `deepnorth`.
 
 Stund is the clock. `Day 43   17:45` on the HUD, in the game's own typeface, top centre by
 default and in any corner you like. Valheim's own clock is the sun and it is a good one; it
@@ -55,19 +80,22 @@ live server is done.
 What remains, in order:
 
 1. Publish **Stund 1.0.0**, **Skaft 1.3.0** and **Rist 1.7.0** from the zips in their own
-   `dist\` folders. Rebuild one only if its repo has moved past the commit its DLL names above.
-2. Add `'stund'` to `$members` in `longhouse\tools\build-manifest.ps1`. Late on purpose: the
+   `dist\` folders, and **Vandi**, **Yoke** and **Vaettir** once theirs exist. Rebuild one only
+   if its repo has moved past the commit its DLL names above.
+2. Add `'stund'` and `'vandi'` to `$members` in `longhouse\tools\build-manifest.ps1`. Late on purpose: the
    generator reads each member's own `manifest.json`, so an early line pulls an unpublished
    1.0.0 into whichever pack version regenerates next.
-3. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check it comes out at **seventeen mods plus
-   BepInEx - eighteen dependency lines**, with Stund present, Skaft at 1.3.0 and Rist at 1.7.0.
+3. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check it comes out at **eighteen mods plus
+   BepInEx - nineteen dependency lines**, with Stund and Vandi present, Skaft at 1.3.0, Rist at
+   1.7.0, and Yoke and Vaettir at their patch versions.
 4. Date the `## [2.3.0]` heading in CHANGELOG.md - the entry is already written.
 5. `package.ps1 -Mod Longhouse`, then publish.
 6. **Live, in the same sitting - not optional.** Rist is `Everyone`, and Skaft is `HostOnly`,
    which still checks a client that carries it against the server's copy. So live needs Rist
    1.7.0 with its `cards.txt` and Skaft 1.3.0, or every player on 2.3.0 is refused - and after a
    restart, every player still on 2.2.0 instead. Live ran Core 1.4.0, Rist 1.6.0 and Skaft 1.2.0
-   when this was written.
+   when this was written. **Vandi, Yoke and Vaettir go on live too**: Vandi is `Everyone` like
+   Rist, and Yoke and Vaettir carry new build ids, which the gate compares.
 
    **Stund goes on live too, though it does nothing there.** Its only patches are on `Hud`,
    which a dedicated server never builds, and it has no `BepInProcess` to keep it off. It has
