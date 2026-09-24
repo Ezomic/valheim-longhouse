@@ -75,6 +75,14 @@ What remains, in order:
    not, live's `AllowedMods` is only Devkit and Sinka, and `dyrr-mods.txt` is empty. Kvedja got
    in the same way, by being on the server.
 
+   **Utangard's settings change in the same sitting, at Robbin's word on 2026-09-24**, and go
+   in before the restart so they load with it. In live's
+   `BepInEx/config/ezomic.valheim.utangard.cfg`, backed up first: `FoodDrainMultiplier` and
+   `BuffDrainMultiplier` 5 to **3**, and `HealthRegenMultiplier` 0 to **0.2**. No Utangard
+   release: Core imposes the server's values on every client, so the file on live is the whole
+   change. It was asked for live and then moved here, to ride the update rather than cost a
+   restart of its own.
+
    Copy the DLLs, and Rist's `cards.txt`, out of the published zips rather than building fresh:
    the gate compares build ids, and the zips are what the players install. Rist's new
    `MinRunStaminaCost` writes itself into live's cfg at 0.2 on the first boot. Card ids did not

@@ -59,6 +59,13 @@ landing hurt. Steady footing is 5% a rank, and Ox-backed's last rank halves the 
 spend walking overloaded instead of reducing stagger, since with Fader's power the two nearly
 made you unstaggerable. Details are in Rist's own changelog.
 
+### On the Longhouse server
+
+A biome the group has not earned is gentler. Food and running buffs burn 3 times faster there
+instead of 5, and wounds heal at a fifth of the normal rate instead of not at all. You still
+cannot eat, drink a mead or use a power inside, and you still leave Sapped. These are the
+server's Utangard settings, so a server of your own keeps Utangard's defaults.
+
 ## [2.2.0] - 2026-09-22
 
 Adds **Kvedja** and **Merki**, the fifteenth and sixteenth members, and repins **Skaft 1.2.0**,
