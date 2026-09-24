@@ -19,7 +19,9 @@ AllHailPidgey reported from live. `MinRunStaminaCost` now keeps running at a fif
 or more, and none of the three capstones touches running any more. Tireless shortens the pause
 before stamina returns, Long wind adds regen, and Long stride jumps 15% higher with the
 landing measured from a vanilla jump's height, because the first build of it hurt on every jump
-at Jump 100. The version is Robbin's. Prepared: 1.7.0 in all four files and the heading dated.
+at Jump 100. Steady footing went to 5% a rank and Ox-backed's capstone from stagger to half the
+overloaded stamina drain, because `rist powers` measured Fader at -0.50 stagger and the two
+stones took a hit down to a twentieth. The version is Robbin's. Prepared: 1.7.0 in all four files and the heading dated.
 **Its zip has to be rebuilt**: Long stride changed after the last one was built, from a fifth
 more jump force (44% more height, 4.38m at Jump 100) to 15% more height (about 3.5m), at
 Robbin's word on 2026-09-24. The landing guard passed its retest on the old value and stays.
