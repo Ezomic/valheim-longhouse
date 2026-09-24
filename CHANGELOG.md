@@ -8,9 +8,9 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [2.3.0] - pending Stund 1.0.0 and Skaft 1.3.0
+## [2.3.0] - pending Stund 1.0.0, Skaft 1.3.0 and Rist 1.7.0
 
-Adds **Stund**, the seventeenth member, and repins **Skaft 1.3.0**.
+Adds **Stund**, the seventeenth member, and repins **Skaft 1.3.0** and **Rist 1.7.0**.
 
 Kept apart from 2.2.0 so that each release carries one Skaft version: 1.2.0 went with 2.2.0 and
 1.3.0 goes here, and 1.3.0 could not have gone first anyway.
@@ -48,6 +48,14 @@ The count is damage and distance only. Stamina, hammer durability, wards and a m
 can still cut the swing short.
 
 No line at all at Crafting 0. Skaft's troubleshooting section names that first.
+
+### Rist 1.7.0
+
+Sprinting could be free. A full hand of Tireless, Long wind and Long stride plus Eikthyr's power
+took the run-stamina discount past 100%. Running now always costs at least a fifth of normal,
+and none of the three capstones touches running any more: Tireless brings stamina back sooner
+after you stop, Long wind adds regen, and Long stride jumps a fifth higher without making the
+landing hurt. Details are in Rist's own changelog.
 
 ## [2.2.0] - 2026-09-22
 
