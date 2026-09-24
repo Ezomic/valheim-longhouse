@@ -21,10 +21,10 @@ before stamina returns, Long wind adds regen, and Long stride jumps 15% higher w
 landing measured from a vanilla jump's height, because the first build of it hurt on every jump
 at Jump 100. Steady footing went to 5% a rank and Ox-backed's capstone from stagger to half the
 overloaded stamina drain, because `rist powers` measured Fader at -0.50 stagger and the two
-stones took a hit down to a twentieth. The version is Robbin's. Prepared: 1.7.0 in all four files and the heading dated.
-**Its zip has to be rebuilt**: Long stride changed after the last one was built, from a fifth
-more jump force (44% more height, 4.38m at Jump 100) to 15% more height (about 3.5m), at
-Robbin's word on 2026-09-24. The landing guard passed its retest on the old value and stays.
+stones took a hit down to a twentieth. The version is Robbin's. Prepared: 1.7.0 in all four files, the heading dated, and the zip built and validated on
+2026-09-24 - 7 entries like 1.6.0's, DLL `1.7.0+8777533` and `cards.txt` both byte-identical
+to what the scenarios ran on. All six Rist scenarios pass, 168 steps, `rist-forsaken-powers`
+among them: no forsaken power plus every stone reaches zero on any stat.
 
 **Rist has nothing of its own to wait for.** Stund's blockers and Skaft's merge hold 2.3.0, and
 Rist's fix is for a bug players on live can hit now. Alone it would be a patch, 2.2.1, by the
@@ -62,8 +62,8 @@ Then, with the Skaft repin in the same sitting:
    `$repos` in `own-profile\package.ps1`.
 5. `package.ps1 -Mod Stund`, then publish **Stund 1.0.0**.
 6. Merge `damaged-in-reach` into `main` in `skaft`, then publish **Skaft 1.3.0**. In the same
-   sitting, `package.ps1 -Mod Rist`, count the zip's entries against 1.6.0's, and publish
-   **Rist 1.7.0**.
+   sitting, publish **Rist 1.7.0** from the zip already built. Rebuild only if Rist has
+   changed since `8777533`, and count entries against 1.6.0's if you do.
 7. Add `'stund'` to `$members` in `longhouse\tools\build-manifest.ps1`.
 8. `.\tools\build-manifest.ps1 -PackVersion 2.3.0`. Check it comes out at **seventeen mods plus
    BepInEx - eighteen dependency lines**, and that Skaft moved to 1.3.0 and Rist to 1.7.0.
@@ -117,8 +117,9 @@ Run the Devkit scenario suite for every mod whose version moves. **Merki has fou
 three have been run, all passing, on 2026-09-22: `merki-forces-you-onto-the-map` in
 singleplayer, and the `paired-merki-watcher` / `paired-merki-dies` pair on the dev server with
 `DeathMarkMinutes = 1`. The fourth is `paired-merki-scope-*`, which needs `Range = 100` on the
-server and has not been run. **Rist has four**, all passing on 2026-09-24: `rist-armour-scales`,
-`rist-steady-footing-capstone`, `rist-sprinting-is-never-free` and `rist-movement-capstones`.
+server and has not been run. **Rist has six**, all passing on 2026-09-24: `rist-armour-scales`,
+`rist-steady-footing-capstone`, `rist-sprinting-is-never-free`, `rist-movement-capstones`,
+`rist-forsaken-powers` and `rist-stagger-and-load`.
 All need **singleplayer**, because ranks live on the server and `rist rank` refuses on a
 client. None needs devcommands: they reach `rist` through Devkit's `mod` step and Eikthyr's
 power through `status`. None of them jumps, so Long stride's landing is checked by hand - Jump
