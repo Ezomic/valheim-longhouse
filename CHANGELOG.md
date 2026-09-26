@@ -8,9 +8,9 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [2.3.0] - pending Stund, Vandi, Skaft 1.3.0, Rist 1.7.0, a vein mining mod, and new versions of Yoke, Vaettir, Utangard, Jafna and Vaka
+## [2.3.0] - pending Stund, Vandi, Malmr, Skaft 1.3.0, Rist 1.7.0, and new versions of Yoke, Vaettir, Utangard, Jafna and Vaka
 
-Adds **Stund**, **Vandi** and a vein mining mod, for nineteen members, and repins **Skaft 1.3.0**,
+Adds **Stund**, **Vandi** and **Malmr**, for nineteen members, and repins **Skaft 1.3.0**,
 **Rist 1.7.0**, Yoke, Vaettir, Utangard, Jafna and Vaka.
 
 Kept apart from 2.2.0 so that each release carries one Skaft version: 1.2.0 went with 2.2.0 and
@@ -71,12 +71,21 @@ It is all per player. Your own kills decide what you meet, and a kill counts for
 the offering, even if they died before the boss did. Helping with someone else's boss earns you
 nothing.
 
-### Vein mining
+### Malmr
 
-A new mod, name still to come. Break a chunk of an ore deposit and the rest of the vein comes
-with it. Each metal unlocks on its own: your Pickaxes skill has to reach that metal's level, and
-you have to have beaten the boss of the biome it comes from at one star, which with Vandi means
-your second kill of it.
+Vein mining. Hold a pickaxe and tap Alt to switch it on. Keep hitting any chunk of an ore deposit
+and a bar under the crosshair fills for the whole deposit instead of breaking that chunk. At 100%
+every chunk comes down at once, buried ones included. It costs the same swings, wear and stamina
+as mining the deposit by hand, and saves you walking between chunks and digging out the ones
+underground. Progress stays on the deposit, so you can leave and come back, or someone else can
+finish it.
+
+Each metal opens on its own: tin at Pickaxes 40, copper 50, iron 60, silver 70, flametal 80 and
+bloodgold 90. Only the level you earned counts, so gear and food bonuses do not open a metal
+early. You also need the boss of that metal's biome dead by your hand. With Vandi installed it has
+to be the one-star version, which is your second kill of it.
+
+Malmr has to be on the server and on every client. Vandi is recommended, not required.
 
 ### Utangard
 
@@ -91,8 +100,11 @@ answers as soon as that biome does, by kills or by the deadline.
 ### Jafna
 
 The hoe can build ground up now. When a flatten needs the ground higher than it is, Jafna raises
-it and takes stone from your pack, at the rate the hoe's own Raise ground charges. Before, a swing
-could only move the ground about a metre and anything higher had to be raised by hand first.
+it and takes stone from your pack, at the rate the hoe's own Raise ground charges. The build panel
+shows what the swing will cost before you make it, and going over ground that is already flat
+costs nothing. Short of stone, the whole patch comes up part of the way and the next swing
+finishes it. Before, a swing could only move the ground about a metre and anything higher had to
+be raised by hand first.
 
 ### Vaka
 
@@ -106,9 +118,12 @@ hair bundle, and the Vanguard chestpiece with its cast and moulds. Yoke raised t
 Eikthyr fell, and Vaettir let them be pulled from chests from Eikthyr on. The Jotun invasion
 spawns in every biome, and the shared biome index read that as the Meadows.
 
-Vaettir also fixes two things players ran into. The chest numbers on the crafting panel were cut
-off at the edge of the slot. Furrow could start a new planting grid for each patch, and saplings
-drifted off the grid of the first one planted.
+Vaettir also fixes two things players ran into. Next to a hod jib, the chest total on the crafting
+panel ran off the edge of its slot, so 169 read as 16. The line now shows what you carry against
+the cost, then what the chests add, like `24/40 +169`, and shrinks to fit. Furrow could put a
+second patch, or the next oak sapling, on a grid turned the same way but shifted over. New plants
+now follow the bed already there, whatever the crop, and patches on open ground share one grid.
+Turning the grid next to an existing bed keeps that bed's angle.
 
 ### On the Longhouse server
 
