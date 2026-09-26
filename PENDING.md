@@ -8,7 +8,7 @@ install, and `tcli` will build it happily.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
-## 2.3.0 - adds Stund and Vandi and repins Skaft, Rist, Yoke and Vaettir
+## 2.3.0 - adds Stund, Vandi and a vein mining mod, and repins Skaft, Rist, Yoke, Vaettir, Utangard, Jafna and Vaka
 
 **A minor**, same as 2.2.0 and for the same reason: the set grows again, sixteen mods to
 eighteen. Waits on Stund 1.0.0, Vandi 1.0.0, Skaft 1.3.0, Rist 1.7.0, and patch releases of Yoke
@@ -57,6 +57,32 @@ went to 5% a rank and Ox-backed's capstone from stagger to half the overloaded s
 because `rist powers` measured Fader at -0.50 stagger and the two stones took a hit down to a
 twentieth. All six Rist scenarios pass, 168 steps, and `rist-forsaken-powers` finds no forsaken
 power that reaches zero on any stat with every stone carved.
+
+### Widened on 2026-09-26 - everything in progress except Thralls
+
+**Robbin's word on release day: "everything we are doing now except thralls" goes out with this
+update, not on its own.** So 2.3.0 also carries the following. Every version below is a
+proposal; the numbers are his.
+
+| Mod | Change | Proposed | Tracker | Gate |
+| --- | --- | --- | --- | --- |
+| Utangard | a boss will not come to an altar in a biome the group has not earned; `utangard biomes` | 1.4.0, a new rule | - | `Everyone` |
+| Vaettir | the BiomeIndex fix above, plus the crafting panel's chest number, plus Furrow's grid drifting between patches and under saplings | 1.6.3, all fixes | LHM-28, LHM-29 | `Everyone` |
+| Jafna | a flatten that needs higher ground raises it and charges stone for it | 1.1.0, a feature | LHM-30 | `HostOnly` |
+| Vaka | lights that burn resin or coal last twice as long; cooking fires unchanged | 1.1.0, a feature | LHM-31 | `Everyone` |
+| new mod | vein mining, unlocked per metal by Pickaxes level; name not picked yet | 1.0.0, the house rule | LHM-32 | not chosen yet |
+
+- **Utangard ships from `main`** (`f967c18`), not from the LHM-26 branch, which merged `main` in
+  but carries the unfinished foothold work. Open: whether the Queen's door should stay shut
+  while the Mistlands are locked. She is placed, not summoned, so the altar rule does not
+  reach her. Live's Utangard cfg edits in step 6 still apply on top of the new build.
+- **The new mod is a member, so the count goes to nineteen mods and twenty lines.** It needs
+  everything Stund needed: an icon, `write-tomls.ps1` and `package.ps1` entries, a public repo,
+  both build lists, and a copy on live whatever its gate turns out to be, for Dyrr's allow-list.
+- **Vandi's altar scenario now asks for `Eikthyrnir`** (`ddffac0`). That is the old name and is
+  unconfirmed on 1.0; if it is wrong, Devkit's `location` step lists the names it knows.
+- All of it was built on 2026-09-26 and none of it has run in game. Each gets its scenarios run
+  before its zip is built, per the rule at the bottom of this file.
 
 ### Prepared on 2026-09-24 - what is left is the uploads
 
