@@ -66,14 +66,15 @@ proposal; the numbers are his.
 
 | Mod | Change | Proposed | Tracker | Gate |
 | --- | --- | --- | --- | --- |
-| Utangard | a boss will not come to an altar in a biome the group has not earned, and the Queen's door stays sealed; `utangard biomes` | 1.4.0, a new rule | - | `Everyone` |
+| Utangard | a boss will not come to an altar in a biome the group has not earned, and the Queen's door stays sealed; personal Fighting and Discovery bars that earn back eating and healing in a locked biome, on a new compendium panel | 1.4.0, new rules | LHM-26 | `Everyone` |
 | Vaettir | the BiomeIndex fix above, plus the crafting panel's chest number, plus Furrow's grid drifting between patches and under saplings | 1.6.3, all fixes | LHM-28, LHM-29 | `Everyone` |
 | Jafna | a flatten that needs higher ground raises it and charges stone for it | 1.1.0, a feature | LHM-30 | `HostOnly` |
 | Vaka | lights that burn resin or coal last twice as long; cooking fires unchanged | 1.1.0, a feature | LHM-31 | `Everyone` |
 | new mod | vein mining, unlocked per metal by Pickaxes level and by beating that biome's boss through Vandi; name not picked yet | 1.0.0, the house rule | LHM-32 | not chosen yet |
 
-- **Utangard ships from `main`** (`d7db158`), not from the LHM-26 branch, which merged `main` in
-  but carries the unfinished foothold work. The Queen's door joined at Robbin's word the same
+- **Utangard ships from the LHM-26 branch merged into `main`** since 2026-09-27, when Robbin pulled
+  the foothold bars and compendium panel C into 2.3.0 ("2.3.0 start building"). Until then it was
+  to ship from `main` alone (`d7db158`). The Queen's door joined at Robbin's word the same
   day: doors keyed to `BossDoorKeys` (the Sealbreaker) stay sealed in a locked biome. That her
   door is keyed that way is unverified; the log names the doors it guards on world load. Live's
   Utangard cfg edits in step 6 still apply on top of the new build.
