@@ -78,7 +78,8 @@ proposal; the numbers are his.
   door is keyed that way is unverified; the log names the doors it guards on world load. Live's
   Utangard cfg edits in step 6 still apply on top of the new build.
 - **The new mod depends on Vandi** (Robbin, 2026-09-26): unlocking a metal needs its biome's
-  boss beaten through Vandi as well as the Pickaxes level. So Vandi publishes first, and the
+  boss beaten at one star through Vandi (your second kill of it; his pick) as well as the
+  Pickaxes level. Two stars stays free for LHM-27's metal doubling. So Vandi publishes first, and the
   vein mod's manifest names it.
 - **The new mod is a member, so the count goes to nineteen mods and twenty lines.** It needs
   everything Stund needed: an icon, `write-tomls.ps1` and `package.ps1` entries, a public repo,
