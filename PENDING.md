@@ -70,7 +70,7 @@ proposal; the numbers are his.
 | Vaettir | the BiomeIndex fix above, plus the crafting panel's chest number, plus Furrow's grid drifting between patches and under saplings | 1.6.3, all fixes | LHM-28, LHM-29 | `Everyone` |
 | Jafna | a flatten that needs higher ground raises it and charges stone for it | 1.1.0, a feature | LHM-30 | `HostOnly` |
 | Vaka | lights that burn resin or coal last twice as long; cooking fires unchanged | 1.1.0, a feature | LHM-31 | `Everyone` |
-| new mod | vein mining, unlocked per metal by Pickaxes level and by beating that biome's boss through Vandi; name not picked yet | 1.0.0, the house rule | LHM-32 | not chosen yet |
+| Malmr (new) | vein mining: tap Alt with a pickaxe, fill a bar for the whole deposit, it breaks at once; each ore opens at a Pickaxes level and its biome's boss killed (at one star with Vandi) | 1.0.0, the house rule | LHM-32 | `Everyone` |
 
 - **Utangard ships from the LHM-26 branch merged into `main`** since 2026-09-27, when Robbin pulled
   the foothold bars and compendium panel C into 2.3.0 ("2.3.0 start building"). Until then it was
@@ -78,10 +78,11 @@ proposal; the numbers are his.
   day: doors keyed to `BossDoorKeys` (the Sealbreaker) stay sealed in a locked biome. That her
   door is keyed that way is unverified; the log names the doors it guards on world load. Live's
   Utangard cfg edits in step 6 still apply on top of the new build.
-- **The new mod depends on Vandi** (Robbin, 2026-09-26): unlocking a metal needs its biome's
-  boss beaten at one star through Vandi (your second kill of it; his pick) as well as the
-  Pickaxes level. Two stars stays free for LHM-27's metal doubling. So Vandi publishes first, and the
-  vein mod's manifest names it.
+- **Malmr reads Vandi but does not require it** (Robbin, 2026-09-26: first a hard dependency,
+  then "make vandi a soft dependency of malmr but recommend it in the readme"). With Vandi a metal
+  needs its biome's boss beaten at one star (the second kill); without it, a plain kill by the
+  character. Malmr's manifest does NOT name Vandi. It is `Everyone`, so it goes on live, and it is
+  in both build lists since own-profile `2026-09-27`.
 - **The new mod is a member, so the count goes to nineteen mods and twenty lines.** It needs
   everything Stund needed: an icon, `write-tomls.ps1` and `package.ps1` entries, a public repo,
   both build lists, and a copy on live whatever its gate turns out to be, for Dyrr's allow-list.
