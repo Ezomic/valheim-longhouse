@@ -8,9 +8,10 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [2.3.0] - pending Stund 1.0.0, Skaft 1.3.0 and Rist 1.7.0
+## [2.3.0] - pending Stund, Vandi, Skaft 1.3.0, Rist 1.7.0, a vein mining mod, and new versions of Yoke, Vaettir, Utangard, Jafna and Vaka
 
-Adds **Stund**, the seventeenth member, and repins **Skaft 1.3.0** and **Rist 1.7.0**.
+Adds **Stund**, **Vandi** and a vein mining mod, for nineteen members, and repins **Skaft 1.3.0**,
+**Rist 1.7.0**, Yoke, Vaettir, Utangard, Jafna and Vaka.
 
 Kept apart from 2.2.0 so that each release carries one Skaft version: 1.2.0 went with 2.2.0 and
 1.3.0 goes here, and 1.3.0 could not have gone first anyway.
@@ -58,6 +59,56 @@ after you stop, Long wind adds regen, and Long stride jumps 15% higher without m
 landing hurt. Steady footing is 5% a rank, and Ox-backed's last rank halves the stamina you
 spend walking overloaded instead of reducing stagger, since with Fader's power the two nearly
 made you unstaggerable. Details are in Rist's own changelog.
+
+### Vandi
+
+Starred creatures get likelier in a biome whose boss you have killed. Each kill adds five
+percentage points to vanilla's ten, up to twenty five extra, so a boss you have killed five times
+leaves its biome spawning stars a third of the time. The boss itself comes back a star stronger
+for each repeat kill, up to two.
+
+It is all per player. Your own kills decide what you meet, and a kill counts for whoever made
+the offering, even if they died before the boss did. Helping with someone else's boss earns you
+nothing.
+
+### Vein mining
+
+A new mod, name still to come. Break a chunk of an ore deposit and the rest of the vein comes
+with it. Each metal unlocks on its own: your Pickaxes skill has to reach that metal's level, and
+you have to have beaten the boss of the biome it comes from at one star, which with Vandi means
+your second kill of it.
+
+### Utangard
+
+A boss will not come to an altar in a biome your group has not earned. Until now one player
+could carry an egg into the locked Mountains, kill Moder there, and start the Plains deadline for
+everybody else. The offering is not used up. The Queen's door stays sealed the same way while the
+Mistlands are locked, and the Sealbreaker stays in your pack.
+
+Nothing gets locked away for good. Each altar stands in the biome the boss before it opens, so it
+answers as soon as that biome does, by kills or by the deadline.
+
+### Jafna
+
+The hoe can build ground up now. When a flatten needs the ground higher than it is, Jafna raises
+it and takes stone from your pack, at the rate the hoe's own Raise ground charges. Before, a swing
+could only move the ground about a metre and anything higher had to be raised by hand first.
+
+### Vaka
+
+Lights that burn resin or coal last twice as long on the same fuel. Cooking fires are unchanged.
+Vaka's log lists which fires that covers when a world loads.
+
+### Vaettir and Yoke
+
+Some Deep North items were filed as Meadows items: the Elaking and Jotun trophies, the Elaking
+hair bundle, and the Vanguard chestpiece with its cast and moulds. Yoke raised their stacks once
+Eikthyr fell, and Vaettir let them be pulled from chests from Eikthyr on. The Jotun invasion
+spawns in every biome, and the shared biome index read that as the Meadows.
+
+Vaettir also fixes two things players ran into. The chest numbers on the crafting panel were cut
+off at the edge of the slot. Furrow could start a new planting grid for each patch, and saplings
+drifted off the grid of the first one planted.
 
 ### On the Longhouse server
 
