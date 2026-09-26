@@ -80,9 +80,10 @@ as mining the deposit by hand, and saves you walking between chunks and digging 
 underground. Progress stays on the deposit, so you can leave and come back, or someone else can
 finish it.
 
-Each metal opens on its own: tin at Pickaxes 40, copper 50, iron 60, silver 70, flametal 80 and
-bloodgold 90. Only the level you earned counts, so gear and food bonuses do not open a metal
-early. You also need the boss of that metal's biome dead by your hand. With Vandi installed it has
+Each ore opens on its own: copper at Pickaxes 30, iron 40, silver 50, the giant brains in the
+Mistlands 60, flametal 70 and bloodgold 80. Only the level you earned counts, so gear and food
+bonuses do not open one early. Tin, and the copper and iron you find in the Mistlands, are mined
+the normal way. You also need the boss of that metal's biome dead by your hand. With Vandi installed it has
 to be the one-star version, which is your second kill of it.
 
 Malmr has to be on the server and on every client. Vandi is recommended, not required.
