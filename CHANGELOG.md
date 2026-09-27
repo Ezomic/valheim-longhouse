@@ -8,9 +8,9 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [2.3.0] - pending Stund, Vandi, Malmr, Skaft 1.3.0, Rist 1.7.0, and new versions of Yoke, Vaettir, Utangard, Jafna and Vaka
+## [2.3.0] - pending Stund, Vandi, Malmr, Varda, Skaft 1.3.0, Rist 1.7.0, and new versions of Yoke, Vaettir, Utangard, Jafna and Vaka
 
-Adds **Stund**, **Vandi** and **Malmr**, for nineteen members, and repins **Skaft 1.3.0**,
+Adds **Stund**, **Vandi**, **Malmr** and **Varda**, for twenty members, and repins **Skaft 1.3.0**,
 **Rist 1.7.0**, Yoke, Vaettir, Utangard, Jafna and Vaka.
 
 Kept apart from 2.2.0 so that each release carries one Skaft version: 1.2.0 went with 2.2.0 and
@@ -88,6 +88,19 @@ normal way. You also need the boss of that biome dead by your hand, Eikthyr for 
 installed it has to be the one-star version, which is your second kill of it.
 
 Malmr has to be on the server and on every client. Vandi is recommended, not required.
+
+### Varda
+
+Map pins for places you have actually been. Go into a dungeon and it pins itself on your map
+with its own icon, a stone arch with steps going down. Walking past the entrance does nothing,
+you have to go in. Every portal you built gets its own pin with its tag on it, the pin follows
+the tag when you change it, and it comes off the map when the portal is broken. Other people's
+portals stay off your map.
+
+They are ordinary map pins wearing a picture, so taking Varda out costs you the icon and not
+the pin.
+
+Nobody else needs it. `Requirement.HostOnly`, every setting marked as yours.
 
 ### Utangard
 

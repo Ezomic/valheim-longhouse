@@ -70,6 +70,7 @@ proposal; the numbers are his.
 | Vaettir | the BiomeIndex fix above, plus the crafting panel's chest number, plus Furrow's grid drifting between patches and under saplings | 1.6.3, all fixes | LHM-28, LHM-29 | `Everyone` |
 | Jafna | a flatten that needs higher ground raises it and charges stone for it | 1.1.0, a feature | LHM-30 | `HostOnly` |
 | Vaka | lights that burn resin or coal last twice as long; cooking fires unchanged | 1.1.0, a feature | LHM-31 | `Everyone` |
+| Varda (new) | map pins for places you have been: a dungeon pins itself when you go in, each portal you built gets its own pin with its tag, and a broken portal takes its pin with it | 1.0.0, the house rule | LHM-33, LHM-34 | `HostOnly` |
 | Malmr (new) | vein mining: tap Alt with a pickaxe, fill a bar for the whole deposit, it breaks at once; stone and each ore open at a Pickaxes level and their biome's boss killed (at one star with Vandi) | 1.0.0, the house rule | LHM-32 | `Everyone` |
 
 - **Utangard ships from the LHM-26 branch merged into `main`** since 2026-09-27, when Robbin pulled
@@ -83,9 +84,18 @@ proposal; the numbers are his.
   needs its biome's boss beaten at one star (the second kill); without it, a plain kill by the
   character. Malmr's manifest does NOT name Vandi. It is `Everyone`, so it goes on live, and it is
   in both build lists since own-profile `2026-09-27`.
-- **The new mod is a member, so the count goes to nineteen mods and twenty lines.** It needs
-  everything Stund needed: an icon, `write-tomls.ps1` and `package.ps1` entries, a public repo,
-  both build lists, and a copy on live whatever its gate turns out to be, for Dyrr's allow-list.
+- **The new mods are members, so the count goes to twenty mods and twenty-one lines.** Malmr
+  needs everything Stund needed: an icon, `write-tomls.ps1` and `package.ps1` entries, a public
+  repo, both build lists, and a copy on live whatever its gate turns out to be, for Dyrr's
+  allow-list.
+- **Varda joined on 2026-09-27 at Robbin's word** ("it should join 2.3.0"), at 0.1.0 and never
+  released. It needs the same as Stund: an icon (three candidates drawn, his pick pending), its
+  `write-tomls.ps1` and `package.ps1` entries once the icon exists, a public repo
+  (github.com/Ezomic/valheim-varda does not exist yet), and a copy on live for Dyrr's allow-list
+  exactly like Stund's, though it does nothing on a server. It stays out of `server.ps1` on the
+  same terms as Stund. Ships from the LHM-34 branch, which sits on LHM-33 (a destroyed portal
+  takes its pin). Its two scenarios were green on 2026-09-22 and have to be rerun on the new
+  build, plus `varda-forgets-a-destroyed-portal`.
 - **Vandi's altar scenario now asks for `Eikthyrnir`** (`ddffac0`). That is the old name and is
   unconfirmed on 1.0; if it is wrong, Devkit's `location` step lists the names it knows.
 - All of it was built on 2026-09-26 and none of it has run in game. Each gets its scenarios run
