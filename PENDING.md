@@ -70,7 +70,7 @@ proposal; the numbers are his.
 | Vaettir | the BiomeIndex fix above, plus the crafting panel's chest number, plus Furrow's grid drifting between patches and under saplings | 1.6.3, all fixes | LHM-28, LHM-29 | `Everyone` |
 | Jafna | a flatten that needs higher ground raises it and charges stone for it | 1.1.0, a feature | LHM-30 | `HostOnly` |
 | Vaka | lights that burn resin or coal last twice as long; cooking fires unchanged | 1.1.0, a feature | LHM-31 | `Everyone` |
-| Malmr (new) | vein mining: tap Alt with a pickaxe, fill a bar for the whole deposit, it breaks at once; each ore opens at a Pickaxes level and its biome's boss killed (at one star with Vandi) | 1.0.0, the house rule | LHM-32 | `Everyone` |
+| Malmr (new) | vein mining: tap Alt with a pickaxe, fill a bar for the whole deposit, it breaks at once; stone and each ore open at a Pickaxes level and their biome's boss killed (at one star with Vandi) | 1.0.0, the house rule | LHM-32 | `Everyone` |
 
 - **Utangard ships from the LHM-26 branch merged into `main`** since 2026-09-27, when Robbin pulled
   the foothold bars and compendium panel C into 2.3.0 ("2.3.0 start building"). Until then it was
