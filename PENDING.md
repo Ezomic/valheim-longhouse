@@ -89,8 +89,8 @@ proposal; the numbers are his.
   repo, both build lists, and a copy on live whatever its gate turns out to be, for Dyrr's
   allow-list.
 - **Varda joined on 2026-09-27 at Robbin's word** ("it should join 2.3.0"), at 0.1.0 and never
-  released. It needs the same as Stund: an icon (three candidates drawn, his pick pending), its
-  `write-tomls.ps1` and `package.ps1` entries once the icon exists, a public repo
+  released. It needs the same as Stund. Done: its icon (candidate c, the folded map, his pick),
+  its generated toml, and its `write-tomls.ps1` and `package.ps1` entries. Left: a public repo
   (github.com/Ezomic/valheim-varda does not exist yet), and a copy on live for Dyrr's allow-list
   exactly like Stund's, though it does nothing on a server. It stays out of `server.ps1` on the
   same terms as Stund. Ships from the LHM-35 branch (H at your portal hides its pin, per player),
