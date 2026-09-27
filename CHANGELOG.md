@@ -95,7 +95,8 @@ Map pins for places you have actually been. Go into a dungeon and it pins itself
 with its own icon, a stone arch with steps going down. Walking past the entrance does nothing,
 you have to go in. Every portal you built gets its own pin with its tag on it, the pin follows
 the tag when you change it, and it comes off the map when the portal is broken. Other people's
-portals stay off your map.
+portals stay off your map. Don't want one on your map? Look at it and press H, and press H again
+to bring it back. That only changes your own map.
 
 They are ordinary map pins wearing a picture, so taking Varda out costs you the icon and not
 the pin.
