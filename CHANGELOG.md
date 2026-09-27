@@ -119,9 +119,11 @@ pick, who it is waiting on, when it opens anyway, and your two bars.
 The hoe can build ground up now. When a flatten needs the ground higher than it is, Jafna raises
 it and takes stone from your pack, at the rate the hoe's own Raise ground charges. The build panel
 shows what the swing will cost before you make it, and going over ground that is already flat
-costs nothing. Short of stone, the whole patch comes up part of the way and the next swing
-finishes it. Before, a swing could only move the ground about a metre and anything higher had to
-be raised by hand first.
+costs nothing. Ground the swing can't bring up is left alone and costs nothing: short of stone,
+the middle of the swing comes up and the rest waits for more stone, and ground more than eight
+metres above where the world put it is never raised, which the game wouldn't keep anyway. Before,
+a swing could only move the ground about a metre and anything higher had to be raised by hand
+first.
 
 ### Vaka
 
