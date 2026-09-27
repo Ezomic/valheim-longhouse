@@ -101,9 +101,11 @@ answers as soon as that biome does, by kills or by the deadline.
 A locked biome was a wall rather than a challenge. AllHailPidgey put it plainly: the problem is not
 being able to eat. So each character now earns a foothold in a locked biome on their own, with two
 bars. Fighting fills from killing that biome's creatures, each worth set points: in the Black Forest
-a greydwarf is 1 and a troll 5, and no one kind of creature can fill more than half. Discovery fills
-from uncovering half a square kilometre of its map yourself. Walking the same ground twice does not
-count, and neither does a map table.
+a greydwarf is 1 and a troll 5, 150 fills the bar, and no one kind of creature can fill more than
+half. Only kills Utangard sees count, in this world: a tamed or bred creature counts for nobody,
+and neither does a kill made with devcommands on, so every character starts from zero. Discovery
+fills from uncovering a square kilometre of its map yourself. Walking the same ground twice does
+not count, and neither does a map table.
 
 At half a Fighting bar you can eat there again. With both bars full, wounds heal at the normal rate.
 Meads, powers and Rested stay refused, food still burns faster, and you still leave Sapped. The bars
