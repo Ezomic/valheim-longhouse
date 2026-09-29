@@ -98,8 +98,20 @@ proposal; the numbers are his.
   build, plus `varda-forgets-a-destroyed-portal` and `varda-hides-one-portal`.
 - **Vandi's altar scenario now asks for `Eikthyrnir`** (`ddffac0`). That is the old name and is
   unconfirmed on 1.0; if it is wrong, Devkit's `location` step lists the names it knows.
-- All of it was built on 2026-09-26 and none of it has run in game. Each gets its scenarios run
-  before its zip is built, per the rule at the bottom of this file.
+- **Scenarios, 2026-09-28 to 09-29: 51 of the 52 in `own-profile\BepInEx\scenarios\playlist.txt`
+  pass** on the current builds, across six runs in fresh test worlds (logs in the session
+  scratchpad, `scenario-run-1..6.log`). Every mod in this table plus Stund, Skaft, Rist, Yoke and
+  Vaka is green. The one left, `varda-pins-your-own-portal`, failed on a world structure inside
+  Devkit's staged circle, not on Varda; Devkit's stage is being taught to move off such ground.
+  Robbin's by-hand checks passed on 2026-09-29: Varda's H key, Jafna's and Malmr's Left Alt as a
+  tap that ignores Alt+Tab. **Not yet run:** the paired (two-client) scenarios, which need the
+  dev server - the kill-credit pair in `utangard\scenarios` and Vaettir's chest pairs.
+- The runs found real bugs, all fixed before this line was written: kill credit that reached
+  nobody (Vandi, Utangard, Vaettir, the OnDeath postfix had no ZDO left), Malmr keying every
+  deposit's metal on the first one struck, Vaettir's Hod line squeezed to the game's label,
+  Deep North materials ungated in Vaettir (now read off the Frozen King at runtime), Alt+Tab
+  toggling Jafna's and Malmr's Left Alt, and Jafna reshaping terrain ops that were not the
+  player's swing. Jafna's paid raise now also needs a workbench in range (Robbin's call).
 
 ### Prepared on 2026-09-24 - what is left is the uploads
 
