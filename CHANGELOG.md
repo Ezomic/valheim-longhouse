@@ -132,7 +132,8 @@ pick, who it is waiting on, when it opens anyway, and your two bars.
 ### Jafna
 
 The hoe can build ground up now. When a flatten needs the ground higher than it is, Jafna raises
-it and takes stone from your pack, at the rate the hoe's own Raise ground charges. A swing that
+it and takes stone from your pack, at the rate the hoe's own Raise ground charges, and like Raise
+ground it needs a workbench nearby. Away from one, the hoe works as it always did. A swing that
 uses stone lifts its whole circle to your height at once, so it leaves a step at its edge until
 your next swing beside it. A swing that needs no stone works like the normal hoe. The build panel
 shows what the swing will cost before you make it, and going over ground that is already flat
@@ -141,6 +142,9 @@ the middle of the swing comes up and the rest waits for more stone, and ground m
 metres above where the world put it is never raised, which the game wouldn't keep anyway. Before,
 a swing could only move the ground about a metre and anything higher had to be raised by hand
 first.
+
+Tapping Left Alt to hold a height now happens when you let go of the key, and Alt+Tab no longer
+pins a height by accident.
 
 ### Vaka
 
@@ -152,7 +156,9 @@ Vaka's log lists which fires that covers when a world loads.
 Some Deep North items were filed as Meadows items: the Elaking and Jotun trophies, the Elaking
 hair bundle, and the Vanguard chestpiece with its cast and moulds. Yoke raised their stacks once
 Eikthyr fell, and Vaettir let them be pulled from chests from Eikthyr on. The Jotun invasion
-spawns in every biome, and the shared biome index read that as the Meadows.
+spawns in every biome, and the shared biome index read that as the Meadows. In Vaettir those
+items, and the rest of the Deep North's materials, now come out of chests only once the Frozen
+King is dead. Before, nothing gated them at all.
 
 Vaettir also fixes two things players ran into. Next to a hod jib, the chest total on the crafting
 panel ran off the edge of its slot, so 169 read as 16. The line now shows what you carry against
