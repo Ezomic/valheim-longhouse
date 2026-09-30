@@ -8,7 +8,7 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
-## [2.3.0] - pending Stund, Vandi, Malmr, Varda, Skaft 1.3.0, Rist 1.7.0, and new versions of Yoke, Vaettir, Utangard, Jafna and Vaka
+## [2.3.0] - 2026-09-30
 
 Adds **Stund**, **Vandi**, **Malmr** and **Varda**, for twenty members, and repins **Skaft 1.3.0**,
 **Rist 1.7.0**, Yoke, Vaettir, Utangard, Jafna and Vaka.
@@ -60,7 +60,7 @@ landing hurt. Steady footing is 5% a rank, and Ox-backed's last rank halves the 
 spend walking overloaded instead of reducing stagger, since with Fader's power the two nearly
 made you unstaggerable. Details are in Rist's own changelog.
 
-### Vandi
+### Vandi 1.0.0
 
 Starred creatures get likelier in a biome whose boss you have killed. Each kill adds five
 percentage points to vanilla's ten, up to twenty five extra, so a boss you have killed five times
@@ -71,7 +71,7 @@ It is all per player. Your own kills decide what you meet, and a kill counts for
 the offering, even if they died before the boss did. Helping with someone else's boss earns you
 nothing.
 
-### Malmr
+### Malmr 1.0.0
 
 Vein mining. Hold a pickaxe and tap Alt to switch it on. Keep hitting any chunk of an ore deposit
 and a bar under the crosshair fills for the whole deposit instead of breaking that chunk. At 100%
@@ -89,7 +89,7 @@ installed it has to be the one-star version, which is your second kill of it.
 
 Malmr has to be on the server and on every client. Vandi is recommended, not required.
 
-### Varda
+### Varda 1.0.0
 
 Map pins for places you have actually been. Go into a dungeon and it pins itself on your map
 with its own icon, a stone arch with steps going down. Walking past the entrance does nothing,
@@ -103,7 +103,7 @@ the pin.
 
 Nobody else needs it. `Requirement.HostOnly`, every setting marked as yours.
 
-### Utangard
+### Utangard 1.4.0
 
 A boss will not come to an altar in a biome your group has not earned. Until now one player
 could carry an egg into the locked Mountains, kill Moder there, and start the Plains deadline for
@@ -129,7 +129,7 @@ are yours alone and only lift the rules in the biome they belong to.
 The compendium's Utangard page is new: every biome in a row, open or locked, and for the one you
 pick, who it is waiting on, when it opens anyway, and your two bars.
 
-### Jafna
+### Jafna 1.1.0
 
 The hoe can build ground up now. When a flatten needs the ground higher than it is, Jafna raises
 it and takes stone from your pack, at the rate the hoe's own Raise ground charges, and like Raise
@@ -146,12 +146,12 @@ first.
 Tapping Left Alt to hold a height now happens when you let go of the key, and Alt+Tab no longer
 pins a height by accident.
 
-### Vaka
+### Vaka 1.1.0
 
 Lights that burn resin or coal last twice as long on the same fuel. Cooking fires are unchanged.
 Vaka's log lists which fires that covers when a world loads.
 
-### Vaettir and Yoke
+### Vaettir 1.6.3 and Yoke 1.2.2
 
 Some Deep North items were filed as Meadows items: the Elaking and Jotun trophies, the Elaking
 hair bundle, and the Vanguard chestpiece with its cast and moulds. Yoke raised their stacks once

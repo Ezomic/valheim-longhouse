@@ -135,7 +135,13 @@ $members = @(
     # Two members in one pack version is a first. The rule still gives one minor: it
     # asks for the smallest correct bump, not one bump per thing.
     'kvedja',
-    'merki'
+    'merki',
+    # Stund, Vandi and Varda joined in 2.3.0, each added here only after it was on
+    # Thunderstore (2026-09-30), for the reason above, and Malmr the same way once its icon was picked.
+    'stund',
+    'vandi',
+    'varda',
+    'malmr'
 )
 
 # BepInEx is pinned by the pack as well as by each mod. A pack that named only the mods

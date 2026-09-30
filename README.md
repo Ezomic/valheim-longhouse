@@ -27,7 +27,13 @@ themselves.
 | [Lur](https://thunderstore.io/c/valheim/p/Ezomic/Lur/) | Sound a horn in one of Hildir's dungeons and its mini-boss wakes again. |
 | [Skaft](https://thunderstore.io/c/valheim/p/Ezomic/Skaft/) | Hammer repair reaches further the higher your Crafting skill. |
 | [Vaka](https://thunderstore.io/c/valheim/p/Ezomic/Vaka/) | Fires keep while you are away. A single absence costs one fuel, however long it was. |
-| [Jafna](https://thunderstore.io/c/valheim/p/Ezomic/Jafna/) | The hoe levels to the flat ground it is touching instead of to your crosshair, and Crafting decides how wide a swing is. |
+| [Jafna](https://thunderstore.io/c/valheim/p/Ezomic/Jafna/) | The hoe levels to the flat ground it is touching instead of to your crosshair, and raises what it cannot reach with stone from your pack. |
+| [Kvedja](https://thunderstore.io/c/valheim/p/Ezomic/Kvedja/) | A message of the day in the chat window when you log in. |
+| [Merki](https://thunderstore.io/c/valheim/p/Ezomic/Merki/) | The server decides who is on the map, and death is public. |
+| [Stund](https://thunderstore.io/c/valheim/p/Ezomic/Stund/) | The time of day and the day number, on screen. |
+| [Vandi](https://thunderstore.io/c/valheim/p/Ezomic/Vandi/) | Creatures wear more stars in a biome whose boss you keep killing, and that boss comes back harder. |
+| [Malmr](https://thunderstore.io/c/valheim/p/Ezomic/Malmr/) | Vein mining: keep hitting a deposit and a bar fills until the whole thing breaks at once, metal by metal as your Pickaxes skill and bosses allow. |
+| [Varda](https://thunderstore.io/c/valheim/p/Ezomic/Varda/) | Dungeons you enter and portals you build put themselves on your map. |
 
 The exact versions are in [manifest.json](manifest.json), and Thunderstore lists them on the
 pack's page. Each mod has its own README and its own changelog.
