@@ -1,8 +1,15 @@
 # Pending pack updates
 
-One: 2.3.0. It waits on Thunderstore publishes that have not happened yet, which is why the
-manifest is untouched: a pack that pins a version nobody can download is a pack that fails to
-install, and `tcli` will build it happily.
+**2.3.0 is PUBLISHED (2026-09-30).** All eleven mods (Stund, Vandi, Malmr and Varda at 1.0.0;
+Skaft 1.3.0, Rist 1.7.0, Utangard 1.4.0, Jafna 1.1.0, Vaka 1.1.0, Vaettir 1.6.3, Yoke 1.2.2) and
+the Longhouse 2.3.0 pack (20 mods, 21 dependency lines) are on Thunderstore; every repo is pushed
+and tagged, and Vandi, Malmr and Varda have public repos. **What is left is live**, step 6 below:
+the published zips' plugin folders are staged in the session scratchpad at
+`live-2.3.0\plugins\` (each zip byte-identical to the upload). Live is Robbin's call, after the
+Thunderstore app shows 2.3.0 (see the package-listing index note in memory). Step 6 predates
+the widening: live needs ALL ELEVEN, including Vaka and Jafna (Vaka is `Everyone`; Jafna, Varda
+and Stund are `HostOnly` and must be there for Dyrr's allow-list), plus Utangard's cfg edits.
+Once live runs 2.3.0, this section goes, as 2.2.0's did.
 
 2.2.0 went out on 2026-09-22 and its section is gone from here. What it carried is in its
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
