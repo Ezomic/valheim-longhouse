@@ -104,8 +104,13 @@ proposal; the numbers are his.
   Vaka is green. The one left, `varda-pins-your-own-portal`, failed on a world structure inside
   Devkit's staged circle, not on Varda; Devkit's stage is being taught to move off such ground.
   Robbin's by-hand checks passed on 2026-09-29: Varda's H key, Jafna's and Malmr's Left Alt as a
-  tap that ignores Alt+Tab. **Not yet run:** the paired (two-client) scenarios, which need the
-  dev server - the kill-credit pair in `utangard\scenarios` and Vaettir's chest pairs.
+  tap that ignores Alt+Tab. **Two players, 2026-09-30:** `paired-kill-credit-killer` 112/112 and
+  `-watcher` 45/45 on the dev server through `own-profile\pair.ps1` (LHM-39: both clients join
+  by themselves, one Run starts both halves). Each kill credited once, by the machine that owned
+  it, to the summoner. Only FallenWarrior, FrozenKing(_p3), TrollFrost and Writhan die through
+  their animation, so only they could ever be counted twice; that path is not exercised and is
+  harmless or minor for all three mods. Vaettir's chest pairs were skipped at Robbin's call:
+  they passed on 2026-09-20 and that code has not changed.
 - The runs found real bugs, all fixed before this line was written: kill credit that reached
   nobody (Vandi, Utangard, Vaettir, the OnDeath postfix had no ZDO left), Malmr keying every
   deposit's metal on the first one struck, Vaettir's Hod line squeezed to the game's label,
