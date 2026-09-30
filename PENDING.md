@@ -1,6 +1,6 @@
 # Pending pack updates
 
-**2.3.0 is PUBLISHED (2026-09-30).** All eleven mods (Stund, Vandi, Malmr and Varda at 1.0.0;
+**2.3.0 is PUBLISHED and LIVE (2026-09-30; live updated ~11:19 UTC with nobody online, backup in the archive).** What remains is Robbin pressing Publish on the site's 2.3.0 release note, which also moves the hub's "Live runs" line. The notes below are kept until then. All eleven mods (Stund, Vandi, Malmr and Varda at 1.0.0;
 Skaft 1.3.0, Rist 1.7.0, Utangard 1.4.0, Jafna 1.1.0, Vaka 1.1.0, Vaettir 1.6.3, Yoke 1.2.2) and
 the Longhouse 2.3.0 pack (20 mods, 21 dependency lines) are on Thunderstore; every repo is pushed
 and tagged, and Vandi, Malmr and Varda have public repos. **What is left is live**, step 6 below:
