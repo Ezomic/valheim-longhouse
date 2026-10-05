@@ -8,6 +8,61 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.3.1] - 2026-10-05
+
+Repins **Stund**, **Kynda**, **Vaettir**, **Rist**, **Malmr**, **Dvala** and **Lur**. Nothing joins or
+leaves, and Core stays at 1.4.0.
+
+### Stund 1.0.1
+
+The clock read raw world time, and the game does not light the sky from that. It squeezes the
+night, so the "Day N" message arrived at 03:36 on the clock and the sun was up around 03:56 and
+down at 20:04. Only noon agreed. Stund now uses the same rescaled time: the morning is 06:00,
+sunrise about 06:00, sunset 18:00. The 2.3.0 notes above gave 06:15 and 17:45, which were the
+raw numbers. The day number changes at 06:00 with the message.
+
+### Kynda 1.1.2
+
+Batching a smelter or fireplace no longer drops to one item a press after the first few. It
+depended on who owned the station and how fast you pressed, which is why it only happened
+sometimes. The Tun now serves the blast furnace too, with the same figures as at a smelter. A
+saved config keeps `Stations = smelter` until you change the line to `smelter,blastfurnace`.
+
+### Vaettir 1.6.4
+
+Items a trader sells, like the Bog Witch's Cured squirrel hamstring, now come out of chests once
+the trader's biome boss is down, and the hamstring's old pin to the Mistlands is gone from the
+default. The Holds button no longer sits on top of a slot in a wide chest such as a Reinforced
+one.
+
+### Rist 1.7.1
+
+Sure-footed's last rank no longer makes you immune to falling. Ranks still give -10% fall
+damage each, and the capstone is a landing roll: dodge in the last 0.3 seconds before you touch
+down and the fall counts 8 metres shorter. A 20 metre fall that used to cost nothing now costs a
+quarter of your health at rank five. This takes something away from anyone who has carved it.
+The runestone page also stops rewriting the cursor every frame, which kept the pointer pinned to
+the middle of the screen for one player on SteamOS.
+
+### Malmr 1.0.1
+
+With `Verbose` on, a blow that goes to vanilla instead of into the vein bar logs the reason. Some
+players see the first blow on a deposit mine the ordinary way. The cause is not found yet, so
+this does not fix it, it only makes the log say why next time.
+
+### Dvala 1.0.3
+
+A restock now puts back the hanging items and pedestal pieces in the frost caves, which are
+destroyed when taken and so had nothing to reset. A refilled chest is only counted as done when
+the write landed, and a dungeon with a chest that could not be refilled is tried again on the
+next sweep instead of waiting thirty days.
+
+### Lur 1.1.2
+
+The horn's bell was see-through. The bone tube had no thickness and the game does not draw the
+back of a face, so looking into the mouth showed the world through the far wall. It has a thin
+wall now and the outside is unchanged, so the horn looks the same from the front.
+
 ## [2.3.0] - 2026-09-30
 
 Adds **Stund**, **Vandi**, **Malmr** and **Varda**, for twenty members, and repins **Skaft 1.3.0**,
