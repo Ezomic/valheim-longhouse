@@ -15,6 +15,106 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
+## 2.3.1 - repins Stund, Kynda, Vaettir, Rist, Malmr and Dvala (LHM-73)
+
+**A patch**: six repins, no member joins or leaves, Core stays at 1.4.0. Prepared on 2026-10-05
+from the published 2.3.0 state, **not from `main`**, because `main` of most of these repos already
+holds work Robbin placed in 2.4.0 and 2.5.0 (the settings screen LHM-51, Kynda's hover text and
+the Skip, Rist's new stones and capstones, Dvala's new dungeon, Vandi and more). Each repo has a
+branch `release/2.3.1`, cut from its 2.3.0 commit with only the fixes below picked onto it. The
+checkouts themselves were not touched: the branches live in git worktrees under
+`E:\Repositories\valheim\wt-release-231\<mod>`, laid out as siblings with `core` checked out
+detached at `b50cc30`, the Core commit 2.3.0 shipped against (1.4.0 plus the BiomeIndex fix, which
+is shared source and not part of Core's DLL). `own-profile\package.ps1` and `write-tomls.ps1` were
+copied into `wt-release-231\own-profile`, so they resolve the siblings there.
+
+**Every version below is a proposal. The numbers are Robbin's.**
+
+| Mod | Proposed | Tickets | What it is | Zip entries (2.3.0 / now) | DLL |
+| --- | --- | --- | --- | --- | --- |
+| Stund | 1.0.1 | LHM-57 | the clock shows the sky's time, 06:00 morning and 18:00 sunset | 6 / 6 | `1.0.1+2c7be67` |
+| Kynda | 1.1.2 | LHM-50, LHM-71 | batching no longer drops to one item a press; the Tun serves the blast furnace | 12 / 12 | `1.1.2+a3c6c74` |
+| Vaettir | 1.6.4 | LHM-63, LHM-58 | trader stock opens with the trader's biome boss; the Holds button clears the slots | 48 / 48 | `1.6.4+770181c` |
+| Rist | 1.7.1 | LHM-64, LHM-59 | cursor written only when it changes; Sure-footed's capstone is a landing roll | 7 / 7 | `1.7.1+b3cf0a6` |
+| Malmr | 1.0.1 | LHM-60 | Verbose names why a blow went to vanilla (diagnostics, not a fix) | 6 / 6 | `1.0.1+63640fa` |
+| Dvala | 1.0.3 | LHM-67, LHM-68 | restock puts back hanging and pedestal pickups; chest refills stop failing silently | 6 / 6 | `1.0.3+94217a0` |
+
+Zips are in each worktree's `dist\`, built with `package.ps1 -Mod <Name>` (never `-SkipBuild`),
+each DLL hashed against the built one and each entry list compared against the 2.3.0 zip: same
+names, and every file other than the DLL, manifest, README and changelog is the same content
+(Rist's `cards.txt` also changed, on purpose). Dyrr (LHM-10) is **not** in this update: its fix
+is the 1.4.2 that 2.3.0 already pins.
+
+**Things that are not what the tickets say, read before publishing:**
+
+- **Kynda LHM-71 is a reduced version.** The commit on `feature/LHM-71-tun-blast-furnace` sits on
+  the Skip (LHM-47, held) and rewrites `ServingStation` around it, so it cannot be picked. 1.1.2
+  carries only what 1.1.1's code needs: the Tun's `Stations` default becomes
+  `smelter,blastfurnace`, plus hover text, README and the scenario. A saved cfg keeps `smelter`
+  until the line is edited.
+- **Kynda LHM-24 has nothing in Kynda.** The only fix commit for it is in Lur (the scroll horn's
+  bore), and Lur is not in this update. Kynda's two camp models still have the open edges the
+  ticket listed.
+- **Rist LHM-59 is reduced too.** The landing roll was merged on top of the unreleased stones.
+  1.7.1 takes the roll, its press guard and the `Enabled` gate, and leaves out everything that
+  needs Eel-slick, Engineer, Blood-sworn and the 31-stone catalogue. It reads `Effects.TotalFor`,
+  the 1.7.0 reader, where `main` uses `Effects.Cached`. It takes immunity away from anyone who
+  carved Sure-footed to rank five, which by the 1.7.0 precedent could argue for a minor.
+- **Dvala LHM-67 and LHM-68 are one commit on top of the new dungeon work (LHM-62).** 1.0.3 is
+  that commit rebuilt against 1.0.2: the pickup rebuild and the chest fixes, a console with only
+  `dvala restock`, the `SoftReferenceableAssets` reference, no NewDungeon text anywhere.
+- **Malmr LHM-60 does not fix the first-blow report.** The cause was never found. The release
+  carries the logging and the `malmr-first-blow` scenario.
+- **Vaettir LHM-63 and LHM-58 changelog hunks** conflicted on the pick and were rewritten as one
+  entry. The code picked cleanly.
+- Nothing from any of these has been run in game. Every ticket comment says "built only".
+
+Steps, in order:
+
+1. Run the scenarios below on a fresh world with passes hidden, against the **release builds**.
+   The play profile builds whatever each real checkout has out, which is a feature branch for
+   Kynda, Vaettir, Rist and Dvala, so the release builds need to get into a profile first.
+2. Core does not move, so nothing goes up before the mods. Publish **Stund 1.0.1, Kynda 1.1.2,
+   Vaettir 1.6.4, Rist 1.7.1, Malmr 1.0.1 and Dvala 1.0.3** from the zips in each worktree's
+   `dist\`. Tomls are generated and committed (AI Generated on all of them). Dvala's listing had
+   no categories when this was written, and the Longhouse listing lacks AI Generated too; the
+   token cannot edit a listing, so check both on the site.
+3. Pack: `longhouse` branch `release/2.3.1` carries manifest 2.3.1 with the six pins, the
+   dated `## [2.3.1]` changelog entry and the generated toml. The pins were edited by hand,
+   since `build-manifest.ps1` reads its members from the real checkouts' manifests, and every
+   pin was compared against the member's release manifest. `tcli build` there makes the zip;
+   it needs no `package.ps1` entry.
+4. Tag each release commit and push the tags and branches when published. `main` of each repo
+   already holds these fixes in their original form, so `release/2.3.1` is not merged back; the
+   next release from `main` simply carries a higher version.
+5. **Live, in the same sitting, Robbin's call:** all six go on live, copied out of the published
+   zips. Kynda, Malmr and Dvala are `Everyone`, Vaettir and Rist carry new build ids the gate
+   compares, and Stund is `HostOnly`, which still checks a client carrying it against the
+   server's copy. Rist's `cards.txt` changes (Sure-footed). Restart with the server empty.
+
+**Scenarios to run before release** (Devkit, `Run all`, singleplayer unless noted). Add the new
+ones to `own-profile\BepInEx\scenarios\playlist.txt` first, which lists the 2.3.0 set only:
+
+- Stund: `stund-clock-agrees-with-the-world` (changed: steps 06:00, 12:00, 18:00, 00:00; assumes
+  the 1200 second day).
+- Kynda: `kynda-coal-three-per-press` and `kynda-tun-blast-furnace`, both new. The second needs
+  `Verbose = true` and `Stations = smelter,blastfurnace` under `[Trough]` in the cfg first, since
+  a saved cfg keeps `smelter`. Also try the batch key with a held key on a burning fireplace by
+  hand, since the report was intermittent.
+- Vaettir: `vaettir-jib-trader-items` and `vaettir-holds-button-clear-of-cells`, both new, and the
+  whole existing jib and furrow set for regressions, because `ConfigRevision` moves to 4. The
+  chest pairs `paired-vaettir-*` stay skipped as in 2.3.0.
+- Rist: `rist-landing-roll`, new, and `rist-forsaken-powers`, whose fall-damage expectation
+  changed. The other five Rist scenarios for regressions. By hand: Jump 100 with Long stride at
+  rank 5, jump on flat ground, no damage; and a landing roll from a ledge.
+- Malmr: `malmr-first-blow`, new, and the rest of the Malmr set. Turn `Verbose` on and read the
+  new reason lines.
+- Dvala: `dvala-restock-spawns-no-pickups-on-a-fresh-dungeon`, new, needs a frost cave
+  (`FrostCaves`) and `devcommands` for `dvala restock`. A spawn on a fresh dungeon means the seed
+  replay picked different alternatives than the original generation. By hand, the real cycle: take
+  the pickups, restock, take again, and the two-client case. The chest report (LHM-68) is only
+  answered by a restock with `Verbose` on, reading the per-chest skip lines.
+
 ## 2.3.0 - adds Stund, Vandi and a vein mining mod, and repins Skaft, Rist, Yoke, Vaettir, Utangard, Jafna and Vaka
 
 **A minor**, same as 2.2.0 and for the same reason: the set grows again, sixteen mods to
