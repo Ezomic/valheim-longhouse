@@ -10,7 +10,7 @@ changelog.
 
 ## [2.3.1] - 2026-10-05
 
-Repins **Stund**, **Kynda**, **Vaettir**, **Rist**, **Malmr** and **Dvala**. Nothing joins or
+Repins **Stund**, **Kynda**, **Vaettir**, **Rist**, **Malmr**, **Dvala** and **Lur**. Nothing joins or
 leaves, and Core stays at 1.4.0.
 
 ### Stund 1.0.1
@@ -56,6 +56,12 @@ A restock now puts back the hanging items and pedestal pieces in the frost caves
 destroyed when taken and so had nothing to reset. A refilled chest is only counted as done when
 the write landed, and a dungeon with a chest that could not be refilled is tried again on the
 next sweep instead of waiting thirty days.
+
+### Lur 1.1.2
+
+The horn's bell was see-through. The bone tube had no thickness and the game does not draw the
+back of a face, so looking into the mouth showed the world through the far wall. It has a thin
+wall now and the outside is unchanged, so the horn looks the same from the front.
 
 ## [2.3.0] - 2026-09-30
 

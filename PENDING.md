@@ -15,9 +15,9 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
-## 2.3.1 - repins Stund, Kynda, Vaettir, Rist, Malmr and Dvala (LHM-73)
+## 2.3.1 - repins Stund, Kynda, Vaettir, Rist, Malmr, Dvala and Lur (LHM-73)
 
-**A patch**: six repins, no member joins or leaves, Core stays at 1.4.0. Prepared on 2026-10-05
+**A patch**: seven repins, no member joins or leaves, Core stays at 1.4.0. Prepared on 2026-10-05
 from the published 2.3.0 state, **not from `main`**, because `main` of most of these repos already
 holds work Robbin placed in 2.4.0 and 2.5.0 (the settings screen LHM-51, Kynda's hover text and
 the Skip, Rist's new stones and capstones, Dvala's new dungeon, Vandi and more). Each repo has a
@@ -38,8 +38,9 @@ copied into `wt-release-231\own-profile`, so they resolve the siblings there.
 | Rist | 1.7.1 | LHM-64, LHM-59 | cursor written only when it changes; Sure-footed's capstone is a landing roll | 7 / 7 | `1.7.1+b3cf0a6` |
 | Malmr | 1.0.1 | LHM-60 | Verbose names why a blow went to vanilla (diagnostics, not a fix) | 6 / 6 | `1.0.1+63640fa` |
 | Dvala | 1.0.3 | LHM-67, LHM-68 | restock puts back hanging and pedestal pickups; chest refills stop failing silently | 6 / 6 | `1.0.3+94217a0` |
+| Lur | 1.1.2 | LHM-24 | the horn's bell has a wall, so it is no longer see-through from inside | 8 / 8 | `1.1.2+3b5d603` |
 
-Zips are in each worktree's `dist\`, built with `package.ps1 -Mod <Name>` (never `-SkipBuild`),
+Zips are in each worktree's `dist\` (the pack's is in `longhouse\build\`), built with `package.ps1 -Mod <Name>` (never `-SkipBuild`),
 each DLL hashed against the built one and each entry list compared against the 2.3.0 zip: same
 names, and every file other than the DLL, manifest, README and changelog is the same content
 (Rist's `cards.txt` also changed, on purpose). Dyrr (LHM-10) is **not** in this update: its fix
@@ -52,9 +53,20 @@ is the 1.4.2 that 2.3.0 already pins.
   carries only what 1.1.1's code needs: the Tun's `Stations` default becomes
   `smelter,blastfurnace`, plus hover text, README and the scenario. A saved cfg keeps `smelter`
   until the line is edited.
-- **Kynda LHM-24 has nothing in Kynda.** The only fix commit for it is in Lur (the scroll horn's
-  bore), and Lur is not in this update. Kynda's two camp models still have the open edges the
-  ticket listed.
+- **LHM-24 is Lur's fix, not Kynda's.** The only fix commit for it is in Lur (the scroll horn's
+  bore), and Lur joined this update on 2026-10-05 at Robbin's word. Kynda has nothing for it:
+  its two camp models still have the open edges the ticket listed, and stay as they are.
+- **Lur 1.1.2 is one picked commit** (`da8114d`, the open-edges fix) on the commit that
+  published 1.1.1 (tag `v1.1.1`), plus the version bump and changelog. Nothing else came with
+  it. The model `lur.obj` and its item icon `lur.png` changed (the icon is redrawn from the new
+  model); the `.mtl`, the package icon, README and licence did not. The check
+  (`own-profile\check-models.py lur`) still lists 85 open edges, **all in the iron group** (band
+  sleeves and the buried start of the mouthpiece, which the commit leaves open on purpose); the
+  bone group, the part a player looks into, went from 26 to 0. `Lur.csproj` still said 1.1.0
+  at 1.1.1, so it moves to 1.1.2 here and is right again. No 1.1.1 zip is on disk, so the entry
+  list was compared with 1.1.0's (same eight names). The README is that of
+  `v1.1.1`, which means the README's bugs-and-ideas section (a later commit on `master`) is not
+  in 1.1.2.
 - **Rist LHM-59 is reduced too.** The landing roll was merged on top of the unreleased stones.
   1.7.1 takes the roll, its press guard and the `Enabled` gate, and leaves out everything that
   needs Eel-slick, Engineer, Blood-sworn and the 31-stone catalogue. It reads `Effects.TotalFor`,
@@ -75,11 +87,11 @@ Steps, in order:
    The play profile builds whatever each real checkout has out, which is a feature branch for
    Kynda, Vaettir, Rist and Dvala, so the release builds need to get into a profile first.
 2. Core does not move, so nothing goes up before the mods. Publish **Stund 1.0.1, Kynda 1.1.2,
-   Vaettir 1.6.4, Rist 1.7.1, Malmr 1.0.1 and Dvala 1.0.3** from the zips in each worktree's
+   Vaettir 1.6.4, Rist 1.7.1, Malmr 1.0.1, Dvala 1.0.3 and Lur 1.1.2** from the zips in each worktree's
    `dist\`. Tomls are generated and committed (AI Generated on all of them). Dvala's listing had
    no categories when this was written, and the Longhouse listing lacks AI Generated too; the
    token cannot edit a listing, so check both on the site.
-3. Pack: `longhouse` branch `release/2.3.1` carries manifest 2.3.1 with the six pins, the
+3. Pack: `longhouse` branch `release/2.3.1` carries manifest 2.3.1 with the seven pins, the
    dated `## [2.3.1]` changelog entry and the generated toml. The pins were edited by hand,
    since `build-manifest.ps1` reads its members from the real checkouts' manifests, and every
    pin was compared against the member's release manifest. `tcli build` there makes the zip;
@@ -87,10 +99,10 @@ Steps, in order:
 4. Tag each release commit and push the tags and branches when published. `main` of each repo
    already holds these fixes in their original form, so `release/2.3.1` is not merged back; the
    next release from `main` simply carries a higher version.
-5. **Live, in the same sitting, Robbin's call:** all six go on live, copied out of the published
-   zips. Kynda, Malmr and Dvala are `Everyone`, Vaettir and Rist carry new build ids the gate
+5. **Live, in the same sitting, Robbin's call:** all seven go on live, copied out of the published
+   zips. Kynda, Malmr, Dvala and Lur are `Everyone`, Vaettir and Rist carry new build ids the gate
    compares, and Stund is `HostOnly`, which still checks a client carrying it against the
-   server's copy. Rist's `cards.txt` changes (Sure-footed). Restart with the server empty.
+   server's copy. Rist's `cards.txt` changes (Sure-footed). Lur's DLL and `lur.obj` both change, copy both. Restart with the server empty.
 
 **Scenarios to run before release** (Devkit, `Run all`, singleplayer unless noted). Add the new
 ones to `own-profile\BepInEx\scenarios\playlist.txt` first, which lists the 2.3.0 set only:
@@ -114,6 +126,12 @@ ones to `own-profile\BepInEx\scenarios\playlist.txt` first, which lists the 2.3.
   replay picked different alternatives than the original generation. By hand, the real cycle: take
   the pickups, restock, take again, and the two-client case. The chest report (LHM-68) is only
   answered by a restock with `Verbose` on, reading the per-chest skip lines.
+- Lur: **no scenario exists**, and none could cover this, since it is a look at a surface. By
+  hand, on the release build: get the horn (Hildir sells it; `spawn Lur` with devcommands),
+  hold it and look into the bell from the open end at eye height, then turn it so the far wall
+  of the bore is behind the opening. You should see the inside of the horn, not the world
+  through it. Then sound it once at a Hildir dungeon to confirm the mod still works, since the
+  mesh is the only thing that changed.
 
 ## 2.3.0 - adds Stund, Vandi and a vein mining mod, and repins Skaft, Rist, Yoke, Vaettir, Utangard, Jafna and Vaka
 
