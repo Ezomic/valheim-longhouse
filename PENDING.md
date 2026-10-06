@@ -15,7 +15,13 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
+## Rist 1.7.2 (standalone, not in a pack)
+
+Published on its own on 2026-10-06 for the SteamOS rune page cursor bug (LHM-64): the page and the game fought over the cursor lock every frame, which Linux turns into a pointer pinned to the centre. Branch `release/rist-1.7.2` in `E:\Repositories\valheim\wt-release-231\rist`, on top of `release/2.3.1`. **The pack still pins Rist 1.7.1.** The next pack update should repin Rist 1.7.2 together with its other members. Not confirmed on a Deck.
+
 ## 2.3.2 - repins Vaettir and Dvala (LHM-74, LHM-75)
+
+**2.3.2 is published and live as of 2026-10-06** (live deployed at 12:44 CEST, backup in `archive\valheim-live-backups`).
 
 **A patch**: two repins, no member joins or leaves, Core stays at 1.4.0, and every other pin is
 exactly 2.3.1's (compared in the built zip's manifest). Prepared on 2026-10-06 after 2.3.1 went
