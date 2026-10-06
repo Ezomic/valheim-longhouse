@@ -8,6 +8,22 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.3.2] - 2026-10-06
+
+Repins **Vaettir** and **Dvala**. Nothing joins or leaves, and Core stays at 1.4.0.
+
+### Vaettir 1.6.5
+
+The Holds button no longer lands on a slot in a wide chest. In a six column chest with a long
+name the title took the room beside Place stacks, and the button was pushed back onto the bottom
+right cell. It now hangs just under the window's bottom edge.
+
+### Dvala 1.0.4
+
+A dungeon with a player's gravestone in any of its rooms is no longer restocked. It is tried
+again on the next sweep, so the spawners are not re-armed around a grave before you collect it.
+`dvala restock` refuses the same way.
+
 ## [2.3.1] - 2026-10-05
 
 Repins **Stund**, **Kynda**, **Vaettir**, **Rist**, **Malmr**, **Dvala** and **Lur**. Nothing joins or
