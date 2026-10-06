@@ -20,7 +20,7 @@ history.
 **A patch**: two repins, no member joins or leaves, Core stays at 1.4.0, and every other pin is
 exactly 2.3.1's (compared in the built zip's manifest). Prepared on 2026-10-06 after 2.3.1 went
 out and live moved to it. Same method as 2.3.1: each repo has a branch `release/2.3.2` in
-`E:\Repositoriesalheim\wt-release-231\<mod>`, cut from its `release/2.3.1` with only the fix
+`E:\Repositories\valheim\wt-release-231\<mod>`, cut from its `release/2.3.1` with only the fix
 and the release commit on top, so nothing from `main` comes with it. `core` stays detached at
 `b50cc30`. Both zips were built with `own-profile\package.ps1 -Mod <Name>` from that folder
 (never `-SkipBuild`) and nothing was deployed into the play profile.
