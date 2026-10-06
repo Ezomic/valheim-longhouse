@@ -15,7 +15,59 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
+## 2.3.2 - repins Vaettir and Dvala (LHM-74, LHM-75)
+
+**A patch**: two repins, no member joins or leaves, Core stays at 1.4.0, and every other pin is
+exactly 2.3.1's (compared in the built zip's manifest). Prepared on 2026-10-06 after 2.3.1 went
+out and live moved to it. Same method as 2.3.1: each repo has a branch `release/2.3.2` in
+`E:\Repositories\valheim\wt-release-231\<mod>`, cut from its `release/2.3.1` with only the fix
+and the release commit on top, so nothing from `main` comes with it. `core` stays detached at
+`b50cc30`. Both zips were built with `own-profile\package.ps1 -Mod <Name>` from that folder
+(never `-SkipBuild`) and nothing was deployed into the play profile.
+
+**Every version below is a proposal. The numbers are Robbin's.**
+
+| Mod | Proposed | Ticket | What it is | Zip entries (previous / now) | DLL |
+| --- | --- | --- | --- | --- | --- |
+| Vaettir | 1.6.5 | LHM-75 | the Holds button hangs outside the frame instead of landing on a chest cell | 48 / 48 | `1.6.5+5da54c5` |
+| Dvala | 1.0.4 | LHM-74 | a dungeon is never restocked while a player's gravestone is in it | 6 / 6 | `1.0.4+d2931a2` |
+
+Zip DLL SHA-256 prefixes: Vaettir `f1ec212bb786`, Dvala `65a08a74d06e`. The DLL names the commit
+that was HEAD when it was built, the one before the release commit, as in 2.3.1. Every entry
+other than the DLL, manifest, README and changelog is the same content as in the previous zip
+once line endings are normalised (Dvala's README changed on purpose, it documents the gravestone
+rule).
+
+**Staging trap, again:** `package.ps1` leaves `<repo>\package\BepInEx\plugins\<Mod>` stale
+(it held the previous version's DLL), and tcli publishes from that folder, not from `dist\`. It
+was restaged from the validated zip's `plugins/<Mod>` content and `tcli build` run in each repo;
+the tcli zips in each repo's `build\` have the same DLL hash and file list as the `dist\` zips
+(only the manifest differs, tcli rewrites it). Publish from those, after checking the staging
+folder still matches.
+
+Things to know:
+
+- Neither fix has been run in game. Dvala's gravestone check in particular needs a real death
+  in a due dungeon. By hand: die in a frost cave that is due, leave the grave, run `dvala restock`
+  (it refuses, Verbose logs the line), collect the grave, restock again. For Vaettir, open a
+  Reinforced chest with a long name and check the Holds button sits clear of the cells.
+- Dvala's worktree and Vaettir's both show many files modified from line endings alone. They
+  are not part of the release and were not committed.
+
+Steps, in order:
+
+1. Publish **Vaettir 1.6.5 and Dvala 1.0.4** from each repo's `build\` zip. Tomls are generated
+   and committed (AI Generated). Core does not move, so nothing goes up before them.
+2. Pack: `longhouse` branch `release/2.3.2` carries manifest 2.3.2 with the two pins, the dated
+   `## [2.3.2]` changelog entry and the toml. `tcli build` there makes the zip.
+3. Tag each release commit and push the tags and branches when published. `main` is not merged
+   from these branches.
+4. Live, Robbin's call: Vaettir and Dvala from the published zips, Vaettir's new build id is
+   compared by the gate. Restart with the server empty.
+
 ## 2.3.1 - repins Stund, Kynda, Vaettir, Rist, Malmr, Dvala and Lur (LHM-73)
+
+**2.3.1 is published and live as of 2026-10-06.** What follows is kept as the record of how it was assembled.
 
 **A patch**: seven repins, no member joins or leaves, Core stays at 1.4.0. Prepared on 2026-10-05
 from the published 2.3.0 state, **not from `main`**, because `main` of most of these repos already
