@@ -21,7 +21,7 @@ history.
 other pin is 2.3.2's. Published in this order on 2026-10-08: Fleyta 1.0.0, Svimma 1.0.0, Vaettir
 1.7.0, Rist 1.8.0, Vandi 1.1.0, Utangard 1.5.0, Jafna 1.2.0, Kynda 1.2.0, Sinka 1.3.0, Taum 1.1.0,
 then the pack. Each was cut from its published commit onto a `release/2.4.0` branch in
-`E:\Repositoriesalheim\wt-release-240\<mod>` with only the chosen changes, tagged and pushed;
+`E:\Repositories\valheim\wt-release-240\<mod>` with only the chosen changes, tagged and pushed;
 `main` of the mods is not merged from these branches. Fleyta and Svimma got public repos
 (github.com/Ezomic/valheim-fleyta and valheim-svimma). Every DLL in the tcli zip equals the dist zip
 and the build; every listing carries AI Generated.
