@@ -15,6 +15,29 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
+## 2.4.0 - planned (a minor: Fleyta and Svimma join), not prepared yet
+
+Robbin's plan from the release planner of 2026-10-04, updated 2026-10-07. A **minor** because the set grows
+(Fleyta, Svimma). Nothing here is cut from `main` blindly: `main` of several repos already holds work
+placed in 2.5.0, so prepare it the way 2.3.1 was, from the published 2.3.x commits with only the
+chosen changes, or after the 2.5.0 items are held back. The same list is on the site at `/next`
+(`content/planned-updates.json` in the site repo).
+
+Changes placed in 2.4.0: Jafna (hoe tooltip, stone toggle), Kynda (hover time left), Sinka (torch
+protects the pole, props centre on the aimed surface), Taum (hover state), Utangard (a tab per
+player, 1 percent steps), Vandi (1.5x metal with the Queen counted, the compendium page), Rist (the
+fifteen capstones, other players' runestones), Fleyta (new), Svimma (new), and, added 2026-10-07 and
+**merged to `main` of Vaettir (bc5acb1)**: the hod jib as a freestanding piece with a drawn reach
+ring, jibs chaining to extend the reach (LHM-77), and building from the hammer menu out of chests in
+a jib's reach (LHM-76). Devkit's F10 screenshot key (LHM-78) is merged to Devkit `main` (8200235);
+Devkit is not in the pack.
+
+For the jib: the model, collider and icon changed (`hod_jib.obj`, `.mtl`, `.col`, `hod_jib_icon.png`),
+the prefab name `hod_jib` is unchanged so jibs already built keep working and change look. It is
+`Requirement.Everyone`. Needs the Devkit scenarios `vaettir-jib-*` and `vaettir-holds-button-clear-of-cells`
+run on the release build (all nine passed in the test profile on 2026-10-07 and the hammer one on its re-run).
+Untested: two players in one jib network on a server, and a world already holding an old jib.
+
 ## Rist 1.7.2 (standalone, not in a pack)
 
 Published on its own on 2026-10-06 for the SteamOS rune page cursor bug (LHM-64): the page and the game fought over the cursor lock every frame, which Linux turns into a pointer pinned to the centre. Branch `release/rist-1.7.2` in `E:\Repositories\valheim\wt-release-231\rist`, on top of `release/2.3.1`. **The pack still pins Rist 1.7.1.** The next pack update should repin Rist 1.7.2 together with its other members. Not confirmed on a Deck.
