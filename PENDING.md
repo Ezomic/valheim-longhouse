@@ -15,28 +15,34 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
-## 2.4.0 - planned (a minor: Fleyta and Svimma join), not prepared yet
+## 2.4.0 - PUBLISHED 2026-10-08: adds Fleyta and Svimma, repins Vaettir, Rist, Vandi, Utangard, Jafna, Kynda, Sinka and Taum
 
-Robbin's plan from the release planner of 2026-10-04, updated 2026-10-07. A **minor** because the set grows
-(Fleyta, Svimma). Nothing here is cut from `main` blindly: `main` of several repos already holds work
-placed in 2.5.0, so prepare it the way 2.3.1 was, from the published 2.3.x commits with only the
-chosen changes, or after the 2.5.0 items are held back. The same list is on the site at `/next`
-(`content/planned-updates.json` in the site repo).
+**A minor**: two mods join (22 members, 23 dependency lines), eight repin, Core stays at 1.4.0. Every
+other pin is 2.3.2's. Published in this order on 2026-10-08: Fleyta 1.0.0, Svimma 1.0.0, Vaettir
+1.7.0, Rist 1.8.0, Vandi 1.1.0, Utangard 1.5.0, Jafna 1.2.0, Kynda 1.2.0, Sinka 1.3.0, Taum 1.1.0,
+then the pack. Each was cut from its published commit onto a `release/2.4.0` branch in
+`E:\Repositoriesalheim\wt-release-240\<mod>` with only the chosen changes, tagged and pushed;
+`main` of the mods is not merged from these branches. Fleyta and Svimma got public repos
+(github.com/Ezomic/valheim-fleyta and valheim-svimma). Every DLL in the tcli zip equals the dist zip
+and the build; every listing carries AI Generated.
 
-Changes placed in 2.4.0: Jafna (hoe tooltip, stone toggle), Kynda (hover time left), Sinka (torch
-protects the pole, props centre on the aimed surface), Taum (hover state), Utangard (a tab per
-player, 1 percent steps), Vandi (1.5x metal with the Queen counted, the compendium page), Rist (the
-fifteen capstones, other players' runestones), Fleyta (new), Svimma (new), and, added 2026-10-07 and
-**merged to `main` of Vaettir (bc5acb1)**: the hod jib as a freestanding piece with a drawn reach
-ring, jibs chaining to extend the reach (LHM-77), and building from the hammer menu out of chests in
-a jib's reach (LHM-76). Devkit's F10 screenshot key (LHM-78) is merged to Devkit `main` (8200235);
-Devkit is not in the pack.
+**Not played with other players, and what was tested in game (single player, release builds, 2026-10-07):**
+the Vaettir jib set, Rist's capstones and others-solo, Utangard's panel passed. Held back or open: the
+Vandi metal scenario hung on its first run (the swing step; Vandi code ruled out, root cause
+unknown), Jafna's three and Kynda's two failed on state/config, not code (see the LHM-42/46/48
+comments), Fleyta's scenario needed a corrected boat position and Svimma's needs you to swim out
+first. Fleyta's shove has never reached water in a test.
 
-For the jib: the model, collider and icon changed (`hod_jib.obj`, `.mtl`, `.col`, `hod_jib_icon.png`),
-the prefab name `hod_jib` is unchanged so jibs already built keep working and change look. It is
-`Requirement.Everyone`. Needs the Devkit scenarios `vaettir-jib-*` and `vaettir-holds-button-clear-of-cells`
-run on the release build (all nine passed in the test profile on 2026-10-07 and the hammer one on its re-run).
-Untested: two players in one jib network on a server, and a world already holding an old jib.
+**Rist 1.8.0 ships Turned blade without the 30 degree parry arc** (it needs the LHM-53 merges, which
+stay in 2.5.0) and removes the old Long stride jump bonus.
+
+**Live (Robbin's call, once the Thunderstore app shows 2.4.0):** needs ALL TEN mods from the
+published zips, including Fleyta (Everyone) and Svimma (HostOnly; add it to Dyrr's allow-list).
+Vaettir's jib model changed: the three standing jibs on live (one each for AngryKarin, Fuhrer and
+Guy Withabeard) change look and size (1.56 m to 3.3 m, 1.9 m footprint) and the reach is now measured
+from the jib, not the post. Copy each plugin folder from the zips; Rist's cards.txt changes. Restart
+with the server empty, backup first. Existing cfg files keep old defaults: Kynda's Stations line is
+already `smelter,blastfurnace` on live.
 
 ## Rist 1.7.2 (standalone, not in a pack)
 
