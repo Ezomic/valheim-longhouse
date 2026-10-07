@@ -8,6 +8,12 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.4.1] - 2026-10-08
+
+Repins **Jafna** to 1.2.1, which makes the hoe's build panel readable again: the text was
+squeezed to a few pixels and is now a fixed size in a taller box. Everything else stays as in
+2.4.0.
+
 ## [2.4.0] - 2026-10-08
 
 Adds **Fleyta** and **Svimma**, for twenty-two members, and repins **Vaettir**, **Rist**, **Vandi**,
