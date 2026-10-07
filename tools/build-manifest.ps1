@@ -141,7 +141,10 @@ $members = @(
     'stund',
     'vandi',
     'varda',
-    'malmr'
+    'malmr',
+    # Fleyta and Svimma joined in 2.4.0, each added here only after it was on Thunderstore.
+    'fleyta',
+    'svimma'
 )
 
 # BepInEx is pinned by the pack as well as by each mod. A pack that named only the mods

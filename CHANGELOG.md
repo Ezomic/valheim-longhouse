@@ -8,6 +8,90 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.4.0] - 2026-10-08
+
+Adds **Fleyta** and **Svimma**, for twenty-two members, and repins **Vaettir**, **Rist**, **Vandi**,
+**Utangard**, **Jafna**, **Kynda**, **Sinka** and **Taum**. Core stays at 1.4.0.
+
+Most of this has been built and not played. Fleyta and Svimma in particular have not been run in
+a real world with other players, so expect to find things.
+
+### Fleyta 1.0.0
+
+Stand beside a boat that is aground and press B: it slides toward the nearest water until it
+floats, and from there it is the game's again. It does nothing to a boat that already floats, and
+nothing to the raft. If there is no water within 30 metres the boat stays where it is and you are
+told so. A shove costs 20 stamina, and a heavier hull slides slower.
+
+Vanilla only moves a ship from the machine that owns it, so the request goes to the owner and
+Fleyta has to be installed on every machine, not just the host's.
+
+### Svimma 1.0.0
+
+Swimming no longer puts your hand items away. Melee weapons, pickaxes and fishing rods stay in
+your hand in deep water and can be equipped there. Bows, crossbows, staffs and building tools stay
+put away, each one a switch in the config. A swing in deep water costs 1.5 times the stamina,
+since stamina does not come back while you swim, and blocking is off unless you turn it on.
+Wading is not deep water and is untouched.
+
+Only the host needs it. `Requirement.HostOnly`.
+
+### Vaettir 1.7.0
+
+The hod jib is a new model, a tall mast with a railed platform and a woven cage on top, and it no
+longer needs a stowing post: its reach is drawn as a circle while you place it or hold the
+hammer near one, and jibs whose circles touch share their chests. The hammer now builds out of
+the chests in a jib's reach, pack first and chests after. The setting is `BuildFromChests` and it
+switches itself off when AzuCraftyBoxes, CraftFromContainers or Storage Core is installed. Jibs
+already standing keep working and only change look.
+
+### Rist 1.8.0
+
+A row of tabs on the rists page shows other players' runestones, read only, when anyone else is
+on the server. The host can turn it off with `ShareRanks`. Fifteen capstones were replaced so each
+is its own behaviour instead of more of the stone's own stat. Ranks are untouched, but anyone who
+carved one of those stones to rank five loses the old capstone and gets the new one, and no pick
+is refunded. The list is in Rist's own changelog. Every player and the server need this build.
+
+### Vandi 1.1.0
+
+A boss killed three times raises the metal of its own biome by half for you, rounded up: copper
+and tin for the Elder, iron for Bonemass, silver for Moder, black metal for Yagluth, flametal and
+bloodgold for Fader, and the giant brains for the Queen. It applies to the player whose blow made
+the drop. Vandi also gets a page in the compendium listing every boss it counts with your kills on
+each. An existing config keeps its old `DoubleBosses` until you edit the line.
+
+### Utangard 1.5.0
+
+The Utangard page in the compendium lists every player seen in the last 14 days with their
+Fighting and Discovery bars, and clicking one shows their bars in the selected biome, read only.
+Each client publishes its bars as percents in a global key. Also fixed: a second world joined in
+one session no longer publishes a false 0% Discovery, and two machines writing one character id no
+longer keep rewriting each other.
+
+### Jafna 1.2.0
+
+J turns the stone fill off and on for yourself while a levelling tool is out, so on a server you
+can leave the stone alone even when the host allows it. The hoe's tooltip is now thirteen rows in
+every state and no longer grows and shrinks as you sweep the crosshair.
+
+### Kynda 1.2.0
+
+Hover text under the batch hint says how long what is loaded will last: the queued ore at a
+smelter, the coal in its fuel switch, the wood in a fireplace. `ShowTimeLeft` turns it off, and it
+is your own setting.
+
+### Sinka 1.3.0
+
+A torch snapped into a pole protects that pole (`ProtectFrom`, `All` by default). A standing
+brazier aimed at a floor tile lands in the middle of the tile (`CentreOnSurface`). Neither has
+been played.
+
+### Taum 1.1.0
+
+The hover over a tamed boar or hen says `Following you`, `Following <name>` or `Staying`, so you
+know what the next Alt+E will do.
+
 ## [2.3.2] - 2026-10-06
 
 Repins **Vaettir** and **Dvala**. Nothing joins or leaves, and Core stays at 1.4.0.
