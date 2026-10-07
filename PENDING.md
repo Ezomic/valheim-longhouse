@@ -15,6 +15,14 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
+## 2.4.1 - PREPARED 2026-10-08, not published: repins Jafna 1.2.1
+
+A patch repin. Jafna 1.2.1 makes the hoe's build panel readable (two columns, taller box, fixed
+font; the label's 61 px box was shrinking thirteen rows to a few pixels). Robbin checked it in game.
+Cut from the 2.4.0 tags onto `release/2.4.1` in `wt-release-240\jafna` and `\longhouse`; both zips
+are in each `build\` (Jafna dll hash equals the package folder's, 6 entries each). Publish Jafna
+first, then the pack. Live needs only Jafna's DLL (HostOnly) when the time comes.
+
 ## 2.4.0 - PUBLISHED 2026-10-08: adds Fleyta and Svimma, repins Vaettir, Rist, Vandi, Utangard, Jafna, Kynda, Sinka and Taum
 
 **A minor**: two mods join (22 members, 23 dependency lines), eight repin, Core stays at 1.4.0. Every
