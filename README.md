@@ -34,6 +34,8 @@ themselves.
 | [Vandi](https://thunderstore.io/c/valheim/p/Ezomic/Vandi/) | Creatures wear more stars in a biome whose boss you keep killing, and that boss comes back harder. |
 | [Malmr](https://thunderstore.io/c/valheim/p/Ezomic/Malmr/) | Vein mining: keep hitting a deposit and a bar fills until the whole thing breaks at once, metal by metal as your Pickaxes skill and bosses allow. |
 | [Varda](https://thunderstore.io/c/valheim/p/Ezomic/Varda/) | Dungeons you enter and portals you build put themselves on your map. |
+| [Fleyta](https://thunderstore.io/c/valheim/p/Ezomic/Fleyta/) | Shove a beached boat back into the water: stand beside it, press B, and it slides to the nearest water. |
+| [Svimma](https://thunderstore.io/c/valheim/p/Ezomic/Svimma/) | Swimming stops putting your weapon away: swords, pickaxes and fishing rods stay in hand in deep water. |
 
 The exact versions are in [manifest.json](manifest.json), and Thunderstore lists them on the
 pack's page. Each mod has its own README and its own changelog.
