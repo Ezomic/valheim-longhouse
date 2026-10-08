@@ -8,6 +8,11 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.4.2] - 2026-10-08
+
+Repins **Vaettir** to 1.7.1: the creatures an ancient sapling calls can now carry stars, at the game's
+own nest chance, which Vandi raises. Everything else stays as in 2.4.1.
+
 ## [2.4.1] - 2026-10-08
 
 Repins **Jafna** to 1.2.1, which makes the hoe's build panel readable again: the text was
