@@ -8,6 +8,12 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.4.3] - 2026-10-09
+
+Repins **Vaettir** to 1.7.2: the hod jib no longer needs boss kills, so any material in any chest in
+range is in reach from the start. The old rule stays behind the host setting `BossGate`. Everything
+else stays as in 2.4.2.
+
 ## [2.4.2] - 2026-10-08
 
 Repins **Vaettir** to 1.7.1: the creatures an ancient sapling calls can now carry stars, at the game's
