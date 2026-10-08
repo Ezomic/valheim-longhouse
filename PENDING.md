@@ -15,6 +15,14 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
+## 2.4.2 - PUBLISHED 2026-10-08: repins Vaettir 1.7.1
+
+A patch repin. Vaettir 1.7.1: the ancient sapling's creatures roll stars at the game's nest chance
+(`BeckonMaxLevel`, default 3), through the shared `SpawnSystem.GetLevelUpChance` so Vandi's raise
+reaches them. Built and not played. Cut from the 1.7.0 tag onto `release/2.4.2`; the Vaettir source
+commit also sits on `feature/LHM-69-vaettir-remodel`. Live is NOT updated: it needs only Vaettir's
+DLL (Everyone), after the Thunderstore app shows 2.4.2.
+
 ## 2.4.1 - PUBLISHED 2026-10-08: repins Jafna 1.2.1
 
 A patch repin. Jafna 1.2.1 makes the hoe's build panel readable (two columns, taller box, fixed
