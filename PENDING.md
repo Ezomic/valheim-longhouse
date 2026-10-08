@@ -15,6 +15,14 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
+## 2.4.3 - PUBLISHED 2026-10-09: repins Vaettir 1.7.2
+
+A patch repin. Vaettir 1.7.2: the hod jib no longer needs boss kills (`BossGate`, a host rule, off by
+default; `true` restores it). Built and not played; the jib scenarios that assert a shut gate
+(`vaettir-jib-gate`, `-deep-north-items`, probably `-limits` and `-trader-items`) fail until they run
+with `BossGate` on, and have not been updated. Cut from the 1.7.1 tag onto `release/2.4.3`. Live runs
+Vaettir 1.7.1 and is NOT on this yet: it needs only Vaettir's DLL, after the app shows 2.4.3.
+
 ## 2.4.2 - PUBLISHED 2026-10-08: repins Vaettir 1.7.1
 
 A patch repin. Vaettir 1.7.1: the ancient sapling's creatures roll stars at the game's nest chance
