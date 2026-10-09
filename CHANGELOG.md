@@ -8,6 +8,12 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.4.4] - 2026-10-09
+
+Repins **Vaettir** to 1.7.3: the Harvester can now move the Ashlands' smoke puffs and the Deep North's
+lingonberry bush, the Transplant levels are ten apart from Thistle up, and the Transplant entry has a
+new icon. Everything else stays as in 2.4.3.
+
 ## [2.4.3] - 2026-10-09
 
 Repins **Vaettir** to 1.7.2: the hod jib no longer needs boss kills, so any material in any chest in
