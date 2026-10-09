@@ -15,6 +15,14 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
+## 2.4.4 - PUBLISHED 2026-10-09: repins Vaettir 1.7.3
+
+A patch repin. Vaettir 1.7.3: Thicket moves the Ashlands' smoke puffs (Farming 65) and the Deep North
+lingonberry (75), the ladder is ten apart from Thistle (cloudberry 55; blue mushrooms are not in the
+game and keep a dead row), and the new Transplant icon (LHM-72, concept D). Built and not played;
+whether smoke puffs can be dug up at all is unproven. Cut from the 1.7.2 tag onto `release/2.4.4`.
+Live runs Vaettir 1.7.2 and is NOT on this yet.
+
 ## 2.4.3 - PUBLISHED 2026-10-09: repins Vaettir 1.7.2
 
 A patch repin. Vaettir 1.7.2: the hod jib no longer needs boss kills (`BossGate`, a host rule, off by
