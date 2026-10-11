@@ -15,6 +15,15 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
+## 2.4.5 - PUBLISHED 2026-10-11: repins Dvala 1.1.0
+
+A patch repin. Dvala 1.1.0: the winding tunnels (`DG_Hole`, theme 16384) and Morkhalla (`DG_MorkHalla`,
+131072) were missing from its theme list, so neither ever restocked (site bug 3); `Tunnels` and
+`Morkhalla` switch them, and `dvala wanted` / `dvala scan` are new console verbs. Cut from the 1.0.4
+tag onto `release/1.1.0` with only that change: **Dvala's `NewDungeon` (LHM-62) stays held and is not in
+it.** The Devkit scenario passes; whether chests and ore veins come back inside those dungeons is
+unchecked. Live runs Dvala 1.0.4 and is NOT on this yet.
+
 ## 2.4.4 - PUBLISHED 2026-10-09: repins Vaettir 1.7.3
 
 A patch repin. Vaettir 1.7.3: Thicket moves the Ashlands' smoke puffs (Farming 65) and the Deep North
