@@ -8,6 +8,11 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.4.5] - 2026-10-11
+
+Repins **Dvala** to 1.1.0: the winding tunnels and Mörkhalla are now restocked like the other dungeons,
+with a switch for each. Everything else stays as in 2.4.4.
+
 ## [2.4.4] - 2026-10-09
 
 Repins **Vaettir** to 1.7.3: the Harvester can now move the Ashlands' smoke puffs and the Deep North's
