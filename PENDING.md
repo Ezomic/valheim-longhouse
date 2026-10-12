@@ -15,6 +15,17 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
+## 2.4.6 - NOT CUT: repins Vandi 1.1.1
+
+Vandi 1.1.1 is on Thunderstore (published 2026-10-12, tagged v1.1.1 on `release/2.4.0` in
+`wt-release-240andi`, cut from the 1.1.0 tag with the CountGameKills commits only). It adds the
+`CountGameKills` setting, off by default, for a player running World Advancement Progression, whose
+default BlockAllGlobalKeys drops every global key Vandi writes its kill record into. The scenario
+`vandi-counts-the-games-kills` passed in game on 2026-10-12 with the setting on. Not tested: the same
+run with WAP installed and blocking. A repin is a patch: 2.4.6 changes only the Vandi line. Live is
+Robbin's call, and Vandi is `HostOnly`-or-not as 1.1.0 was, so check its Requirement before deciding
+whether live needs the DLL.
+
 ## 2.4.5 - PUBLISHED 2026-10-11: repins Dvala 1.1.0
 
 A patch repin. Dvala 1.1.0: the winding tunnels (`DG_Hole`, theme 16384) and Morkhalla (`DG_MorkHalla`,
