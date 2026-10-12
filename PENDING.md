@@ -15,7 +15,7 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
-## 2.4.6 - NOT CUT: repins Vandi 1.1.1
+## 2.4.6 - PREPARED 2026-10-12, NOT PUBLISHED: repins Vandi 1.1.1
 
 Vandi 1.1.1 is on Thunderstore (published 2026-10-12, tagged v1.1.1 on `release/2.4.0` in
 `wt-release-240andi`, cut from the 1.1.0 tag with the CountGameKills commits only). It adds the
@@ -25,6 +25,9 @@ default BlockAllGlobalKeys drops every global key Vandi writes its kill record i
 run with WAP installed and blocking. A repin is a patch: 2.4.6 changes only the Vandi line. Live is
 Robbin's call. Vandi registers as `Requirement.Everyone`, so live needs the new DLL and the version
 gate will refuse a client on 1.1.0 once it does: players must have the 2.4.6 pack first.
+Cut on `release/2.4.6` in `wt-release-240\longhouse` (manifest, toml, changelog), zip built with `tcli build` at
+`build\Ezomic-Longhouse-2.4.6.zip`; only the Vandi line differs from 2.4.5. Remaining: Robbin's word, `tcli publish`,
+tag `v2.4.6`, merge to main, push.
 
 ## 2.4.5 - PUBLISHED 2026-10-11: repins Dvala 1.1.0
 
