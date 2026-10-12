@@ -8,6 +8,12 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.4.6] - 2026-10-12
+
+Repins **Vandi** to 1.1.1: a new `CountGameKills` setting, off by default, for players running World Advancement
+Progression, whose default setting blocks the global keys Vandi stores its kill record in. Everything else stays
+as in 2.4.5.
+
 ## [2.4.5] - 2026-10-11
 
 Repins **Dvala** to 1.1.0: the winding tunnels and Mörkhalla are now restocked like the other dungeons,

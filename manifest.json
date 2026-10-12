@@ -1,7 +1,7 @@
 {
     "name":  "Longhouse",
     "author":  "Robbin Thijssen",
-    "version_number":  "2.4.5",
+    "version_number":  "2.4.6",
     "website_url":  "https://github.com/Ezomic/valheim-longhouse",
     "description":  "Every Ezomic mod, pinned to one set that a server will accept.",
     "dependencies":  [
@@ -23,7 +23,7 @@
                          "Ezomic-Kvedja-1.0.0",
                          "Ezomic-Merki-1.0.0",
                          "Ezomic-Stund-1.0.1",
-                         "Ezomic-Vandi-1.1.0",
+                         "Ezomic-Vandi-1.1.1",
                          "Ezomic-Varda-1.0.0",
                          "Ezomic-Malmr-1.0.1",
                          "Ezomic-Fleyta-1.0.0",
