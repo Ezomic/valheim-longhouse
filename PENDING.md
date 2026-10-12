@@ -23,8 +23,8 @@ Vandi 1.1.1 is on Thunderstore (published 2026-10-12, tagged v1.1.1 on `release/
 default BlockAllGlobalKeys drops every global key Vandi writes its kill record into. The scenario
 `vandi-counts-the-games-kills` passed in game on 2026-10-12 with the setting on. Not tested: the same
 run with WAP installed and blocking. A repin is a patch: 2.4.6 changes only the Vandi line. Live is
-Robbin's call, and Vandi is `HostOnly`-or-not as 1.1.0 was, so check its Requirement before deciding
-whether live needs the DLL.
+Robbin's call. Vandi registers as `Requirement.Everyone`, so live needs the new DLL and the version
+gate will refuse a client on 1.1.0 once it does: players must have the 2.4.6 pack first.
 
 ## 2.4.5 - PUBLISHED 2026-10-11: repins Dvala 1.1.0
 
