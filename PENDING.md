@@ -15,19 +15,26 @@ Once live runs 2.3.0, this section goes, as 2.2.0's did.
 changelog entry, and how 2.1.4, 2.1.5 and 2.4.0 were folded into it is in this file's git
 history.
 
-## 2.4.6 - PREPARED 2026-10-12, NOT PUBLISHED: repins Vandi 1.1.1
+## 2.4.6 - PUBLISHED 2026-10-12: repins Vandi 1.1.1
 
-Vandi 1.1.1 is on Thunderstore (published 2026-10-12, tagged v1.1.1 on `release/2.4.0` in
-`wt-release-240andi`, cut from the 1.1.0 tag with the CountGameKills commits only). It adds the
-`CountGameKills` setting, off by default, for a player running World Advancement Progression, whose
-default BlockAllGlobalKeys drops every global key Vandi writes its kill record into. The scenario
-`vandi-counts-the-games-kills` passed in game on 2026-10-12 with the setting on. Not tested: the same
-run with WAP installed and blocking. A repin is a patch: 2.4.6 changes only the Vandi line. Live is
-Robbin's call. Vandi registers as `Requirement.Everyone`, so live needs the new DLL and the version
-gate will refuse a client on 1.1.0 once it does: players must have the 2.4.6 pack first.
-Cut on `release/2.4.6` in `wt-release-240\longhouse` (manifest, toml, changelog), zip built with `tcli build` at
-`build\Ezomic-Longhouse-2.4.6.zip`; only the Vandi line differs from 2.4.5. Remaining: Robbin's word, `tcli publish`,
-tag `v2.4.6`, merge to main, push.
+**A patch**: one repin, no member joins or leaves, Core stays at 1.4.0. Vandi 1.1.1 (published the same day,
+tagged v1.1.1 on `release/2.4.0` in `wt-release-240andi`, cut from the 1.1.0 tag with the CountGameKills
+commits only) adds the `CountGameKills` setting, off by default, for a player running World Advancement
+Progression, whose default `BlockAllGlobalKeys` drops every global key Vandi writes its kill record into.
+The pack is `release/2.4.6` in `wt-release-240\longhouse`, tagged `v2.4.6` (88d110d) and pushed; `main` is not merged
+from it. Thunderstore served it a few minutes after the upload.
+
+**Tested (single player, own-profile, 2026-10-12):** with WAP 1.0.0 and the player's own config loaded, Vandi's normal
+mode fails (kill key never set, the second Eikthyr arrives plain) and with CountGameKills on both scenarios pass
+(`vandi-counts-the-games-kills`, `vandi-game-kills-without-the-note`). **Not tested:** the player's own setup. He
+reported the setting did not work for him; the likely causes are that he was still on Vandi 1.1.0 or the cfg was not
+applied, and his `vandi` console output and log would settle it.
+
+**Live (Robbin's call, once the Thunderstore app shows 2.4.6):** Vandi registers as `Requirement.Everyone`, so live
+needs the 1.1.1 DLL and the gate will refuse a client still on 1.1.0: players need the 2.4.6 pack first.
+
+**Next:** the new bonemeal icon (Vaettir LHM-70, approved by Robbin 2026-10-12) is unreleased on
+`feature/LHM-70-bonemeal-icon`; proposed as Vaettir 1.7.4 with a 2.4.7 pack, version his to pick.
 
 ## 2.4.5 - PUBLISHED 2026-10-11: repins Dvala 1.1.0
 
