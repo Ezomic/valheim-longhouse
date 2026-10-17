@@ -8,6 +8,11 @@ The pack's version is its own and does not track any member's. It moves when the
 changes: a mod added, removed, or repinned. What changed inside a mod is in that mod's
 changelog.
 
+## [2.4.7] - 2026-10-17
+
+Repins **Sinka** to 1.3.1: the standing brazier and the blue standing brazier can be placed again when aimed at the top
+of a floor or another piece. In 1.3.0 they could not be placed there at all. Everything else stays as in 2.4.6.
+
 ## [2.4.6] - 2026-10-12
 
 Repins **Vandi** to 1.1.1: a new `CountGameKills` setting, off by default, for players running World Advancement
